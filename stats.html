@@ -4,18 +4,19 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       function log() {
-        if ($("#login").val() == "log") {
-          alert("You are a valid user");
+        if ($("#log").val() == "eta6806" || $("#log").val() == "ETA6806") {
+          $(".connection").css('display','none');
+          $(".statistics").append("<p>Test</p>");
         } else {
-          alert("mauvais identifiant");
+          alert("error, try again the login");
         }
       }
     </script>
   </head>
   <body>
-    <div class="login-page">
-      <div class="form">
-        <input type="login" id="login" placeholder="identifiant" />
+    <div class="statistics">
+      <div class="connection">
+        <input type="login" id="login" placeholder="login" />
         <button id="log" type="button" onclick="log()">Login</button></br>
       </div>
     </div>
