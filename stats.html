@@ -18,7 +18,8 @@
 						suffix: "%"
 					},
 					toolTip: {
-						shared: true
+						shared: true,
+						content:"{name} : {y}%"
 					},
 					legend:{
 						verticalAlign: "top",
@@ -31,7 +32,7 @@
 							name: "Annotations à la mi-trimestre",
 							axisYType: "secondary",
 							color: "#7E8F74",
-							indexLabel: "#total%",
+						    indexLabel: "{y}%",
 							dataPoints: [
 								{ y: 0, label: "Cheikh, Frikia" },
 								{ y: 0, label: "Benoit, Céline" },
@@ -78,7 +79,7 @@
 							name: "Annotations à la fin du trimestre",
 							axisYType: "secondary",
 							color:"#DB9079",
-							indexLabel: "#total%",
+						    indexLabel: "{y}%",
 							dataPoints: [
 								{ y: 0, label: "Cheikh, Frikia" },
 								{ y: 0, label: "Benoit, Céline" },
