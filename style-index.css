@@ -7,7 +7,10 @@ a {
 	color: rgb(255, 255, 255);
 	text-decoration: none;
 }
-a:hover {
+p a:hover {
+	cursor: pointer;
+}
+li a:hover {
 	cursor: pointer;
 	border-bottom: 1px solid white;
 }
