@@ -7,6 +7,10 @@ a {
 	color: rgb(255, 255, 255);
 	text-decoration: none;
 }
+p a {
+	font-size: 22px;
+	vertical-align: -5px;
+}
 p a:hover {
 	cursor: pointer;
 }
