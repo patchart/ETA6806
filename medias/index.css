@@ -24,7 +24,7 @@ header {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.8);
 }
-h1 {
+header h1 {
 	position: absolute;
 	left: 0;
 	bottom: 50%;
@@ -35,7 +35,7 @@ h1 {
 	font: 200 46px "Helvetica Neue", Helvetica,Arial, sans-serif;
 	color: rgb(255, 255, 255);
 }
-h1 span {
+header h1 span {
 	background-color: rgb(0, 0, 0);
 }
 /* stylisation du contenu principal */
@@ -60,22 +60,22 @@ section img {
 		width: 300px;
 	}
 }
-h2 {
+section h2 {
 	text-align: left;
 	font: 200 25px "Helvetica Neue", Helvetica,Arial, sans-serif;
 	color: rgb(255, 255, 255);
 }
-h2 span {
+section h2 span {
     box-shadow: inset 0 -10px 0 0 #205064;
 }
-h2 span:after {
+section h2 span:after {
 	content: "\00a0"
 }
-h2 span:hover {
+section h2 span:hover {
 	cursor: pointer;
   	border-bottom: solid 5px #205064;  
 }
-h3, p {
+section h3, section p {
 	margin-bottom: 0;
 	text-align: left;
 	font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
@@ -86,22 +86,22 @@ footer {
 	padding: 15px 35px;
 	font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 }
-ul {
+footer ul {
     list-style: none;
     padding-left: 0;
 }​
-li {
+footer li {
 	display: inline;
 	list-style-type: none;
 }
 @media screen and (min-width: 450px) {
-	ul {
+	footer ul {
 		float: right;
 	}
-	li {
+	footer li {
 		float: left;
 	}
-	li:first-of-type {
+	footer li:first-of-type {
 		margin: 0 30px 0 0;
 	}
 }
