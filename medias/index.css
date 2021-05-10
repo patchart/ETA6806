@@ -86,6 +86,11 @@ footer {
 	padding: 15px 35px;
 	font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 }
+footer p {
+	text-align: left;
+	font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
+	color: rgb(255, 255, 255);	
+}
 footer ul {
     list-style: none;
     padding-left: 0;
