@@ -8,18 +8,6 @@ a {
 	color: rgb(255, 255, 255);
 	text-decoration: none;
 }
-p a {
-	color: #205064;
-	font-size: 22px;
-	vertical-align: -5px;
-}
-p a:hover {
-	color: rgb(255, 255, 255);
-	cursor: pointer;
-}
-a p:active {
-	background-color: #205064;
-}
 li a:hover {
 	cursor: pointer;
 	border-bottom: 1px solid;
