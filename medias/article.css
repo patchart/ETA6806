@@ -1,4 +1,4 @@
-/* stylisation générale */
+/* stylisation d'ensemble */
 body, html {
 	height: 100%;
 	margin: 0;
@@ -14,6 +14,9 @@ a:hover {
 a.data {
 	cursor: zoom-in;
 }
+a[href^=".."]:hover {
+	border-bottom: 1px solid;
+}
 /* stylisation de l'article */
 article {
 	width: 50%;
@@ -22,7 +25,7 @@ article {
 	font-size: 28px;
 	font-weight: 200;
 	text-align: center;
-	color: white;
+	color: rgb(255, 255, 255);
 }
 @media screen and (max-width: 450px) {
 	article {
@@ -30,11 +33,12 @@ article {
 	}
 }
 article h1 {
-		font: 200 46px "Helvetica Neue", Helvetica,Arial, sans-serif;
+	font: 200 46px "Helvetica Neue", Helvetica,Arial, sans-serif;
 	color: rgb(255, 255, 255);
 }
-article p:first-of-type {
-	text-align: center;
+article h2 {
+	font: 200 28px "Helvetica Neue", Helvetica,Arial, sans-serif;
+	color: rgb(255, 255, 255);
 }
 article p {
 	text-align: justify;
@@ -53,12 +57,13 @@ article ul {
     text-align: left;
 }
 /* stylisation de la navigation */
-nav {
+aside {
 	width: 50%;
 	margin: 25px auto;
+	padding: 25px;
 	font-family: "Helvetica Neue", Helvetica,Arial, sans-serif;
-	font-size: 66px;
+	font-size: 18px;
 	font-weight: 200;
 	text-align: center;
-	color: white;			
+	color: rgb(255, 255, 255);			
 }
