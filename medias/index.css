@@ -76,7 +76,7 @@ h2 span:hover {
   	border-bottom: solid 5px #205064;  
 }
 h3, p {
-	padding-bottom: 10px;
+	margin-bottom: 0;
 	text-align: left;
 	font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 	color: rgb(255, 255, 255);	
