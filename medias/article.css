@@ -21,9 +21,7 @@ a[href^=".."]:hover {
 article {
 	width: 50%;
 	margin: 25px auto;
-	font-family: "Helvetica Neue", Helvetica,Arial, sans-serif;
-	font-size: 28px;
-	font-weight: 200;
+	font: 200 28px "Helvetica Neue", Helvetica,Arial, sans-serif;
 	text-align: center;
 	color: rgb(255, 255, 255);
 }
@@ -61,9 +59,7 @@ aside {
 	width: 50%;
 	margin: 25px auto;
 	padding: 25px;
-	font-family: "Helvetica Neue", Helvetica,Arial, sans-serif;
-	font-size: 18px;
-	font-weight: 200;
+	font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 	text-align: center;
 	color: rgb(255, 255, 255);			
 }
