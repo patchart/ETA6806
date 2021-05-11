@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<link rel="icon" href="../../medias/icon.jpg"/>
+		<link rel="stylesheet" href="../../medias/text.css"/>
+	</head>
+	<body>
+		<article>
+			<h1>Stoke Mountains</h1>
+			<h2>8th May 2021</h2>
+			<img src="map.jpg"/>
+			<img src="graph.jpg"/>
+			<ul>
+				<li>Length: <span class="data" data-stop="18">18</span>,<span class="data" data-stop="97">97</span> km</li>
+				<li>Positive elevation: <span class="data" data-stop="890">890</span> m</li>
+				<li>Climax: <span class="data" data-stop="653">653</span> m</li>
+				<li>Summit view: <span class="data" data-stop="180">180</span>&#176;</li>
+				<li>Duration: <span class="data" data-stop="6">6</span> hours</li>
+			</ul>
+			<!-- où -->
+			<a href="image-1.jpg"><img src="image-1.jpg"/></a>
+			<a href="image-2.jpg"><img src="image-2.jpg"/></a>
+			<p>The Stokes Mountains form a chain of mountains separate from the great Eastern Townships hiking trail. The geographical situation means that the region is little frequented by hikers, which offers excursions in peace and in a nature that does not have too many human traces, almost intact. Rare thing in Estrie...</p>
+			<!-- quoi -->
+			<a href="image-3.jpg"><img src="image-3.jpg"/></a>
+			<a href="image-4.jpg"><img src="image-4.jpg"/></a>
+			<p>The network of hiking trails in the Stokes Mountains is divided into three zones. The Chapman zone crosses the mountain ridge for about ten kilometers, providing views and points of interest: caves, cliffs, marshes, etc. If you attempt the crossing, the ridge path leads on a solitary path and in the heart of a wild forest. The Stoke zone extends over the southern part of the mountains, and the East Angus zone allows you to join La Vallée Heureuse du Mont-Élan while offering viewpoints and a pretty stream.</p>
+			<!-- quand -->
+			<a href="image-5.jpg"><img src="image-5.jpg"/></a>
+			<a href="image-6.jpg"><img src="image-6.jpg"/></a>
+			<p>My hike was done at the beginning of May; the thaw period ending earlier than elsewhere in this region. A cloudy day with very few winds made the walk a bit more difficult than I expected due to a heavy atmosphere, especially in the dense, overgrown undergrowth.</p>
+			<!-- comment -->
+			<a href="image-7.jpg"><img src="image-7.jpg"/></a>
+			<a href="image-8.jpg"><img src="image-8.jpg"/></a>
+			<p>The hike begins after an approach walk of a few meters at the end of Rang 10. Once on the trail, the tone is set: very rugged terrain punctuated by steep climbs and descents. The summits are unfortunately not up to the effort involved in the ascent, as there are few if any viewpoints.</p>
+			<a href="image-9.jpg"><img src="image-9.jpg"/></a>
+		</article>
+		<aside>
+			<button onClick="location.href='../../index.html'">home</button>
+		</aside>
+		<script>
+			$(".data").each(function() {
+  				var $this = $(this);
+  				jQuery({ Counter: 0 }).animate({ Counter: $this.attr("data-stop") }, {
+    				duration: 1000,
+    				easing: "swing",
+    				step: function (now) {
+      					$this.text(Math.ceil(now));
+    				}
+  				});
+			});
+		</script>
+	</body>
+</html>
