@@ -125,11 +125,11 @@ footer li {
 	footer li {
 		margin: 0;
 	}
-	footer li:first-of-type {
-		padding-right: 20px;
+	footer li:first-of-type::after {
+		content: "\00a0\00a0\00a0\00a0\00a0";
 		border-right: 1px solid rgb(255, 255, 255);
 	}
-	footer li:last-of-type {
-		padding-left: 11px;
+	footer li:last-of-type::before {
+		content: "\00a0\00a0\00a0";
 	}
 }
