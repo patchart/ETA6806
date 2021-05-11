@@ -122,14 +122,10 @@ footer li {
 	margin: 0 0 0 35px;
 }
 @media screen and (max-width: 450px) {
-	footer li {
+	footer li:first-of-type {
+		margin: 0 35px 0 0;
+	}
+	footer li:last-of-type {
 		margin: 0;
-	}
-	footer li:first-of-type::after {
-		content: "\00a0\00a0\00a0\00a0\00a0";
-		border-right: 1px solid rgb(255, 255, 255);
-	}
-	footer li:last-of-type::before {
-		content: "\00a0\00a0\00a0";
 	}
 }
