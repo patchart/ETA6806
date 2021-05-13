@@ -1,5 +1,5 @@
 <main>
-	<!-- page -->
+	<!-- pages -->
 	<section>
 		<img src="00000000/image-1.jpg"/>
 		<h2><a href="00000000/article.html">t<span>itle</span></a></h2>
