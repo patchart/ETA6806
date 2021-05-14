@@ -8,8 +8,6 @@
 		<p>paragraph...</p>
 	</section>
 </main>
-
-
 <article>
 
 	<!-- intro -->
