@@ -70,10 +70,6 @@
 					text-align: left;
 				}
 			}
-			#article p {
-				display: block;
-				word-wrap: break-word;
-			}
 			#article img {
 				width: 100%;
 			}
@@ -153,10 +149,10 @@
 								duration.innerHTML = "Duration: ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
-								text = document.createElement("div");
+								text = document.createElement("p");
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
-								paragraph = document.createElement("p");
+								paragraph = document.createElement("br");
 								paragraph.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
 								text.appendChild(paragraph);
 							}
