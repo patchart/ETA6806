@@ -17,11 +17,9 @@
 		</nav>
 		<script>
 			function afficher() {
-				var url, page, code;
+				var url, code;
 				url = window.location.href;
-				page = url.substr(url.length - 8);
-
- 				var code = page.options[page.selectedIndex].value;
+				code = url.substr(url.length - 8);
 
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function()	{
