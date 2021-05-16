@@ -1,0 +1,12 @@
+COLLATIONS
+2 sacs de friandises 
+2 paquets de boeuf séché
+4 barres protéinées
+
+SOUPER
+1 sac de riz & poulet
+1 sachet de thé
+
+DÉJEUNER
+1 paquet de gruau nature ([bleuets*, banane*], amandes*, [miel*, sucre brun*])
+1 capsule de café
