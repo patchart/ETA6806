@@ -117,6 +117,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
+						var typo = xmlDoc.getElementsByTagName("paragraph");
 						var article = document.getElementById("article");
 						article.innerHTML = "";
 						// on calcul le nombre de données
@@ -149,12 +150,14 @@
 								duration.innerHTML = "Duration: ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
-								text = document.createElement("p");
+								text = document.createElement("div");
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
-								paragraph = document.createElement("br");
-								paragraph.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
-								text.appendChild(paragraph);
+								for (var j = 0; j < typo.length; j++) {
+									paragraph = document.createElement("p");
+									paragraph.appendChild(document.createTextNode(getNodeValue(typo[j], "paragraph")));
+									text.appendChild(paragraph);
+								}
 							}
 						}
 						// on ajoute le contenu du document
