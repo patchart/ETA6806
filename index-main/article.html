@@ -128,9 +128,14 @@
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
-									date = document.createElement("h2");
+								date = document.createElement("h2");
 								date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 								article.appendChild(date);
+								metadata = document.createElement("ul");
+								article.appendChild(metadata);
+								length = document.createElement("li");
+								length.appendChild(document.createTextNode(getNodeValue(data[i], "length")));
+								metadata.appendChild(length);
 							}
 						}
 						// on ajoute le contenu du document
