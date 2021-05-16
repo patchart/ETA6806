@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="icon" href="../medias/icon.jpg"/>
+		<link rel="stylesheet" href="../styles/article.css"/>
+	</head>
+	<body>
+		<aside>
+			<p><a href=".">en</a> &#8212; <a href="article_fr.html">fr</a></p>
+		</aside>
+		<article onload="afficher()">
+		</article>
+		<nav>
+			<button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button>
+		</nav>
+		<script>
+			function afficher() {
+				var url, page, code;
+				url = window.location.href;
+				page = url.substr(url.length - 8);
+
+ 				var code = page.options[page.selectedIndex].value;
+
+				var xhr = new XMLHttpRequest();
+				xhr.onload = function()	{
+					if (xhr.status === 200) {
+						var xmlDoc = xhr.responseXML;
+						var data = xmlDoc.getElementsByTagName("article");
+
+						var article, title;
+			
+						article = document.getElementsByTagName("article");
+						article.innerHTML = "";
+		
+						title = document.createElement("h1");
+						article.appendChild(title);
+			
+						for (var i = 0; i < data.length; i++) {
+
+						if (code == data[i].getAttribute("no")) {
+
+							var text;
+							text = document.createElement("h1");
+							text.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
+							title.appendChild(text);
+						}
+					}
+
+				function getNodeValue(obj, tag) {
+				return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
+				}
+			}
+		};
+	xhr.open("GET", "articles.xml", true);
+	xhr.send(null);
+}
+		</script>
+	</body>
+</html>
