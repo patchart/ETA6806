@@ -117,8 +117,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var gallery = xmlDoc.getElementsByTagName("gallery");
-						var content = xmlDoc.getElementsByTagName("text");
+						var test = xmlDoc.getElementsByTagName("gallery");
 						var article = document.getElementById("article");
 						article.innerHTML = "";
 						// on calcul le nombre de données
@@ -160,7 +159,7 @@
 								text = document.createElement("p");
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
-								for (var j = 0; j < gallery.length; j++) {
+								for (var j = 0; j < test.length; j++) {
 									image = document.createElement("img");
 									image.setAttribute("src", "08052021/image-"+j+".jpg");
 									article.appendChild(image);
