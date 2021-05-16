@@ -3,166 +3,148 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link rel="icon" href="../medias/icon.jpg"/>
-		<link rel="stylesheet" href="../styles/article.css"/>
 		<style>
-/* stylisation d'ensemble */
-body, html {
-	height: 100%;
-	margin: 0;
-	background-color: rgb(0, 0, 0);
-}
-a {
-	color: rgb(255, 255, 255);
-	text-decoration: none;
-}
-a:hover {
-	cursor: pointer;
-}
-a:not(article>a):hover {
-	border-bottom: 1px solid;
-}
-/* stylisation du choix alternatif */
-#aside {
-	width: 50%;
-	margin: auto;
-	padding: 15px;
-	text-align: center;
-	font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
-	color: rgb(255, 255, 255);
-}
-/* stylisation de l'article */
-#article {
-	width: 50%;
-	margin: 25px auto;
-	font: 200 28px "Helvetica Neue", Helvetica,Arial, sans-serif;
-	text-align: center;
-	color: rgb(255, 255, 255);
-}
-@media screen and (max-width: 450px) {
-	#article {
-		width: 95%;
-		font-size: 22px;
-	}
-}
-#article h1 {
-	text-transform: uppercase;
-	font: 100 46px "Helvetica Neue", Helvetica,Arial, sans-serif;
-	color: rgb(255, 255, 255);
-}
-@media screen and (max-width: 450px) {
-	#article h1 {
-		font-size: 40px;
-	}
-}
-#article h2 {
-	font: 100 28px "Helvetica Neue", Helvetica,Arial, sans-serif;
-	color: rgb(255, 255, 255);
-}
-@media screen and (max-width: 450px) {
-	#article h2 {
-		font-size: 22px;
-	}
-}
-#article p {
-	text-align: justify;
-}
-@media screen and (max-width: 450px) {
-	#article p {
-		text-align: left;
-	}
-}
-#article img {
-	width: 100%;
-}
-#article ul {
-	list-style: none;
-   	padding-left: 0;
-   	text-align: left;
-}
-/* stylisation de la navigation */
-#nav {
-	width: 50%;
-	margin: auto;
-	padding: 50px;
-	text-align: center;
-}
-#nav button {
-	width: 170px;
-	padding: 10px;
-	border: 1px solid rgb(255, 255, 255);
-	font: 200 22px "Helvetica Neue", Helvetica,Arial, sans-serif;
-	color: rgb(255, 255, 255);
-	background-color: rgb(0, 0, 0);
-}
-#nav button:last-of-type {
-	margin-top: 36px;
-	padding: 10px 56px;
-}
-#nav button:hover {
-	cursor: pointer;
-}
-#nav button:focus {
-	outline-color: #205064;
-}
+			/* stylisation d'ensemble */
+			body, html {
+				height: 100%;
+				margin: 0;
+				background-color: rgb(0, 0, 0);
+			}
+			a {
+				color: rgb(255, 255, 255);
+				text-decoration: none;
+			}
+			a:hover {
+				cursor: pointer;
+			}
+			a:not(article>a):hover {
+				border-bottom: 1px solid;
+			}
+			/* stylisation du choix alternatif */
+			#aside {
+				width: 50%;
+				margin: auto;
+				padding: 15px;
+				text-align: center;
+				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
+				color: rgb(255, 255, 255);
+			}
+			/* stylisation de l'article */
+			#article {
+				width: 50%;
+				margin: 25px auto;
+				font: 200 28px "Helvetica Neue", Helvetica,Arial, sans-serif;
+				text-align: center;
+				color: rgb(255, 255, 255);
+			}
+			@media screen and (max-width: 450px) {
+				#article {
+					width: 95%;
+					font-size: 22px;
+				}
+			}
+			#article h1 {
+				text-transform: uppercase;
+				font: 100 46px "Helvetica Neue", Helvetica,Arial, sans-serif;
+				color: rgb(255, 255, 255);
+			}
+			@media screen and (max-width: 450px) {
+				#article h1 {
+					font-size: 40px;
+				}
+			}
+			#article h2 {
+				font: 100 28px "Helvetica Neue", Helvetica,Arial, sans-serif;
+				color: rgb(255, 255, 255);
+			}
+			@media screen and (max-width: 450px) {
+				#article h2 {
+					font-size: 22px;
+				}
+			}
+			#article p {
+				text-align: justify;
+			}
+			@media screen and (max-width: 450px) {
+				#article p {
+					text-align: left;
+				}
+			}
+			#article img {
+				width: 100%;
+			}
+			#article ul {
+				list-style: none;
+				padding-left: 0;
+				text-align: left;
+			}
+			/* stylisation de la navigation */
+			#nav {
+				width: 50%;
+				margin: auto;
+				padding: 50px;
+				text-align: center;
+			}
+			#nav button {
+				width: 170px;
+				padding: 10px;
+				border: 1px solid rgb(255, 255, 255);
+				font: 200 22px "Helvetica Neue", Helvetica,Arial, sans-serif;
+				color: rgb(255, 255, 255);
+				background-color: rgb(0, 0, 0);
+			}
+			#nav button:last-of-type {
+				margin-top: 36px;
+				padding: 10px 56px;
+			}
+			#nav button:hover {
+				cursor: pointer;
+			}
+			#nav button:focus {
+				outline-color: #205064;
+			}
 		</style>
 		<script src="js/jquery-3.1.1.min.js"></script>
-	<script>
-	function afficher() {
+		<script>
+			function page() {
+				// on prépare l'identification
 				var url, code;
 				url = window.location.href;
 				code = url.substr(url.length - 8);
-
-	// on envoie la requête XML
-	var xhr = new XMLHttpRequest();
-	xhr.onload = function(){
-		if (xhr.status === 200) {
-			var xmlDoc = xhr.responseXML;
-			var data = xmlDoc.getElementsByTagName("article");
-
-			var article = document.getElementById("article");
-			article.innerHTML = "";
-			
-
-			// CORPS DU TABLEAU
-			// on calcul le nombre de données liées
-			for (var i = 0; i < data.length; i++) {
-
-				// on fait une condition pour que les données correspondent au numéro de dossier sélectionné, c-à-d à l'indice
-				if (code == data[i].getAttribute("no")) {
-
-
-					// on récupère les données dans les attributs et éléments
-					var title;
-
-					// élément 1
-					title = document.createElement("h1");
-					title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
-					article.appendChild(title);
-				}
+				// on envoie la requête XML
+				var xhr = new XMLHttpRequest();
+				xhr.onload = function() {
+					if (xhr.status === 200) {
+						var xmlDoc = xhr.responseXML;
+						var data = xmlDoc.getElementsByTagName("article");
+						var article = document.getElementById("article");
+						article.innerHTML = "";
+						// on calcul le nombre de données
+						for (var i = 0; i < data.length; i++) {
+							// on fait une condition pour identifier les données
+							if (code == data[i].getAttribute("no")) {
+								// on récupère les données dans les attributs et éléments XML
+								var title;
+								title = document.createElement("h1");
+								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
+								article.appendChild(title);
+							}
+						}
+						// on ajoute le contenu du document
+						function getNodeValue(x, y) {
+							return x.getElementsByTagName(y)[0].firstChild.nodeValue;
+						}
+					}
+				};
+				// on charge le contenu du document
+				xhr.open("GET", "articles.xml", true);
+				xhr.send(null);
 			}
-
-
-			// REQUÊTE XML
-			// on ajoute le contenu du document
-			function getNodeValue(x, y) {
-				return x.getElementsByTagName(y)[0].firstChild.nodeValue;
-			}
-		}
-	};
-	// on charge le contenu du document
-	xhr.open("GET", "articles.xml", true);
-	xhr.send(null);
-}
 		</script>
 	</head>
-	<body onload="afficher()">
-		<div id="aside">
-			<p><a href=".">en</a> &#8212; <a href="article_fr.html">fr</a></p>
-		</div>
-		<div id="article">
-		</div>
-		<div id="nav">
-			<button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button>
-		</div>
+	<body onload="page()">
+		<div id="aside"><p><a href=".">en</a> &#8212; <a href="article_fr.html">fr</a></p></div>
+		<div id="article"></div>
+		<div id="nav"><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></div>
 	</body>
 </html>
