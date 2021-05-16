@@ -160,9 +160,9 @@
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
 								for (var j = 0; j < test.length; j++) {
-									image = document.createElement("img");
+									image+"-"+j = document.createElement("img");
 									image.setAttribute("src", "08052021/image-"+j+".jpg");
-									article.appendChild(image);
+									article.appendChild(image+"-"+j);
 								}
 							}
 						}
