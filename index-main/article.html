@@ -124,7 +124,7 @@
 							// on fait une condition pour identifier les données
 							if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, metadata, length, climax, viewpoint, duration, paragraph;
+								var title, date, metadata, length, climax, viewpoint, duration, text;
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
@@ -149,9 +149,9 @@
 								duration.innerHTML = "Duration: ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
-								let paragraph = document.createElement("p");
-								paragraph.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
-								article.appendChild(paragraph);
+								text = document.createElement("p");
+								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
+								article.appendChild(text);
 							}
 						}
 						// on ajoute le contenu du document
