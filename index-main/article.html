@@ -149,7 +149,7 @@
 								duration.innerHTML = "Duration: ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
-								paragraph = document.createElement("p");
+								let paragraph = document.createElement("p");
 								paragraph.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
 								article.appendChild(paragraph);
 							}
