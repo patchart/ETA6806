@@ -117,7 +117,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var line = xmlDoc.getElementsByTagName("text");
+						var content = xmlDoc.getElementsByTagName("text");
 						var article = document.getElementById("article");
 						article.innerHTML = "";
 						// on calcul le nombre de données
@@ -153,10 +153,10 @@
 								text = document.createElement("div");
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
-								for (var j = 0; j < line.length; j++) {
+								for (let j in content) {
 									paragraph = document.createElement("p");
-									paragraph.appendChild(document.createTextNode(getNodeValue(line[j], "paragraph")));
-									text.appendChild(paragraph);									
+									paragraph.appendChild(document.createTextNode(getNodeValue("paragraph")));
+									text.appendChild(paragraph);	
 								}
 							}
 						}
