@@ -149,6 +149,9 @@
 								duration.innerHTML = "Duration: ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
+								paragraph = document.createElement("p");
+								paragraph = document.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
+								article.appendChild(paragraph);
 							}
 						}
 						// on ajoute le contenu du document
