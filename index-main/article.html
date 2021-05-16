@@ -125,13 +125,17 @@
 							// on fait une condition pour identifier les données
 							if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, metadata, length, climax, viewpoint, duration, text, paragraph;
+								var title, date, photo, graph, metadata, length, climax, viewpoint, duration, text, paragraph;
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
 								date = document.createElement("h2");
 								date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 								article.appendChild(date);
+								photo = document.createElement("img");
+								photo.setAttribute("src", "08052021/image-1.jpg");
+								graph = document.createElement("img");
+								graph.setAttribute("src", "08052021/graph.jpg");
 								metadata = document.createElement("ul");
 								article.appendChild(metadata);
 								length = document.createElement("li");
@@ -150,12 +154,9 @@
 								duration.innerHTML = "Duration: ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
-								text = document.createElement("div");
+								text = document.createElement("p");
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
-								paragraph = document.createElement("p");
-								paragraph.appendChild(document.createTextNode(getAttributeValue(data[i], "introduction")));
-								text.appendChild(paragraph);
 							}
 						}
 						// on ajoute le contenu du document
