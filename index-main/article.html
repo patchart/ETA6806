@@ -153,11 +153,6 @@
 								text = document.createElement("div");
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
-								for (var j in data[i].length) {
-									paragraph = document.createElement("p");
-									paragraph.appendChild(document.createTextNode(getNodeValue(data[i][j], "paragraph")));
-									text.appendChild(paragraph);	
-								}
 							}
 						}
 						// on ajoute le contenu du document
