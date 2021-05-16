@@ -14,45 +14,35 @@
 	xhr.onload = function(){
 		if (xhr.status === 200) {
 			var xmlDoc = xhr.responseXML;
-			var donnees = xmlDoc.getElementsByTagName("article");
+			var data = xmlDoc.getElementsByTagName("article");
 
-
-			// TABLEAU
-			// on fait les variables de base pour afficher les tableaux
-			var affichage, button, table, thead, tbody, p;
-			
-			// on fait l'espace d'affichage
-			affichage = document.getElementsByTagName("article");
-			affichage.innerHTML = "";
-			
-			// on prépare la structure du tableau
-			table = document.createElement("div");
-			affichage.appendChild(table);
+			var article = document.getElementById("article");
+			article.innerHTML = "";
 			
 
 			// CORPS DU TABLEAU
 			// on calcul le nombre de données liées
-			for (var i = 0; i < donnees.length; i++) {
+			for (var i = 0; i < data.length; i++) {
 
 				// on fait une condition pour que les données correspondent au numéro de dossier sélectionné, c-à-d à l'indice
-				if (code == donnees[i].getAttribute("no")) {
+				if (code == data[i].getAttribute("no")) {
 
 
 					// on récupère les données dans les attributs et éléments
-					var attr1, attr2, elem1, elem2, elem3;
+					var title;
 
 					// élément 1
-					elem1 = document.createElement("p");
-					elem1.appendChild(document.createTextNode(getNodeValue(donnees[i], "title")));
-					table.appendChild(elem1);
+					title = document.createElement("h1");
+					title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
+					article.appendChild(title);
 				}
 			}
 
 
 			// REQUÊTE XML
 			// on ajoute le contenu du document
-			function getNodeValue(obj, tag) {
-				return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
+			function getNodeValue(x, y) {
+				return x.getElementsByTagName(y)[0].firstChild.nodeValue;
 			}
 		}
 	};
@@ -68,8 +58,8 @@
 		<aside>
 			<p><a href=".">en</a> &#8212; <a href="article_fr.html">fr</a></p>
 		</aside>
-		<article id="affichage">
-		</article>
+		<div id="article">
+		</div>
 		<nav>
 			<button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button>
 		</nav>
