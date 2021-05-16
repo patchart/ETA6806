@@ -134,7 +134,8 @@
 								metadata = document.createElement("ul");
 								article.appendChild(metadata);
 								length = document.createElement("li");
-								length.appendChild(document.createTextNode("Length: ", getNodeValue(data[i], "length")));
+								length.innerHTML = "Length: ";
+								length.appendChild(document.createTextNode(getNodeValue(data[i], "length")));
 								metadata.appendChild(length);
 							}
 						}
