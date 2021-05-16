@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <articles>
-    <article no="08052020">
+    <article no="08052021">
         <title>Stoke Mountains</title>
         <date>8th May 2021</date>
+        <photo link="medias/08052021/photo.jpg"/>
+        <graph link="medias/08052021/graph.jpg"/>
         <metadata>
             <length>18,97 km</length>
             <climax>653 m</climax>
