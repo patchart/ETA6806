@@ -155,7 +155,7 @@
 								article.appendChild(text);
 								for (var j in line) {
 									paragraph = document.createElement("p");
-									paragraph.appendChild(document.createTextNode(getNodeValue(data[j], "paragraph")));
+									paragraph.appendChild(document.createTextNode(getNodeValue(line[j], "paragraph")));
 									text.appendChild(paragraph);									
 								}
 							}
