@@ -125,7 +125,7 @@
 							// on fait une condition pour identifier les données
 							if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, photo, graph, metadata, length, climax, viewpoint, duration, text, paragraph, image;
+								var title, date, photo, graph, metadata, length, climax, viewpoint, duration, text, paragraph;
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
@@ -160,7 +160,7 @@
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
 								for (var j = 0; j < test.length; j++) {
-									image+"-"+j = document.createElement("img");
+									let image+"-"+j = document.createElement("img");
 									image.setAttribute("src", "08052021/image-"+j+".jpg");
 									article.appendChild(image+"-"+j);
 								}
