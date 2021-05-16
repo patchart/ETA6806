@@ -137,6 +137,18 @@
 								length.innerHTML = "Length: ";
 								length.appendChild(document.createTextNode(getNodeValue(data[i], "length")));
 								metadata.appendChild(length);
+								climax = document.createElement("li");
+								climax.innerHTML = "Climax: ";
+								climax.appendChild(document.createTextNode(getNodeValue(data[i], "climax")));
+								metadata.appendChild(climax);
+								viewpoint = document.createElement("li");
+								viewpoint.innerHTML = "Viewpoint: ";
+								viewpoint.appendChild(document.createTextNode(getNodeValue(data[i], "viewpoint")));
+								metadata.appendChild(viewpoint);
+								duration = document.createElement("li");
+								duration.innerHTML = "Duration: ";
+								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
+								metadata.appendChild(duration);
 							}
 						}
 						// on ajoute le contenu du document
