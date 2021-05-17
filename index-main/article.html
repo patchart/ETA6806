@@ -162,10 +162,10 @@
 								////
 								var x = "", j;
 								for (j = 0; j < gallery.length; j++) {
-  									x += gallery[j].getAttribute("no");
+  									x += "<img src='medias/"+code+"/photo-"+gallery[j].getAttribute("no")+".jpg'/>";
 								}
-								photo = document.createElement("img");
-								photo.setAttribute("src", "medias/"+code+"/photo-"+x+".jpg");//appendChild(document.createTextNode(x));
+								photo = document.createElement("div");
+								photo.appendChild(x);//("src", "medias/"+code+"/photo-"+x+".jpg");//appendChild(document.createTextNode(x));
 								article.appendChild(photo);
 								//document.getElementById("nav").innerHTML = x;
 								////
