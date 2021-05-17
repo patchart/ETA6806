@@ -161,7 +161,7 @@
 								article.appendChild(text);
 								for (var j = 0; j < test.length; j++) {
 									paragraph = document.createElement("p");
-    									paragraph.appendChild(document.createTextNode(getNodeValue(test[j].childNodes[0].nodeValue)));
+    									paragraph.appendChild(document.createTextNode(getNodeValue(test[j].childNodes[0])));
 									article.appendChild(paragraph);
 								}
 							}
