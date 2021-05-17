@@ -117,7 +117,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var test = xmlDoc.getElementsByTagName("image");
+						var gallery = xmlDoc.getElementsByTagName("photo");
 						var article = document.getElementById("article");
 						article.innerHTML = "";
 						// on calcul le nombre de données
@@ -125,18 +125,18 @@
 							// on fait une condition pour identifier les données
 							if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, photo, graph, metadata, length, climax, viewpoint, duration, text, paragraph, image;
+								var title, date, image, graph, metadata, length, climax, viewpoint, duration, text, paragraph, photo;
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
 								date = document.createElement("h2");
 								date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 								article.appendChild(date);
-								photo = document.createElement("img");
-								photo.setAttribute("src", "medias/photo-"+code+".jpg");
-								article.appendChild(photo);
+								image = document.createElement("img");
+								image.setAttribute("src", "medias/"+code+"/image.jpg");
+								article.appendChild(image);
 								graph = document.createElement("img");
-								graph.setAttribute("src", "medias/graph-"+code+".jpg");
+								graph.setAttribute("src", "medias/"+code+"/graph.jpg");
 								article.appendChild(graph);
 								metadata = document.createElement("ul");
 								article.appendChild(metadata);
@@ -160,14 +160,13 @@
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
 								////
-								var x = "";
-								var j;
-								for (j = 0; j < test.length; j++) {
-  									x += test[j].nodeName + "<br>";
+								var x = "", j;
+								for (j = 0; j < gallery.length; j++) {
+  									x += gallery[j].getAttribute("id");
 								}
-								paragraph = document.createElement("p");
-								paragraph.appendChild(document.createTextNode(x));
-								article.appendChild(paragraph);
+								photo = document.createElement("p");
+								photo.appendChild(document.createTextNode(x));
+								article.appendChild(photo);
 								//document.getElementById("nav").innerHTML = x;
 								////
 							}
