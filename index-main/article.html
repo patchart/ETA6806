@@ -160,10 +160,6 @@
 								text = document.createElement("p");
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
-								for (var j = 0; j < test.length; j++) {
-									txt = txt + test[j].nodeName + "<br>";
-								}
-								document.getElementById("article").innerHTML = txt;
 							}
 						}
 						// on ajoute le contenu du document
