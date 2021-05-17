@@ -117,7 +117,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var test = xmlDoc.getElementsByTagName("gallery").childNodes;
+						var test = xmlDoc.getElementsByTagName("image");
 						var txt = "";
 						var article = document.getElementById("article");
 						article.innerHTML = "";
@@ -160,6 +160,10 @@
 								text = document.createElement("p");
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
+								for (var j = 0; j < test.length; j++) {
+    									document.write(test[j].childNodes[0].nodeValue);
+    									document.write("<br>");
+								}
 							}
 						}
 						// on ajoute le contenu du document
