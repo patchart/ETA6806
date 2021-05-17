@@ -123,7 +123,7 @@
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
 							// on fait une condition pour identifier les données
-							if (code == data[i].getAttribute("no")) {
+							if (code == data[i].getAttribute("code")) {
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, image, graph, metadata, length, climax, viewpoint, duration, text, paragraph, photo;
 								title = document.createElement("h1");
@@ -162,10 +162,10 @@
 								////
 								var x = "", j;
 								for (j = 0; j < gallery.length; j++) {
-  									x += gallery[j].getAttribute("id");
+  									x += gallery[j].getAttribute("no");
 								}
-								photo = document.createElement("p");
-								photo.appendChild(document.createTextNode(x));
+								photo = document.createElement("img");
+								photo.setAttribute("src", "photo-"+x);//appendChild(document.createTextNode(x));
 								article.appendChild(photo);
 								//document.getElementById("nav").innerHTML = x;
 								////
