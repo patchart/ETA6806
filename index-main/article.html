@@ -165,7 +165,7 @@
   									x += "<img src='medias/"+code+"/photo-"+gallery[j].getAttribute("no")+".jpg'/>";
 								}
 								photo = document.createElement("div");
-								photo.appendChild(x);//("src", "medias/"+code+"/photo-"+x+".jpg");//appendChild(document.createTextNode(x));
+								photo.appendChild(document.createTextNode(x));//("src", "medias/"+code+"/photo-"+x+".jpg");//appendChild(document.createTextNode(x));
 								article.appendChild(photo);
 								//document.getElementById("nav").innerHTML = x;
 								////
