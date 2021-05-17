@@ -161,11 +161,12 @@
 								article.appendChild(text);
 							}
 						}
-								for (var j = 0; j < test.length; j++) {
-									paragraph = document.createElement("p");
-    									paragraph.appendChild(document.createTextNode(getNodeValue(test[j].childNodes[0])));
-									article.appendChild(paragraph);
-								}
+						var x = "";
+						var j;
+						for (j = 0; j < test.length; j++) {
+  							x += j + "<br>";
+						}
+						document.getElementById("article").innerHTML = x;
 						// on ajoute le contenu du document
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
