@@ -159,14 +159,20 @@
 								text = document.createElement("p");
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
+								var x = "";
+								var j;
+								for (j = 0; j < test.length; j++) {
+  									x += test[j].nodeName + "<br>";
+								}
+								article.appendChild(x);
 							}
 						}
-						var x = "";
-						var j;
-						for (j = 0; j < test.length; j++) {
-  							x += test[j].nodeName + "<br>";
-						}
-						document.getElementById("article").innerHTML = x;
+						//var x = "";
+						//var j;
+						//for (j = 0; j < test.length; j++) {
+  						//	x += test[j].nodeName + "<br>";
+						//}
+						//document.getElementById("article").innerHTML = x;
 						// on ajoute le contenu du document
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
