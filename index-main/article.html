@@ -159,12 +159,14 @@
 								text = document.createElement("p");
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
+								////
 								var x = "";
 								var j;
 								for (j = 0; j < test.length; j++) {
   									x += test[j].nodeName + "<br>";
 								}
-								article.appendChild(x);
+								document.getElementById("nav").innerHTML = x;
+								////
 							}
 						}
 						//var x = "";
