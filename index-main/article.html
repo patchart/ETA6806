@@ -117,7 +117,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var test = xmlDoc.getElementsByTagName("gallery");
+						var test = xmlDoc.getElementsByTagName("image");
 						var article = document.getElementById("article");
 						article.innerHTML = "";
 						// on calcul le nombre de données
