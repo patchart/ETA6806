@@ -118,7 +118,6 @@
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
 						var test = xmlDoc.getElementsByTagName("image");
-						var txt = "";
 						var article = document.getElementById("article");
 						article.innerHTML = "";
 						// on calcul le nombre de données
@@ -161,8 +160,9 @@
 								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
 								article.appendChild(text);
 								for (var j = 0; j < test.length; j++) {
-    									document.write(test[j].childNodes[0].nodeValue);
-    									document.write("<br>");
+									paragraph = document.createElement("p");
+    									paragraph.appendChild(document.createTextNode(getNodeValue(test[j].childNodes[0].nodeValue)));
+									article.appendChild(paragraph);
 								}
 							}
 						}
