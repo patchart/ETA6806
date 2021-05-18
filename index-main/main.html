@@ -22,18 +22,18 @@
 				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 			}
 			/* stylisation de l'entête */
-			#header {
+			header {
 				height: 100%; 
 				background-image: url("../medias/theme.jpg");
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: cover;
 			}
-			#header #cover {
+			header #cover {
 				height: 100%;
 				background-color: rgba(0, 0, 0, 0.8);
 			}
-			#header h1 {
+			header h1 {
 				position: absolute;
 				left: 0;
 				bottom: 50%;
@@ -44,11 +44,11 @@
 				font: 200 46px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 			}
-			#header h1 span {
+			header h1 span {
 				background-color: rgb(0, 0, 0);
 			}
 			/* stylisation du contenu principal */
-			#main {
+			main {
 				padding-top: 50px;
 				text-align: center;
 				background-color: rgb(0, 0, 0);
@@ -98,47 +98,47 @@
 				cursor: pointer;
 				border-bottom: solid 5px #205064;  
 			}
-			section h3, section p {
+			section h3 /*, section p*/ {
 				margin-bottom: 0;
 				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);	
 			}
 			/* stylisation du pied de page */
-			#footer {
+			footer {
 				padding: 15px 35px;
 				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 			}
 			@media screen and (max-width: 450px) {
-				#footer {
+				footer {
 					max-width: 275px;
 					padding: 15px;
 				}
 			}
-			#footer h4 {
+			footer h4 {
 				text-align: left;
 				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);	
 			}
-			#footer ul {
+			footer ul {
 				float: right;
 				list-style: none;
 				padding-left: 0;
 			}
 			@media screen and (max-width: 450px) {
-				#footer ul {
+				footer ul {
 					float: none;
 				}
 			}
-			#footer li {
+			footer li {
 				display: inline;
 				list-style-type: none;
 				margin: 0 0 0 35px;
 			}
 			@media screen and (max-width: 450px) {
-				#footer li:first-of-type {
+				footer li:first-of-type {
 					margin: 0 35px 0 0;
 				}
-				#footer li:last-of-type {
+				footer li:last-of-type {
 					margin: 0;
 				}
 			}
@@ -152,14 +152,13 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var main = document.getElementById("main");
+						var main = document.getElementsByTagName("main");
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
-							var section, title, date, image, code, graph, x, y, z, intro, photo;
+							var section, image, x, y, z, title, date;
 							section = document.createElement("section");
 							main.appendChild(section);
-							
 							image = document.createElement("img");
 							image.setAttribute("src", "medias/"+data[i].getAttribute("no")+"/image.jpg");
 							section.appendChild(image);
@@ -180,9 +179,6 @@
 							date = document.createElement("h3");
 							date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 							section.appendChild(date);
-							intro = document.createElement("p");
-							intro.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
-							section.appendChild(intro);
 						}
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
@@ -196,17 +192,8 @@
 		</script>
 	</head>
 	<body onload="page()">
-		<div id="header"><div id="cover"><h1><span>Of Stories<br/>and Trees</span></h1></div></div>
-		<div id="main">
-			<!--<div class="section">
-				<img src="08052021/image-1.jpg"/>
-				<form action="article.html">
-					<button type="submit" name="no" value="08052021"><h2>S<span>toke Mountains</span></h2></button>
-				</form>				
-				<h3>8th May 2021</h3>
-				<p>I wanted this day hike to complete the crossing of the Stoke Mountains, and the weekend of May 8 was a good fit; the thaw period ending...</p>
-			</div>-->
-		</div>
-		<div id="footer"><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></div id="footer">
+		<header><div id="cover"><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
+		<main><!-- Document Object Model Contents & Sections --></main>
+		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 	</body>
 </html>
