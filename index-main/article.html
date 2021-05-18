@@ -126,7 +126,7 @@
 							// on fait une condition pour identifier les données
 							if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, image, graph, metadata, length, climax, viewpoint, duration, text, paragraph, photo;
+								var title, date, image, graph, metadata, length, climax, viewpoint, duration, paragraph, photo;
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
@@ -157,15 +157,22 @@
 								duration.innerHTML = "Duration: ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
-								text = document.createElement("p");
-								text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
-								article.appendChild(text);
+								//text = document.createElement("p");
+								//text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
+								//article.appendChild(text);
 								var x = "", j;
-								for (j = 0; j < gallery.length; j++) {
-  									x += "<img src='medias/"+code+"/photo-"+gallery[j].getAttribute("status")+".jpg'/>";
+								for (j = 0; j < text.length; j++) {
+  									x += text[j].getNodeValue("paragraph");
+								}
+								paragraph = document.createElement("p");
+								paragraph.innerHTML = x;
+								article.appendChild(paragraph);
+								var y = "", k;
+								for (k = 0; k < gallery.length; k++) {
+  									y += "<img src='medias/"+code+"/photo-"+gallery[k].getAttribute("status")+".jpg'/>";
 								}
 								photo = document.createElement("div");
-								photo.innerHTML = x;
+								photo.innerHTML = y;
 								article.appendChild(photo);
 							}
 						}
