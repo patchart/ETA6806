@@ -108,9 +108,9 @@
 		<script>
 			function page() {
 				// on prépare l'identification
-				var url, code;
+				var url, no;
 				url = window.location.href;
-				code = url.substr(url.length - 8);
+				no = url.substr(url.length - 8);
 				// on envoie la requête XML
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function() {
@@ -123,7 +123,7 @@
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
 							// on fait une condition pour identifier les données
-							if (code == data[i].getAttribute("code")) {
+							if (no == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, image, graph, metadata, length, climax, viewpoint, duration, text, paragraph, photo;
 								title = document.createElement("h1");
@@ -133,10 +133,10 @@
 								date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 								article.appendChild(date);
 								image = document.createElement("img");
-								image.setAttribute("src", "medias/"+code+"/image.jpg");
+								image.setAttribute("src", "medias/"+no+"/image.jpg");
 								article.appendChild(image);
 								graph = document.createElement("img");
-								graph.setAttribute("src", "medias/"+code+"/graph.jpg");
+								graph.setAttribute("src", "medias/"+no+"/graph.jpg");
 								article.appendChild(graph);
 								metadata = document.createElement("ul");
 								article.appendChild(metadata);
@@ -162,7 +162,7 @@
 								////
 								var x = "", j;
 								for (j = 0; j < gallery.length; j++) {
-  									x += "<img src='medias/"+code+"/photo-"+gallery[j].getAttribute("no")+".jpg'/>";
+  									x += "<img src='medias/"+no+"/photo-"+gallery[j].getAttribute("code")+".jpg'/>";
 								}
 								photo = document.createElement("div");
 								photo.innerHTML = x;//("src", "medias/"+code+"/photo-"+x+".jpg");//appendChild(document.createTextNode(x));
