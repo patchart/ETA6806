@@ -181,10 +181,7 @@
 							date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 							section.appendChild(date);
 							intro = document.createElement("p");
-							var test;
-							test.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
-							intro = test.substr(test.length - 8);
-							//intro.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
+							intro.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
 							section.appendChild(intro);
 						}
 						function getNodeValue(obj, tag) {
