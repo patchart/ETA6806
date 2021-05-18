@@ -153,7 +153,7 @@
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
 						var main = document.getElementById("main");
-						var code = xmlDoc.getElementsByTagName("article").getAttribute("no");
+						//var code = xmlDoc.getElementsByTagName("article").getAttribute("no");
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
