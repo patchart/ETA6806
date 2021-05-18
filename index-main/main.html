@@ -164,10 +164,11 @@
 								section = document.createElement("section");
 								main.appendChild(section);
 							
-								image = document.createElement("img");
+								image = document.createElement("p");
 								var z = document.getElementsByTagName("article")[0].getAttribute("no");
-								image.setAttribute("src", "medias/"+z+"/image.jpg");
+								//image.setAttribute("src", "medias/"+z+"/image.jpg");
 								//image.setAttribute("src", "medias/"+code+"/image.jpg");
+								section.innerHTML = z;
 								section.appendChild(image);
 								
 								title = document.createElement("h2");
