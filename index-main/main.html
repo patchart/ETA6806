@@ -146,8 +146,6 @@
 		<script src="js/jquery-3.1.1.min.js"></script>
 		<script>
 			function page() {
-				var test = document.getElementsByTagName("main");
-				test.setAttribute("id", "main");
 				// on envoie la requête XML
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function() {
@@ -195,7 +193,7 @@
 	</head>
 	<body onload="page()">
 		<header><div id="cover"><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
-		<main><!-- Document Object Model Contents & Sections --></main>
+		<main id="main"><!-- Document Object Model Contents & Sections --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 	</body>
 </html>
