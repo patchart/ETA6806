@@ -153,7 +153,6 @@
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
 						var main = document.getElementById("main");
-						var code = xmlDoc.getElementsByTagName("article").getAttribute("no");
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
@@ -164,11 +163,12 @@
 								section = document.createElement("section");
 								main.appendChild(section);
 							
-								//image = document.createElement("p");
+								image = document.createElement("p");
 								//image.appendChild(document.createTextNode(getAttribute(data, "no")));
 								//image.setAttribute("src", "medias/"+z+"/image.jpg");
 								//image.setAttribute("src", "medias/"+code+"/image.jpg");
-								//section.appendChild(image);
+								image.innerHTML = data[i].getAttribute("no");
+								section.appendChild(image);
 								
 								title = document.createElement("h2");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
