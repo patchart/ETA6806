@@ -165,10 +165,9 @@
 								main.appendChild(section);
 							
 								image = document.createElement("p");
-								var z = document.getElementsByTagName("article").getAttribute("no");
+								image.appendChild(document.createTextNode(getAttribute(data, "no")));
 								//image.setAttribute("src", "medias/"+z+"/image.jpg");
 								//image.setAttribute("src", "medias/"+code+"/image.jpg");
-								section.innerHTML = z;
 								section.appendChild(image);
 								
 								title = document.createElement("h2");
