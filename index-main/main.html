@@ -156,26 +156,17 @@
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
-							// on fait une condition pour identifier les données
-							//if (code == data[i].getAttribute("no")) {
-								// on récupère les données dans les attributs et les éléments XML
-								var section, title, date, image, code, graph, metadata, length, climax, viewpoint, duration, paragraph, photo;
-								section = document.createElement("section");
-								main.appendChild(section);
+							var section, title, date, image, code, graph, metadata, length, climax, viewpoint, duration, paragraph, photo;
+							section = document.createElement("section");
+							main.appendChild(section);
 							
-								image = document.createElement("p");
-								//image.appendChild(document.createTextNode(getAttribute(data, "no")));
-								//image.setAttribute("src", "medias/"+z+"/image.jpg");
-								//image.setAttribute("src", "medias/"+code+"/image.jpg");
-								image.innerHTML = data[i].getAttribute("no");
-								section.appendChild(image);
+							image = document.createElement("p");
+							image.appendChild(document.createTextNode(data[i].getAttribute("no")));
+							section.appendChild(image);
 								
-								title = document.createElement("h2");
-								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
-								section.appendChild(title);
-							
-								
-							//}
+							title = document.createElement("h2");
+							title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
+							section.appendChild(title);
 						}
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
