@@ -146,13 +146,15 @@
 		<script src="js/jquery-3.1.1.min.js"></script>
 		<script>
 			function page() {
+				var test = document.getElementsByTagName("main");
+				test.setAttribute("id", "main");
 				// on envoie la requête XML
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function() {
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var main = document.getElementsByTagName("main");
+						var main = document.getElementById("main");
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
@@ -195,5 +197,11 @@
 		<header><div id="cover"><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
 		<main><!-- Document Object Model Contents & Sections --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
+		<script>
+			function page() {
+				var test = document.getElementsByTagName("main");
+				test.setAttribute("id", "main");
+			}
+		</script>
 	</body>
 </html>
