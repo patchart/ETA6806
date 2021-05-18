@@ -163,17 +163,17 @@
 								var section, title, date, image, code, graph, metadata, length, climax, viewpoint, duration, paragraph, photo;
 								section = document.createElement("section");
 								main.appendChild(section);
-								image = document.createElement("img");
-								image.setAttribute("src", "medias/"+code+"/image.jpg");
-								section.appendChild(image);
-								
-								title = document.createElement("h2");
-								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
-								section.appendChild(title);
+								//image = document.createElement("img");
+								//image.setAttribute("src", "medias/"+code+"/image.jpg");
+								//section.appendChild(image);
 							
 								date = document.createElement("date");
 								date.appendChild(document.createTextNode(code));
 								section.appendChild(date);
+								
+								title = document.createElement("h2");
+								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
+								section.appendChild(title);
 							
 								
 							//}
