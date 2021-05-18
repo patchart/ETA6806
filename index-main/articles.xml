@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <articles>
-    <article code="08052021">
+    <article no="08052021">
         <title>Stoke Mountains</title>
         <date>8th May 2021</date>
         <metadata>
@@ -24,8 +24,8 @@
             cross any other path on the entire crossing: little frequented, the region is endowed with dense and diverse vegetation.
         </text>
         <gallery>
-            <photo no="1"/>
-            <photo no="2"/>
+            <photo code="1"/>
+            <photo code="2"/>
         </gallery>
     </article>
     <article no="22052020">
