@@ -156,12 +156,12 @@
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
-							var section, title, date, image, code, graph, metadata, length, climax, viewpoint, duration, paragraph, photo;
+							var section, title, date, image, code, graph, x, y, paragraph, photo;
 							section = document.createElement("section");
 							main.appendChild(section);
 							
-							image = document.createElement("p");
-							image.appendChild(document.createTextNode(data[i].getAttribute("no")));
+							image = document.createElement("img");
+							image.setAttribute("src", "medias/"+data[i].getAttribute("no")+"/image.jpg");
 							section.appendChild(image);
 								
 							title = document.createElement("h2");
