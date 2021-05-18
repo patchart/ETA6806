@@ -168,7 +168,7 @@
 								//section.appendChild(image);
 							
 								date = document.createElement("p");
-								date.innerHTML = code;
+								date.appendChild(document.createTextNode(getAttribute(data[i], "no")));
 								section.appendChild(date);
 								
 								title = document.createElement("h2");
