@@ -156,17 +156,28 @@
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
-							var section, title, date, image, code, graph, x, y, paragraph, photo;
+							var section, title, date, image, code, graph, x, y, z, paragraph, photo;
 							section = document.createElement("section");
 							main.appendChild(section);
 							
 							image = document.createElement("img");
 							image.setAttribute("src", "medias/"+data[i].getAttribute("no")+"/image.jpg");
 							section.appendChild(image);
-								
+							
+							x = document.createElement("form");
+							x.setAttribute("action", "article.html");
+							section.appendChild(x);
+							y = document.createElement("button");
+							y.setAttribute("name", "no");
+							y.setAttribute("value", data[i].getAttribute("no"));
+							x.appendChild(y);
+							
 							title = document.createElement("h2");
-							title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 							section.appendChild(title);
+							z = document.createElement("span");
+							z.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
+							title.appendChild(z);
+
 						}
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
