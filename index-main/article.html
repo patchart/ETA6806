@@ -34,6 +34,10 @@
 				padding-left: 0;
 				text-align: left;
 			}
+			#aside ul li {
+				display: inline;
+    				float: left;
+			}
 			/* stylisation de l'article */
 			#article {
 				width: 50%;
@@ -191,7 +195,7 @@
 	</head>
 	<body onload="page()">
 		<!--<div id="aside"><p><a href=".">en</a> &#8212; <a href="article_fr.html">fr</a></p></div>-->
-		<div id="aside"><ul><li><a href=".">en</a></li><li>&#8212;</li><li><a href="article_fr.html">fr</a></li></div>
+		<div id="aside"><ul><li><a href=".">en</a></li><li> &#8212; </li><li><a href="article_fr.html">fr</a></li></div>
 		<div id="article"><!-- Document Object Model Contents --></div>
 		<div id="nav"><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></div>
 	</body>
