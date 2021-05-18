@@ -146,10 +146,6 @@
 		<script src="js/jquery-3.1.1.min.js"></script>
 		<script>
 			function page() {
-				// on prépare l'identification
-				var url, code;
-				url = window.location.href;
-				code = url.substr(url.length - 8);
 				// on envoie la requête XML
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function() {
