@@ -53,7 +53,7 @@
 				text-align: center;
 				background-color: rgb(0, 0, 0);
 			}
-			#section {
+			.section {
 				display: inline-block;
 				max-width: 400px;
 				margin: 50px 20px;
@@ -63,42 +63,42 @@
 				background-color: rgba(255, 255, 255, 0.05);
 			}
 			@media screen and (max-width: 450px) {
-				#section {
+				.section {
 					margin: 50px 0;
 					max-width: 275px;
 				}
 			}
-			#section img {
+			.section img {
 				width: 400px;
 			}
 			@media screen and (max-width: 450px) {
-				#section img {
+				.section img {
 					width: 275px;
 				}
 			}
-			#section button {
+			.section button {
 				border: none;
 				padding: 0;
 				font: 200 25px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 				background-color: inherit;
 			}
-			#section h2 {
+			.section h2 {
 				margin: 0;
 				font: 200 25px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 			}
-			#section h2 span {
+			.section h2 span {
 			    box-shadow: inset 0 -10px 0 0 #205064;
 			}
-			#section h2 span:after {
+			.section h2 span:after {
 				content: "\00a0"
 			}
-			#section h2 span:hover {
+			.section h2 span:hover {
 				cursor: pointer;
 				border-bottom: solid 5px #205064;  
 			}
-			#section h3, #section p {
+			.section h3, #section p {
 				margin-bottom: 0;
 				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);	
@@ -143,16 +143,97 @@
 				}
 			}
 		</style>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script>
+			function page() {
+				// on prépare l'identification
+				var url, code;
+				url = window.location.href;
+				code = url.substr(url.length - 8);
+				// on envoie la requête XML
+				var xhr = new XMLHttpRequest();
+				xhr.onload = function() {
+					if (xhr.status === 200) {
+						var xmlDoc = xhr.responseXML;
+						var data = xmlDoc.getElementsByTagName("article");
+						var main = document.getElementById("main");
+						var code = xmlDoc.getElementsByTagName("article").getAttribute("no");
+						article.innerHTML = "";
+						// on calcul le nombre de données
+						for (var i = 0; i < data.length; i++) {
+							// on fait une condition pour identifier les données
+							//if (code == data[i].getAttribute("no")) {
+								// on récupère les données dans les attributs et les éléments XML
+								var section, title, date, image, code, graph, metadata, length, climax, viewpoint, duration, paragraph, photo;
+								section = document.createElement("div");
+								section.setAttribute("class", "section");
+								main.appendChild(section);
+								image = document.createElement("img");
+								image.setAttribute("src", "medias/"+code+"/image.jpg");
+								section.appendChild(image);
+								
+								title = document.createElement("h1");
+								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
+								section.appendChild(title);
+							
+								date = document.createElement("h2");
+								date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
+								article.appendChild(date);
+								image = document.createElement("img");
+								image.setAttribute("src", "medias/"+code+"/image.jpg");
+								article.appendChild(image);
+								graph = document.createElement("img");
+								graph.setAttribute("src", "medias/"+code+"/graph.jpg");
+								article.appendChild(graph);
+								metadata = document.createElement("ul");
+								article.appendChild(metadata);
+								length = document.createElement("li");
+								length.innerHTML = "Length: ";
+								length.appendChild(document.createTextNode(getNodeValue(data[i], "length")));
+								metadata.appendChild(length);
+								climax = document.createElement("li");
+								climax.innerHTML = "Climax: ";
+								climax.appendChild(document.createTextNode(getNodeValue(data[i], "climax")));
+								metadata.appendChild(climax);
+								viewpoint = document.createElement("li");
+								viewpoint.innerHTML = "Viewpoint: ";
+								viewpoint.appendChild(document.createTextNode(getNodeValue(data[i], "viewpoint")));
+								metadata.appendChild(viewpoint);
+								duration = document.createElement("li");
+								duration.innerHTML = "Duration: ";
+								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
+								metadata.appendChild(duration);
+								var x = "", j;
+								for (var j = 0; j < text.length; j++) {
+  									x += "<p>"+text[j].textContent+"</p>";
+								}
+								paragraph = document.createElement("div");
+								paragraph.innerHTML = x;
+								article.appendChild(paragraph);
+								var y = "", k;
+								for (k = 0; k < gallery.length; k++) {
+  									y += "<img src='medias/"+code+"/photo-"+gallery[k].getAttribute("status")+".jpg'/>";
+								}
+								photo = document.createElement("div");
+								photo.innerHTML = y;
+								article.appendChild(photo);
+							//}
+						}
+						function getNodeValue(obj, tag) {
+							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
+						}
+					}
+				};
+				// on charge le contenu du document
+				xhr.open("GET", "articles.xml", true);
+				xhr.send(null);
+			}
+		</script>
 	</head>
-	<body>
-		<div id="header">
-			<div id="cover">
-				<h1><span>Of Stories<br/>and Trees</span></h1>
-			</div>
-		</div>
-		<!-- pages -->
+	<body onload="page()">
+		<div id="header"><div id="cover"><h1><span>Of Stories<br/>and Trees</span></h1></div></div>
 		<div id="main">
-			<div id="section">
+			<div class="section">
 				<img src="08052021/image-1.jpg"/>
 				<form action="article.html">
 					<button type="submit" name="no" value="08052021"><h2>S<span>toke Mountains</span></h2></button>
@@ -161,12 +242,6 @@
 				<p>I wanted this day hike to complete the crossing of the Stoke Mountains, and the weekend of May 8 was a good fit; the thaw period ending...</p>
 			</div>
 		</div>
-		<div id="footer">
-			<ul>
-				<li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li>
-				<li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li>
-			</ul>
-			<h4>Patrick Chartrand &copy; 2021</h4>
-		</div id="footer">
+		<div id="footer"><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></div id="footer">
 	</body>
 </html>
