@@ -162,7 +162,7 @@
 								//article.appendChild(text);
 								var x = "", j;
 								for (j = 0; j < text.length; j++) {
-  									x += text[j].nodeValue;
+  									x += text[j].textContent;
 								}
 								paragraph = document.createElement("div");
 								paragraph.innerHTML = x;
