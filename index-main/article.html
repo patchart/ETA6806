@@ -29,6 +29,11 @@
 				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 			}
+			#aside ul {
+				list-style: none;
+				padding-left: 0;
+				text-align: left;
+			}
 			/* stylisation de l'article */
 			#article {
 				width: 50%;
@@ -73,7 +78,7 @@
 			#article img {
 				width: 100%;
 			}
-			#article ul {
+			#article ol {
 				list-style: none;
 				padding-left: 0;
 				text-align: left;
@@ -139,7 +144,7 @@
 								graph = document.createElement("img");
 								graph.setAttribute("src", "medias/"+code+"/graph.jpg");
 								article.appendChild(graph);
-								metadata = document.createElement("ul");
+								metadata = document.createElement("ol");
 								article.appendChild(metadata);
 								length = document.createElement("li");
 								length.innerHTML = "Length: ";
@@ -185,7 +190,8 @@
 		</script>
 	</head>
 	<body onload="page()">
-		<div id="aside"><p><a href=".">en</a> &#8212; <a href="article_fr.html">fr</a></p></div>
+		<!--<div id="aside"><p><a href=".">en</a> &#8212; <a href="article_fr.html">fr</a></p></div>-->
+		<div id="aside"><ul><li><a href=".">en</a></li><li>&#8212;</li><li><a href="article_fr.html">fr</a></li></div>
 		<div id="article"><!-- Document Object Model Contents --></div>
 		<div id="nav"><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></div>
 	</body>
