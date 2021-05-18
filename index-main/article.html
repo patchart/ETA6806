@@ -118,8 +118,8 @@
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
 						var article = document.getElementById("article");
-						var gallery = xmlDoc.getElementsByTagName("photo");
 						var text = xmlDoc.getElementsByTagName("paragraph");
+						var gallery = xmlDoc.getElementsByTagName("photo");
 						article.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
@@ -157,11 +157,8 @@
 								duration.innerHTML = "Duration: ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
-								//text = document.createElement("p");
-								//text.appendChild(document.createTextNode(getNodeValue(data[i], "text")));
-								//article.appendChild(text);
 								var x = "", j;
-								for (j = 0; j < text.length; j++) {
+								for (var j = 0; j < text.length; j++) {
   									x += "<p>"+text[j].textContent+"</p>";
 								}
 								paragraph = document.createElement("div");
@@ -176,13 +173,6 @@
 								article.appendChild(photo);
 							}
 						}
-						//var x = "";
-						//var j;
-						//for (j = 0; j < test.length; j++) {
-  						//	x += test[j].nodeName + "<br>";
-						//}
-						//document.getElementById("article").innerHTML = x;
-						// on ajoute le contenu du document
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
 						}
@@ -196,7 +186,7 @@
 	</head>
 	<body onload="page()">
 		<div id="aside"><p><a href=".">en</a> &#8212; <a href="article_fr.html">fr</a></p></div>
-		<div id="article"></div>
+		<div id="article"><!-- Document Object Model --></div>
 		<div id="nav"><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></div>
 	</body>
 </html>
