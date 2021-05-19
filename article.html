@@ -138,10 +138,10 @@
 								date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 								article.appendChild(date);
 								image = document.createElement("img");
-								image.setAttribute("src", "medias/"+code+"/image.jpg");
+								image.setAttribute("src", "multimedia/"+code+"/image.jpg");
 								article.appendChild(image);
 								graph = document.createElement("img");
-								graph.setAttribute("src", "medias/"+code+"/graph.jpg");
+								graph.setAttribute("src", "multimedia/"+code+"/graph.jpg");
 								article.appendChild(graph);
 								metadata = document.createElement("ul");
 								article.appendChild(metadata);
@@ -170,7 +170,7 @@
 								article.appendChild(paragraph);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
-  									y += "<img src='medias/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
+  									y += "<img src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
 								}
 								photo = document.createElement("div");
 								photo.innerHTML = y;
@@ -183,7 +183,7 @@
 					}
 				};
 				// on charge le contenu du document
-				xhr.open("GET", "articles.xml", true);
+				xhr.open("GET", "document/articles.xml", true);
 				xhr.send(null);
 			}
 		</script>
