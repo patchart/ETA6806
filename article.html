@@ -173,15 +173,9 @@
   									y += "<img src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
 								}
 								photo = document.createElement("div");
-								photo = setAttribute("class", "slides");
+								//photo = setAttribute("class", "slides");
 								photo.innerHTML = y;
 								article.appendChild(photo);
-								left = document.createElement("button");
-								left.setAttribute("onclick", "plusDivs(-1)");
-								article.appendChild(left);
-								right = document.createElement("button");
-								right.setAttribute("onclick", "plusDivs(1)");
-								article.appendChild(right);
 							}
 						}
 						function getNodeValue(obj, tag) {
