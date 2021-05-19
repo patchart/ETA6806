@@ -162,7 +162,6 @@
 							image = document.createElement("img");
 							image.setAttribute("src", "medias/"+data[i].getAttribute("no")+"/image.jpg");
 							section.appendChild(image);
-							// on commence le formulaire
 							x = document.createElement("form");
 							x.setAttribute("action", "article.html");
 							section.appendChild(x);
@@ -176,7 +175,6 @@
 							z = document.createElement("span");
 							z.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 							title.appendChild(z);
-							// on termine le formulaire 
 							date = document.createElement("h3");
 							date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 							section.appendChild(date);
