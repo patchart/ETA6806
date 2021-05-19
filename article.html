@@ -111,7 +111,7 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 		<script type="text/javascript">
 			var index = 1;
-			var show(index);
+			show(index);
 			function slide(n) {
 				show(index += n);
 			}
@@ -128,6 +128,11 @@
 		</script>
 		<script type="text/javascript">
 			function page() {
+				var index = 1;
+				show(index);
+				function slide(n) {
+					show(index += n);
+				}
 				// on prépare l'identification
 				var url, code;
 				url = window.location.href;
