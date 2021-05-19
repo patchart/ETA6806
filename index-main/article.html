@@ -125,7 +125,7 @@
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
 						var text = xmlDoc.getElementsByTagName("paragraph");
-						var media = xmlDoc.getElementsByTagName("photo");
+						var multimedia = xmlDoc.getElementsByTagName("photo");
 						var article = document.getElementById("article");
 						article.innerHTML = "";
 						// on calcul le nombre de données
@@ -172,8 +172,8 @@
 								paragraph.innerHTML = x;
 								article.appendChild(paragraph);
 								var y = "", k;
-								for (k = 0; k < media.length; k++) {
-  									y += "<img src='medias/"+code+"/photo-"+media[k].getAttribute("status")+".jpg'/>";
+								for (k = 0; k < multimedia.length; k++) {
+  									y += "<img src='medias/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
 								}
 								photo = document.createElement("div");
 								photo.innerHTML = y;
