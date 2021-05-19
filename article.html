@@ -170,12 +170,17 @@
 								article.appendChild(paragraph);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
-  									y += "<img src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
+  									y += "<img class='slides' src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
 								}
 								photo = document.createElement("div");
-								//photo = setAttribute("class", "slides");
 								photo.innerHTML = y;
 								article.appendChild(photo);
+								left = document.createElement("button");
+								left.setAttribute("onclick", "plusDivs(-1)");
+								article.appendChild(left);
+								right = document.createElement("button");
+								right.setAttribute("onclick", "plusDivs(1)");
+								article.appendChild(right);
 							}
 						}
 						function getNodeValue(obj, tag) {
