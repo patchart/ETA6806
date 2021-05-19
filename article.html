@@ -111,13 +111,7 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 		<script type="text/javascript">
 			function page() {
-				// on programme les affichages (1/2)
-				var index = 1;
-				show(index);
-				function slide(n) {
-					show(index += n);
-				}
-				// on prépare l'identification (0)
+				// on prépare l'identification
 				var url, code;
 				url = window.location.href;
 				code = url.substr(url.length - 8);
@@ -198,6 +192,18 @@
 				xhr.open("GET", "document/articles.xml", true);
 				xhr.send(null);
 			}
+		</script>
+	</head>
+	<body onload="page()">
+		<aside><ul><li><a href=".">en</a></li><li>&nbsp;&#8212;&nbsp;</li><li><a href="article_fr.html">fr</a></li></aside>
+		<article id="article"><!-- Document Object Model Contents --></article>
+		<nav><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></nav>
+		<script>
+			var index = 1;
+			show(index);
+			function slide(n) {
+				show(index += n);
+			}
 			function show(n) {
 				var i;
 				var x = document.getElementsByClassName("slides");
@@ -209,10 +215,5 @@
 				x[index-1].style.display = "block";
 			}
 		</script>
-	</head>
-	<body onload="page()">
-		<aside><ul><li><a href=".">en</a></li><li>&nbsp;&#8212;&nbsp;</li><li><a href="article_fr.html">fr</a></li></aside>
-		<article id="article"><!-- Document Object Model Contents --></article>
-		<nav><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></nav>
 	</body>
 </html>
