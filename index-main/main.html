@@ -91,9 +91,6 @@
 			section h2 span {
 				box-shadow: inset 0 -10px 0 0 #205064;
 			}
-			section h2 span:after {
-				content: "\00a0\00a0"
-			}
 			section h2 span:hover {
 				cursor: pointer;
 				border-bottom: solid 5px #205064;  
@@ -103,6 +100,8 @@
 				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);	
 			}
+			section p:after {
+				content: "...";
 			/* stylisation du pied de page */
 			footer {
 				padding: 15px 35px;
@@ -156,7 +155,7 @@
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
-							var section, image, x, y, z, title, date, intro;
+							var section, image, x, y, title, z, date, intro;
 							section = document.createElement("section");
 							main.appendChild(section);
 							image = document.createElement("img");
