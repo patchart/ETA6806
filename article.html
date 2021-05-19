@@ -109,6 +109,23 @@
 			}
 		</style>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+		<script>
+			var index = 1;
+			show(index);
+			function slide(n) {
+				show(index += n);
+			}
+			function show(n) {
+				var i;
+				var x = document.getElementsByClassName("slides");
+				if (n > x.length) {index = 1}
+				if (n < 1) {index = x.length}
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+				}
+				x[index-1].style.display = "block";
+			}
+		</script>
 		<script type="text/javascript">
 			function page() {
 				// on prépare l'identification
@@ -198,22 +215,5 @@
 		<aside><ul><li><a href=".">en</a></li><li>&nbsp;&#8212;&nbsp;</li><li><a href="article_fr.html">fr</a></li></aside>
 		<article id="article"><!-- Document Object Model Contents --></article>
 		<nav><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></nav>
-		<script>
-			var index = 1;
-			show(index);
-			function slide(n) {
-				show(index += n);
-			}
-			function show(n) {
-				var i;
-				var x = document.getElementsByClassName("slides");
-				if (n > x.length) {index = 1}
-				if (n < 1) {index = x.length}
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";
-				}
-				x[index-1].style.display = "block";
-			}
-		</script>
 	</body>
 </html>
