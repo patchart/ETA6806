@@ -20,8 +20,8 @@
 			a:not(article>a):hover {
 				border-bottom: 1px solid;
 			}
-			/* stylisation du choix alternatif */
-			#aside {
+			/* stylisation de l'alternative */
+			aside {
 				width: 50%;
 				margin: auto;
 				padding: 15px;
@@ -29,15 +29,15 @@
 				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 			}
-			#aside ul {
+			aside ul {
 				list-style: none;
 				padding-left: 0;
 			}
-			#aside ul li {
+			aside ul li {
 				display: inline;
 			}
 			/* stylisation de l'article */
-			#article {
+			article {
 				width: 50%;
 				margin: 25px auto;
 				font: 200 28px "Helvetica Neue", Helvetica,Arial, sans-serif;
@@ -45,54 +45,54 @@
 				color: rgb(255, 255, 255);
 			}
 			@media screen and (max-width: 450px) {
-				#article {
+				article {
 					width: 95%;
 					font-size: 22px;
 				}
 			}
-			#article h1 {
+			article h1 {
 				text-transform: uppercase;
 				font: 100 46px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 			}
 			@media screen and (max-width: 450px) {
-				#article h1 {
+				article h1 {
 					font-size: 40px;
 				}
 			}
-			#article h2 {
+			article h2 {
 				font: 100 28px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 			}
 			@media screen and (max-width: 450px) {
-				#article h2 {
+				article h2 {
 					font-size: 22px;
 				}
 			}
-			#article p {
+			article p {
 				text-align: justify;
 			}
 			@media screen and (max-width: 450px) {
-				#article p {
+				article p {
 					text-align: left;
 				}
 			}
-			#article img {
+			article img {
 				width: 100%;
 			}
-			#article ul {
+			article ul {
 				list-style: none;
 				padding-left: 0;
 				text-align: left;
 			}
 			/* stylisation de la navigation */
-			#nav {
+			nav {
 				width: 50%;
 				margin: auto;
 				padding: 50px;
 				text-align: center;
 			}
-			#nav button {
+			nav button {
 				width: 170px;
 				padding: 10px;
 				border: 1px solid rgb(255, 255, 255);
@@ -100,14 +100,14 @@
 				color: rgb(255, 255, 255);
 				background-color: rgb(0, 0, 0);
 			}
-			#nav button:last-of-type {
+			nav button:last-of-type {
 				margin-top: 36px;
 				padding: 10px 56px;
 			}
-			#nav button:hover {
+			nav button:hover {
 				cursor: pointer;
 			}
-			#nav button:focus {
+			nav button:focus {
 				outline-color: #205064;
 			}
 		</style>
@@ -124,9 +124,9 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var article = document.getElementById("article");
 						var text = xmlDoc.getElementsByTagName("paragraph");
 						var gallery = xmlDoc.getElementsByTagName("photo");
+						var article = document.getElementById("article");
 						article.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
@@ -192,8 +192,8 @@
 		</script>
 	</head>
 	<body onload="page()">
-		<div id="aside"><ul><li><a href=".">en</a></li><li>&nbsp;&#8212;&nbsp;</li><li><a href="article_fr.html">fr</a></li></div>
-		<div id="article"><!-- Document Object Model Contents --></div>
-		<div id="nav"><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></div>
+		<aside><ul><li><a href=".">en</a></li><li>&nbsp;&#8212;&nbsp;</li><li><a href="article_fr.html">fr</a></li></aside>
+		<article id="article"><!-- Document Object Model Contents --></article>
+		<nav><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></nav>
 	</body>
 </html>
