@@ -110,29 +110,7 @@
 		</style>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 		<script type="text/javascript">
-			var index = 1;
-			show(index);
-			function slide(n) {
-				show(index += n);
-			}
-			function show(n) {
-				var i;
-				var x = document.getElementsByClassName("slides");
-				if (n > x.length) {index = 1}
-				if (n < 1) {index = x.length}
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";
-				}
-				x[index-1].style.display = "block";
-			}
-		</script>
-		<script type="text/javascript">
 			function page() {
-				var index = 1;
-				show(index);
-				function slide(n) {
-					show(index += n);
-				}
 				// on prépare l'identification
 				var url, code;
 				url = window.location.href;
@@ -213,6 +191,22 @@
 				// on charge le contenu du document
 				xhr.open("GET", "document/articles.xml", true);
 				xhr.send(null);
+				///////////////////
+				var index = 1;
+				show(index);
+				function slide(n) {
+					show(index += n);
+				}
+				function show(n) {
+					var i;
+					var x = document.getElementsByClassName("slides");
+					if (n > x.length) {index = 1}
+					if (n < 1) {index = x.length}
+					for (i = 0; i < x.length; i++) {
+						x[i].style.display = "none";
+					}
+					x[index-1].style.display = "block";
+				}
 			}
 		</script>
 	</head>
