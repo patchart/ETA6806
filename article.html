@@ -111,7 +111,13 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 		<script type="text/javascript">
 			function page() {
-				// on prépare l'identification
+				// on programme les affichages (1/2)
+				var index = 1;
+				show(index);
+				function slide(n) {
+					show(index += n);
+				}
+				// on prépare l'identification (0)
 				var url, code;
 				url = window.location.href;
 				code = url.substr(url.length - 8);
@@ -176,10 +182,10 @@
 								photo.innerHTML = y;
 								article.appendChild(photo);
 								left = document.createElement("button");
-								left.setAttribute("onclick", "plusDivs(-1)");
+								left.setAttribute("onclick", "slide(-1)");
 								article.appendChild(left);
 								right = document.createElement("button");
-								right.setAttribute("onclick", "plusDivs(1)");
+								right.setAttribute("onclick", "slide(1)");
 								article.appendChild(right);
 							}
 						}
@@ -192,22 +198,15 @@
 				xhr.open("GET", "document/articles.xml", true);
 				xhr.send(null);
 			}
-		</script>
-		<script>
-			var slideIndex = 1;
-			showDivs(slideIndex);
-			function plusDivs(n) {
-				showDivs(slideIndex += n);
-			}
-			function showDivs(n) {
+			function show(n) {
 				var i;
 				var x = document.getElementsByClassName("slides");
-				if (n > x.length) {slideIndex = 1}
-				if (n < 1) {slideIndex = x.length}
+				if (n > x.length) {index = 1}
+				if (n < 1) {index = x.length}
 				for (i = 0; i < x.length; i++) {
 					x[i].style.display = "none";
 				}
-				x[slideIndex-1].style.display = "block";
+				x[index-1].style.display = "block";
 			}
 		</script>
 	</head>
