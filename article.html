@@ -130,7 +130,7 @@
 							// on fait une condition pour identifier les données
 							if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, image, graph, metadata, length, climax, viewpoint, duration, paragraph, photo;
+								var title, date, image, graph, metadata, length, climax, viewpoint, duration, paragraph, photo, left, right;
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
@@ -173,8 +173,15 @@
   									y += "<img src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
 								}
 								photo = document.createElement("div");
+								photo = setAttribute("class", "slides");
 								photo.innerHTML = y;
 								article.appendChild(photo);
+								left = document.createElement("button");
+								left.setAttribute("onclick", "plusDivs(-1)");
+								article.appendChild(left);
+								right = document.createElement("button");
+								right.setAttribute("onclick", "plusDivs(1)");
+								article.appendChild(right);
 							}
 						}
 						function getNodeValue(obj, tag) {
@@ -192,5 +199,22 @@
 		<aside><ul><li><a href=".">en</a></li><li>&nbsp;&#8212;&nbsp;</li><li><a href="article_fr.html">fr</a></li></aside>
 		<article id="article"><!-- Document Object Model Contents --></article>
 		<nav><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></nav>
+		<script>
+			var slideIndex = 1;
+			showDivs(slideIndex);
+			function plusDivs(n) {
+				showDivs(slideIndex += n);
+			}
+			function showDivs(n) {
+				var i;
+				var x = document.getElementsByClassName("slides");
+				if (n > x.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = x.length}
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+				}
+				x[slideIndex-1].style.display = "block";
+			}
+		</script>
 	</body>
 </html>
