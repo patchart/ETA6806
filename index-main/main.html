@@ -180,7 +180,7 @@
 							date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 							section.appendChild(date);
 							intro = document.createElement("p");
-							intro.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph"))+"..");
+							intro.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
 							section.appendChild(intro);
 						}
 						function getNodeValue(obj, tag) {
@@ -196,7 +196,7 @@
 	</head>
 	<body onload="page()">
 		<header><div id="cover"><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
-		<main id="main"><!-- Document Object Model Contents--></main>
+		<main id="main" class="section"><!-- Document Object Model Contents--></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 	</body>
 </html>
