@@ -111,7 +111,7 @@
 				outline-color: #205064;
 			}
 		</style>
-		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 		<script>
 			function page() {
 				// on prépare l'identification
@@ -125,7 +125,7 @@
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
 						var text = xmlDoc.getElementsByTagName("paragraph");
-						var gallery = xmlDoc.getElementsByTagName("photo");
+						var media = xmlDoc.getElementsByTagName("photo");
 						var article = document.getElementById("article");
 						article.innerHTML = "";
 						// on calcul le nombre de données
@@ -172,8 +172,8 @@
 								paragraph.innerHTML = x;
 								article.appendChild(paragraph);
 								var y = "", k;
-								for (k = 0; k < gallery.length; k++) {
-  									y += "<img src='medias/"+code+"/photo-"+gallery[k].getAttribute("status")+".jpg'/>";
+								for (k = 0; k < media.length; k++) {
+  									y += "<img src='medias/"+code+"/photo-"+media[k].getAttribute("status")+".jpg'/>";
 								}
 								photo = document.createElement("div");
 								photo.innerHTML = y;
