@@ -9,7 +9,7 @@
             <viewpoint>180&#176;</viewpoint>
             <duration>6 hours</duration>
         </metadata>
-        <text>
+        <text type="en">
             <paragraph>I wanted this day hike to complete the crossing of the Stoke Mountains<intro/>, and the weekend of May 8 was a good fit; the thaw period 
             ending earlier than elsewhere in this region. Interesting fact: the Stoke Mountains form a mountain range that stands out from the 
             great Eastern Townships trail. The geographical situation means that the place is little frequented by hikers, offering kilometers of 
@@ -22,6 +22,8 @@
             summits are a bit disappointing, I still note that the region's forest is particularly pretty, with no human traces. So I cross the mountain 
             ridge for about ten kilometers, offering viewpoints and points of interest: caves, cliffs, marshes, etc. This section of the hike does not 
             cross any other path on the entire crossing: little frequented, the region is endowed with dense and diverse vegetation.</paragraph>
+        </text>
+        <text type="fr">
         </text>
         <multimedia>
             <photo status="1"/>
