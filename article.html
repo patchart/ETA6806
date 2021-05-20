@@ -21,19 +21,16 @@
 			.images:not(:first-child) {
 				display: none;
 			}
-			.buttons {
+			.button {
 				border: none;
 				background-color: inherit;
 				font: 100 50px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 			}
-			.buttons:first-child {
-				margin-right: 50px;
-			}
-			.buttons:hover {
+			.button:hover {
 				cursor: pointer;
 			}
-			.buttons:focus {
+			.button:focus {
 				outline-color: #205064;
 			}
 			/* stylisation de l'alternative */
@@ -149,7 +146,7 @@
 							// on fait une condition pour identifier les données
 							if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, image, graph, metadata, length, climax, viewpoint, duration, paragraph, photo, left, right;
+								var title, date, image, graph, metadata, length, climax, viewpoint, duration, paragraph, photo, button;
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
@@ -194,16 +191,11 @@
 								photo = document.createElement("div");
 								photo.innerHTML = y;
 								article.appendChild(photo);
-								left = document.createElement("button");
-								left.setAttribute("onclick", "slide(-1)");
-								left.setAttribute("class", "buttons");
-								left.innerHTML = "&#10092;";
-								article.appendChild(left);
-								right = document.createElement("button");
-								right.setAttribute("onclick", "slide(1)");
-								right.setAttribute("class", "buttons");
-								right.innerHTML = "&#10093;";
-								article.appendChild(right);
+								button = document.createElement("button");
+								button.setAttribute("onclick", "slide(1)");
+								button.setAttribute("class", "button");
+								right.innerHTML = "&#10162;";
+								article.appendChild(button);
 							}
 						}
 						function getNodeValue(obj, tag) {
