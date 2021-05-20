@@ -27,7 +27,7 @@
 				font: 100 50px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 			}
-			.buttons:nth-of-type(1) {
+			.buttons:first-child {
 				margin-right: 50px;
 			}
 			.buttons:hover {
@@ -197,12 +197,12 @@
 								left = document.createElement("button");
 								left.setAttribute("onclick", "slide(-1)");
 								left.setAttribute("class", "buttons");
-								left.innerHTML = "&#10094;";
+								left.innerHTML = "&#10092;";
 								article.appendChild(left);
 								right = document.createElement("button");
 								right.setAttribute("onclick", "slide(1)");
 								right.setAttribute("class", "buttons");
-								right.innerHTML = "&#10095;";
+								right.innerHTML = "&#10093;";
 								article.appendChild(right);
 							}
 						}
