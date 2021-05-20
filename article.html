@@ -179,7 +179,6 @@
 								left.setAttribute("onclick", "slide(-1)");
 								article.appendChild(left);
 								right = document.createElement("button");
-								right.setAttribute("onload", "slide(1)");
 								right.setAttribute("onclick", "slide(1)");
 								article.appendChild(right);
 							}
@@ -192,6 +191,9 @@
 				// on charge le contenu du document
 				xhr.open("GET", "document/articles.xml", true);
 				xhr.send(null);
+				
+				var a = document.getElementsByClassName("slides");
+				a.style.display = "none";
 			}
 		</script>
 		<script type="text/javascript">
