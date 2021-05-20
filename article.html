@@ -124,11 +124,6 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 		<script type="text/javascript">
 			function page() {
-				// on programme la traduction
-				var en = document.getElementById("en");
-				en.setAttribute("href", url);
-				var fr = document.getElementById("fr");
-				fr.setAttribute("href", url+"_fr");
 				// on prépare l'identification
 				var url, code, word;
 				url = window.location.href;
@@ -260,6 +255,11 @@
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
 						}
 					}
+					// on programme la traduction
+					var en = document.getElementById("en");
+					en.setAttribute("href", url);
+					var fr = document.getElementById("fr");
+					fr.setAttribute("href", url+"_fr");
 				};
 				// on charge le contenu du document
 				xhr.open("GET", "document/articles.xml", true);
