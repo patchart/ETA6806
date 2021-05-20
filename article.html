@@ -170,7 +170,7 @@
 								article.appendChild(paragraph);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
-  									y += "<img class='slides' src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
+  									y += "<img style='display:none' class='slides' src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
 								}
 								photo = document.createElement("div");
 								photo.innerHTML = y;
@@ -191,9 +191,6 @@
 				// on charge le contenu du document
 				xhr.open("GET", "document/articles.xml", true);
 				xhr.send(null);
-				
-				var a = document.getElementsByClassName("slides");
-				a.style.display = "none";
 			}
 		</script>
 		<script type="text/javascript">
