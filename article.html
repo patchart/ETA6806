@@ -143,7 +143,7 @@
 							// on fait une condition pour identifier les données
 							if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, photo, button;
+								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image, button;
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
@@ -183,11 +183,11 @@
 								article.appendChild(paragraph);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
-  									y += "<img class='images' src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
+  									y += "<img class='images' src='multimedia/"+code+"/image-"+multimedia[k].getAttribute("status")+".jpg'/>";
 								}
-								photo = document.createElement("div");
-								photo.innerHTML = y;
-								article.appendChild(photo);
+								image = document.createElement("div");
+								image.innerHTML = y;
+								article.appendChild(image);
 								button = document.createElement("button");
 								button.setAttribute("onclick", "slide(1)");
 								button.setAttribute("class", "button");
