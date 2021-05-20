@@ -156,12 +156,12 @@
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
-							var section, image, x, y, title, z, date, intro;
+							var section, media, x, y, title, z, date, intro;
 							section = document.createElement("section");
 							main.appendChild(section);
-							image = document.createElement("img");
-							image.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/image.jpg");
-							section.appendChild(image);
+							media = document.createElement("img");
+							media.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/media.jpg");
+							section.appendChild(media);
 							x = document.createElement("form");
 							x.setAttribute("action", "article.html");
 							section.appendChild(x);
