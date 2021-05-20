@@ -26,6 +26,7 @@
 				background-color: inherit;
 				font: 100 75px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
+  				transition: all 1s ease-in-out;
 			}
 			.button:hover {
 				cursor: pointer;
@@ -193,6 +194,7 @@
 								article.appendChild(photo);
 								button = document.createElement("button");
 								button.setAttribute("onclick", "slide(1)");
+								button.setAttribute("id", "spin");
 								button.setAttribute("class", "button");
 								button.innerHTML = "&#10227;";
 								article.appendChild(button);
@@ -224,24 +226,16 @@
 				}
 				x[index-1].style.display = "block";
 			}
+			var y = document.getElementById("spin");
+			var z = document.getElementById("spin");
+			z.addEventListener("click", function() {
+  				y.style = 'transform: rotate(' + 0 + '360deg)';
+			});
 		</script>
 	</head>
 	<body onload="page()">
 		<aside><ul><li><a href=".">en</a></li><li>&nbsp;&#8212;&nbsp;</li><li><a href="article_fr.html">fr</a></li></aside>
 		<article id="article"><!-- Document Object Model Contents --></article>
-		<nav><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></nav>
-		<script>
-$('.button').click(function() {
-  $('.button').animate(
-    { deg: 180 },
-    {
-      duration: 1200,
-      step: function(now) {
-        $(this).css({ transform: 'rotate(' + now + 'deg)' });
-      }
-    }
-  );
-});
-		</script>	
+		<nav><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></nav>	
 	</body>
 </html>
