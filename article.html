@@ -124,6 +124,24 @@
 				outline-color: #205064;
 			}
 		</style>
+		<script>
+			$(function() {
+    				var $x = $(".button"), degree = 0, timer;
+   				rotate();
+    				function rotate() {
+					$x.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});  
+					$x.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});                      
+					timer = setTimeout(function() {
+           					++degree; rotate();
+       					}, 5);
+   				 }
+   				$(".button").toggle(function() {
+        			clearTimeout(timer);
+    				}, function() {
+        				rotate();
+   				});
+			});
+		</script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 		<script type="text/javascript">
 			function page() {
