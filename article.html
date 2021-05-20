@@ -17,6 +17,10 @@
 			a:hover {
 				cursor: pointer;
 			}
+			/* stylisation du DOM */
+			.slides:not(:first-child) {
+			    display: none;
+			}
 			/* stylisation de l'alternative */
 			aside {
 				width: 50%;
@@ -170,7 +174,7 @@
 								article.appendChild(paragraph);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
-  									y += "<img style='display:none' class='slides' src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
+  									y += "<img class='slides' src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
 								}
 								photo = document.createElement("div");
 								photo.innerHTML = y;
