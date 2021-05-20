@@ -231,22 +231,17 @@
 		<article id="article"><!-- Document Object Model Contents --></article>
 		<nav><button onClick="window.open('https://www.alltrails.com/fr/explore/map/monts-stoke-cacbf64')">custom map</button><br/><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></nav>
 		<script>
-			$(function() {
-    				var $x = $(".button"), degree = 0, timer;
-   				rotate();
-    				function rotate() {
-					$x.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});  
-					$x.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});                      
-					timer = setTimeout(function() {
-           					++degree; rotate();
-       					}, 5);
-   				 }
-   				$(".button").toggle(function() {
-        			clearTimeout(timer);
-    				}, function() {
-        				rotate();
-   				});
-			});
+$('.button').click(function() {
+  $('.button').animate(
+    { deg: 180 },
+    {
+      duration: 1200,
+      step: function(now) {
+        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+      }
+    }
+  );
+});
 		</script>	
 	</body>
 </html>
