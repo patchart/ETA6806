@@ -18,8 +18,13 @@
 				cursor: pointer;
 			}
 			/* stylisation du DOM */
-			.slides:not(:first-child) {
-			    display: none;
+			.images:not(:first-child) {
+				display: none;
+			}
+			.buttons {
+				border: none;
+				font: 200 40px "Helvetica Neue", Helvetica,Arial, sans-serif;
+				color: rgb(255, 255, 255);
 			}
 			/* stylisation de l'alternative */
 			aside {
@@ -174,16 +179,20 @@
 								article.appendChild(paragraph);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
-  									y += "<img class='slides' src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
+  									y += "<img class='images' src='multimedia/"+code+"/photo-"+multimedia[k].getAttribute("status")+".jpg'/>";
 								}
 								photo = document.createElement("div");
 								photo.innerHTML = y;
 								article.appendChild(photo);
 								left = document.createElement("button");
 								left.setAttribute("onclick", "slide(-1)");
+								left.setAttribute("class", "buttons");
+								left.innerHTML = "&#10094;";
 								article.appendChild(left);
 								right = document.createElement("button");
 								right.setAttribute("onclick", "slide(1)");
+								right.setAttribute("class", "buttons");
+								right.innerHTML = "&#10095;";
 								article.appendChild(right);
 							}
 						}
@@ -205,7 +214,7 @@
 			}
 			function show(n) {
 				var i;
-				var x = document.getElementsByClassName("slides");
+				var x = document.getElementsByClassName("images");
 				if (n > x.length) {index = 1}
 				if (n < 1) {index = x.length}
 				for (i = 0; i < x.length; i++) {
