@@ -93,7 +93,6 @@
 			}
 			article img {
 				width: 100%;
-				max-height: 540px;
 			}
 			article ul {
 				list-style: none;
@@ -144,16 +143,16 @@
 							// on fait une condition pour identifier les données
 							if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, image, graph, metadata, length, climax, viewpoint, duration, paragraph, photo, button;
+								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, photo, button;
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
 								date = document.createElement("h2");
 								date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 								article.appendChild(date);
-								image = document.createElement("img");
-								image.setAttribute("src", "multimedia/"+code+"/image.jpg");
-								article.appendChild(image);
+								media = document.createElement("img");
+								media.setAttribute("src", "multimedia/"+code+"/media.jpg");
+								article.appendChild(media);
 								graph = document.createElement("img");
 								graph.setAttribute("src", "multimedia/"+code+"/graph.jpg");
 								article.appendChild(graph);
