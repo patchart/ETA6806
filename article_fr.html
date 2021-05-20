@@ -201,9 +201,9 @@
 					}
 					// on programme la traduction
 					var en = document.getElementById("en");
-					en.setAttribute("href", url);
+					en.setAttribute("href", url.slice(0, -3));
 					var fr = document.getElementById("fr");
-					fr.setAttribute("href", url.slice(0, -3));
+					fr.setAttribute("href", url);
 				};
 				// on charge le contenu du document
 				xhr.open("GET", "document/articles.xml", true);
