@@ -176,7 +176,7 @@
 								metadata.appendChild(viewpoint);
 								duration = document.createElement("li");
 								duration.innerHTML = "Durée : ";
-								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
+								duration.appendChild(document.createTextNode(meta[0].getAttribute("time")));
 								metadata.appendChild(duration);
 								var x = "", j;
 								for (var j = 0; j < traduction.length; j++) {
