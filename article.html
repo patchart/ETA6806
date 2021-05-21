@@ -125,9 +125,10 @@
 		<script type="text/javascript">
 			function page() {
 				// on prépare l'identification
-				var url, code;
+				var url, code, word;
 				url = window.location.href;
 				code = url.substr(url.length - 8);
+				word = url.substr(url.length - 11);
 				// on envoie la requête XML
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function() {
@@ -193,7 +194,7 @@
 								button.setAttribute("class", "button");
 								button.innerHTML = "&#10227;";
 								article.appendChild(button);
-							} else if (code == data[i].getAttribute("no")+"_fr") {
+							} else if (word == data[i].getAttribute("no")+"_fr") {
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image, button;
 								title = document.createElement("h1");
