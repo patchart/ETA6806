@@ -135,6 +135,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
+						var text_fr = xmlDoc.getElementsByTagName("translate");
 						var text = xmlDoc.getElementsByTagName("paragraph");
 						var multimedia = xmlDoc.getElementsByTagName("image");
 						var article = document.getElementById("article");
@@ -144,7 +145,7 @@
 							// on fait une condition pour identifier les données
 							if (word == data[i].getAttribute("no")+"_fr") {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image, button;
+								var title, date, media, graph, metadata, length, climax, viewpoint, duration, translate, image, button;
 								var z = word.slice(0, -3);
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
@@ -180,9 +181,9 @@
 								for (var j = 0; j < text.length; j++) {
   									x += "<p>"+text[j].textContent+"</p>";
 								}
-								paragraph = document.createElement("div");
-								paragraph.innerHTML = x;
-								article.appendChild(paragraph);
+								translate = document.createElement("div");
+								translate.innerHTML = x;
+								article.appendChild(translate);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
   									y += "<img class='images' src='multimedia/"+z+"/image-"+multimedia[k].getAttribute("status")+".jpg'/>";
