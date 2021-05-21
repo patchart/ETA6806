@@ -145,13 +145,13 @@
 							// on fait une condition pour identifier les données
 							if (word == data[i].getAttribute("no")+"_fr") {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image, button;
+								var title, date, media, graph, metadata, length, climax, viewpoint, duration, translate, image, button;
 								var z = word.slice(0, -3);
 								title = document.createElement("h1");
-								title.appendChild(document.createTextNode(getAttribute(data[i], "name")));
+								title.appendChild(document.createTextNode(data[i].getAttribute("title")));
 								article.appendChild(title);
 								date = document.createElement("h2");
-								date.appendChild(document.createTextNode(getAttribute(data[i], "time")));
+								date.appendChild(document.createTextNode(data[i].getAttribute("date")));
 								article.appendChild(date);
 								media = document.createElement("img");
 								media.setAttribute("src", "multimedia/"+z+"/media.jpg");
@@ -181,9 +181,9 @@
 								for (var j = 0; j < traduction.length; j++) {
   									x += "<p>"+traduction[j].textContent+"</p>";
 								}
-								paragraph = document.createElement("div");
-								paragraph.innerHTML = x;
-								article.appendChild(paragraph);
+								translate = document.createElement("div");
+								translate.innerHTML = x;
+								article.appendChild(translate);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
   									y += "<img class='images' src='multimedia/"+z+"/image-"+multimedia[k].getAttribute("status")+".jpg'/>";
