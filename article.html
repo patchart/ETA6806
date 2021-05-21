@@ -259,9 +259,18 @@
 				var en = document.getElementById("en");
 				en.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html"+code);
 				en.setAttribute("onclick", ".");
-				var fr = document.getElementById("fr");
-				fr.setAttribute("onclick", ".");
-				fr.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+code+"_fr");
+				
+				var word;
+				word = url.substr(url.length - 2);
+				var link = url.slice(0, -3);
+				var z = link.substr(link.length - 8);
+				if (word == "fr") {
+					en.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+z);
+					en.setAttribute("onclick", ".");
+					var fr = document.getElementById("fr");
+					fr.setAttribute("onclick", ".");
+					fr.setAttribute("href", ".");
+				}
 			}
 		</script>
 		<script type="text/javascript">
