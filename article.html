@@ -198,7 +198,7 @@
 								en.setAttribute("href", url);
 								var fr = document.getElementById("fr");
 								fr.setAttribute("href", url+"_fr");
-							} else if (code == data[i].getAttribute("no")) {
+							} else if (code == data[i].getAttribute("no")+"_fr") {
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image, button;
 								title = document.createElement("h1");
@@ -252,7 +252,8 @@
 								article.appendChild(button);
 								// on programme la traduction
 								var en = document.getElementById("en");
-								en.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+code);
+								var word = url.slice(0, -3);
+								en.setAttribute("href", word);
 								var fr = document.getElementById("fr");
 								fr.setAttribute("href", url);
 							}
