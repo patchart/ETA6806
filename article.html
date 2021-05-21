@@ -148,7 +148,7 @@
 								var title, date, media, graph, metadata, length, climax, viewpoint, duration, translate, image, button;
 								var z = word.slice(0, -3);
 								title = document.createElement("h1");
-								title.appendChild(document.createTextNode(data[i][25].getAttribute("title")));
+								title.appendChild(document.createTextNode(data[i]["traduction"].getAttribute("title")));
 								article.appendChild(title);
 								date = document.createElement("h2");
 								date.appendChild(document.createTextNode(data[i].getAttribute("date")));
