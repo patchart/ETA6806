@@ -262,14 +262,14 @@
 				
 				var word;
 				word = url.substr(url.length - 2);
-				var link = url.slice(0, -3);
-				var z = link.substr(link.length - 8);
+				var x = url.slice(0, -3);
+				var y = x.substr(x.length - 8);
 				if (word == "fr") {
-					en.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+z);
+					en.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+y);
 					en.setAttribute("onclick", ".");
 					var fr = document.getElementById("fr");
+					fr.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+y+"_fr");
 					fr.setAttribute("onclick", ".");
-					fr.setAttribute("href", ".");
 				}
 			}
 		</script>
