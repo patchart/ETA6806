@@ -125,9 +125,10 @@
 		<script type="text/javascript">
 			function page() {
 				// on prépare l'identification
-				var url, code;
+				var url, code, word;
 				url = window.location.href;
-				code = url.substr(url.length - 8);
+				word = url.slice(0, -3);
+				code = word.substr(word.length - 8);
 				// on envoie la requête XML
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function() {
@@ -201,7 +202,7 @@
 					}
 					// on programme la traduction
 					var en = document.getElementById("en");
-					en.setAttribute("href", url.slice(0, -3));
+					en.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+code);
 					var fr = document.getElementById("fr");
 					fr.setAttribute("href", url);
 				};
