@@ -127,8 +127,7 @@
 				// on prépare l'identification
 				var url, code, word;
 				url = window.location.href;
-				word = url.slice(0, -3);
-				code = word.substr(word.length - 8);
+				code = url.substr(url.length - 8);
 				// on envoie la requête XML
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function() {
