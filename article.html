@@ -145,6 +145,7 @@
 							if (word == data[i].getAttribute("no")+"_fr") {
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image, button;
+								var z = word.slice(0, -3);
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
@@ -152,10 +153,10 @@
 								date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 								article.appendChild(date);
 								media = document.createElement("img");
-								media.setAttribute("src", "multimedia/"+code+"/media.jpg");
+								media.setAttribute("src", "multimedia/"+z+"/media.jpg");
 								article.appendChild(media);
 								graph = document.createElement("img");
-								graph.setAttribute("src", "multimedia/"+code+"/graph.jpg");
+								graph.setAttribute("src", "multimedia/"+z+"/graph.jpg");
 								article.appendChild(graph);
 								metadata = document.createElement("ul");
 								article.appendChild(metadata);
@@ -184,7 +185,7 @@
 								article.appendChild(paragraph);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
-  									y += "<img class='images' src='multimedia/"+code+"/image-"+multimedia[k].getAttribute("status")+".jpg'/>";
+  									y += "<img class='images' src='multimedia/"+z+"/image-"+multimedia[k].getAttribute("status")+".jpg'/>";
 								}
 								image = document.createElement("div");
 								image.innerHTML = y;
