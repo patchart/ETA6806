@@ -246,11 +246,6 @@
 								button.innerHTML = "&#10227;";
 								article.appendChild(button);
 							}
-							// on programme la traduction
-							var en = document.getElementById("en");
-							en.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+code);
-							var fr = document.getElementById("fr");
-							fr.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+code+"_fr");
 						}
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
@@ -260,6 +255,13 @@
 				// on charge le contenu du document
 				xhr.open("GET", "document/articles.xml", true);
 				xhr.send(null);
+				// on programme la traduction
+				var en = document.getElementById("en");
+				en.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+code);
+				en.setAttribute("onclick", ".");
+				var fr = document.getElementById("fr");
+				fr.setAttribute("onclick", ".");
+				fr.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+code+"_fr");
 			}
 		</script>
 		<script type="text/javascript">
