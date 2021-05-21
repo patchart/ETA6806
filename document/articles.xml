@@ -33,12 +33,12 @@
             <image status="7"/>
             <image status="8"/>
         </multimedia>
-        <translate>
+        <traduction>
             <titre></titre>
             <date></date>
             <texte>
                 <paragraphe>allo</paragraphe>
             </texte>
-        </translate>
+        </traduction>
     </article>
 </articles>
