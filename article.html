@@ -193,11 +193,6 @@
 								button.setAttribute("class", "button");
 								button.innerHTML = "&#10227;";
 								article.appendChild(button);
-								// on programme la traduction
-								var en = document.getElementById("en");
-								en.setAttribute("href", url);
-								var fr = document.getElementById("fr");
-								fr.setAttribute("href", url+"_fr");
 							} else if (code == data[i].getAttribute("no")+"_fr") {
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image, button;
@@ -250,13 +245,12 @@
 								button.setAttribute("class", "button");
 								button.innerHTML = "&#10227;";
 								article.appendChild(button);
-								// on programme la traduction
-								var en = document.getElementById("en");
-								var word = url.slice(0, -3);
-								en.setAttribute("href", word);
-								var fr = document.getElementById("fr");
-								fr.setAttribute("href", url);
 							}
+							// on programme la traduction
+							var en = document.getElementById("en");
+							en.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+code);
+							var fr = document.getElementById("fr");
+							fr.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+code+"_fr");
 						}
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
