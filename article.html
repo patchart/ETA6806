@@ -135,6 +135,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
+						var test = xmlDoc.getElementsByTagName("traduction");
 						var traduction = xmlDoc.getElementsByTagName("translate");
 						var text = xmlDoc.getElementsByTagName("paragraph");
 						var multimedia = xmlDoc.getElementsByTagName("image");
@@ -148,7 +149,7 @@
 								var title, date, media, graph, metadata, length, climax, viewpoint, duration, translate, image, button;
 								var z = word.slice(0, -3);
 								title = document.createElement("h1");
-								title.appendChild(document.createTextNode(data[i]["traduction"].getAttribute("title")));
+								title.appendChild(document.createTextNode(test.getAttribute("title")));
 								article.appendChild(title);
 								date = document.createElement("h2");
 								date.appendChild(document.createTextNode(data[i].getAttribute("date")));
