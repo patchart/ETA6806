@@ -135,7 +135,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var test = xmlDoc.getElementsByTagName("traduction");
+						var meta = xmlDoc.getElementsByTagName("traduction");
 						var traduction = xmlDoc.getElementsByTagName("translate");
 						var text = xmlDoc.getElementsByTagName("paragraph");
 						var multimedia = xmlDoc.getElementsByTagName("image");
@@ -147,18 +147,18 @@
 							if (word == data[i].getAttribute("no")+"_fr") {
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, media, graph, metadata, length, climax, viewpoint, duration, translate, image, button;
-								var z = word.slice(0, -3);
+								var digit = word.slice(0, -3);
 								title = document.createElement("h1");
-								title.appendChild(document.createTextNode(test[0].getAttribute("title")));
+								title.appendChild(document.createTextNode(meta[0].getAttribute("title")));
 								article.appendChild(title);
 								date = document.createElement("h2");
-								date.appendChild(document.createTextNode(data[i].getAttribute("date")));
+								date.appendChild(document.createTextNode(meta[0].getAttribute("date")));
 								article.appendChild(date);
 								media = document.createElement("img");
-								media.setAttribute("src", "multimedia/"+z+"/media.jpg");
+								media.setAttribute("src", "multimedia/"+digit+"/media.jpg");
 								article.appendChild(media);
 								graph = document.createElement("img");
-								graph.setAttribute("src", "multimedia/"+z+"/graph.jpg");
+								graph.setAttribute("src", "multimedia/"+digit+"/graph.jpg");
 								article.appendChild(graph);
 								metadata = document.createElement("ul");
 								article.appendChild(metadata);
@@ -187,7 +187,7 @@
 								article.appendChild(translate);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
-  									y += "<img class='images' src='multimedia/"+z+"/image-"+multimedia[k].getAttribute("status")+".jpg'/>";
+  									y += "<img class='images' src='multimedia/"+digit+"/image-"+multimedia[k].getAttribute("status")+".jpg'/>";
 								}
 								image = document.createElement("div");
 								image.innerHTML = y;
@@ -259,7 +259,7 @@
 				// on charge le contenu du document
 				xhr.open("GET", "document/articles.xml", true);
 				xhr.send(null);
-				// on programme la traduction
+				// on dirige vers la traduction française
 				var x;
 				x = url.substr(url.length - 2);
 				var y = url.slice(0, -3);
@@ -282,6 +282,7 @@
 			}
 		</script>
 		<script type="text/javascript">
+			// on programme le montage multimédia
 			var index = 1;
 			show(index);
 			function slide(n) {
