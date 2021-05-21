@@ -135,7 +135,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var text_fr = xmlDoc.getElementsByTagName("translate");
+						var traduction = xmlDoc.getElementsByTagName("translate");
 						var text = xmlDoc.getElementsByTagName("paragraph");
 						var multimedia = xmlDoc.getElementsByTagName("image");
 						var article = document.getElementById("article");
@@ -145,13 +145,13 @@
 							// on fait une condition pour identifier les données
 							if (word == data[i].getAttribute("no")+"_fr") {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, media, graph, metadata, length, climax, viewpoint, duration, translate, image, button;
+								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image, button;
 								var z = word.slice(0, -3);
 								title = document.createElement("h1");
-								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
+								title.appendChild(document.createTextNode(getAttribute(data[i], "name")));
 								article.appendChild(title);
 								date = document.createElement("h2");
-								date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
+								date.appendChild(document.createTextNode(getAttribute(data[i], "time")));
 								article.appendChild(date);
 								media = document.createElement("img");
 								media.setAttribute("src", "multimedia/"+z+"/media.jpg");
@@ -162,28 +162,28 @@
 								metadata = document.createElement("ul");
 								article.appendChild(metadata);
 								length = document.createElement("li");
-								length.innerHTML = "Length: ";
+								length.innerHTML = "Distance : ";
 								length.appendChild(document.createTextNode(getNodeValue(data[i], "length")));
 								metadata.appendChild(length);
 								climax = document.createElement("li");
-								climax.innerHTML = "Climax: ";
+								climax.innerHTML = "Sommet : ";
 								climax.appendChild(document.createTextNode(getNodeValue(data[i], "climax")));
 								metadata.appendChild(climax);
 								viewpoint = document.createElement("li");
-								viewpoint.innerHTML = "Viewpoint: ";
+								viewpoint.innerHTML = "Point de vue : ";
 								viewpoint.appendChild(document.createTextNode(getNodeValue(data[i], "viewpoint")));
 								metadata.appendChild(viewpoint);
 								duration = document.createElement("li");
-								duration.innerHTML = "Duration: ";
+								duration.innerHTML = "Durée : ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
 								var x = "", j;
-								for (var j = 0; j < text_fr.length; j++) {
-  									x += "<p>"+text_fr[j].textContent+"</p>";
+								for (var j = 0; j < traduction.length; j++) {
+  									x += "<p>"+traduction[j].textContent+"</p>";
 								}
-								translate = document.createElement("div");
-								translate.innerHTML = x;
-								article.appendChild(translate);
+								paragraph = document.createElement("div");
+								paragraph.innerHTML = x;
+								article.appendChild(paragraph);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
   									y += "<img class='images' src='multimedia/"+z+"/image-"+multimedia[k].getAttribute("status")+".jpg'/>";
