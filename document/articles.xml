@@ -7,7 +7,7 @@
             <length>18,97 km</length>
             <climax>653 m</climax>
             <viewpoint>180&#176;</viewpoint>
-            <duration>6 hours</duration>
+            <duration type="hours">6</duration>
         </metadata>
         <text>
             <paragraph>I wanted this day hike to complete the crossing of the Stoke Mountains<intro/>, and the weekend of May 8 was a good fit; the thaw period 
@@ -22,9 +22,6 @@
             summits are a bit disappointing, I still note that the region's forest is particularly pretty, with no human traces. So I cross the mountain 
             ridge for about ten kilometers, offering viewpoints and points of interest: caves, cliffs, marshes, etc. This section of the hike does not 
             cross any other path on the entire crossing: little frequented, the region is endowed with dense and diverse vegetation.</paragraph>
-            <traduction>
-                <translate>allo</translate>
-            </traduction>
         </text>
         <multimedia>
             <image status="1"/>
@@ -36,5 +33,12 @@
             <image status="7"/>
             <image status="8"/>
         </multimedia>
+        <translate>
+            <titre></titre>
+            <date></date>
+            <texte>
+                <paragraphe>allo</paragraphe>
+            </texte>
+        </translate>
     </article>
 </articles>
