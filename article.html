@@ -146,7 +146,7 @@
 							// on fait une condition pour identifier les données
 							if (word == data[i].getAttribute("no")+"_fr") {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, media, graph, metadata, length, climax, viewpoint, duration, translate, image, button;
+								var title, date, media, graph, metadata, length, elevation, climax, viewpoint, duration, translate, image, button;
 								var digit = word.slice(0, -3);
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(meta[0].getAttribute("title")));
@@ -166,6 +166,10 @@
 								length.innerHTML = "Distance : ";
 								length.appendChild(document.createTextNode(getNodeValue(data[i], "length")));
 								metadata.appendChild(length);
+								elevation = document.createElement("li");
+								elevation.innerHTML = "Dénivelé positif : ";
+								elevation.appendChild(document.createTextNode(getNodeValue(data[i], "elevation")));
+								metadata.appendChild(elevation);	
 								climax = document.createElement("li");
 								climax.innerHTML = "Sommet : ";
 								climax.appendChild(document.createTextNode(getNodeValue(data[i], "climax")));
@@ -218,6 +222,10 @@
 								length.innerHTML = "Length: ";
 								length.appendChild(document.createTextNode(getNodeValue(data[i], "length")));
 								metadata.appendChild(length);
+								elevation = document.createElement("li");
+								elevation.innerHTML = "Elevation gain : ";
+								elevation.appendChild(document.createTextNode(getNodeValue(data[i], "elevation")));
+								metadata.appendChild(elevation);
 								climax = document.createElement("li");
 								climax.innerHTML = "Climax: ";
 								climax.appendChild(document.createTextNode(getNodeValue(data[i], "climax")));
