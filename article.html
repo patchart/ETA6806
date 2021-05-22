@@ -37,7 +37,7 @@
 			.left {
 				left: 25%;
 				width: auto;
-				padding: 8px 16px 16px;
+				padding: 16px;
 				margin: auto 50px auto 0;
 				color: rgb(255, 255, 255);
 				font-weight: bold;
@@ -46,7 +46,7 @@
 			.right {
 				right: 25%;
 				width: auto;
-				padding: 8px 16px 16px;
+				padding: 16px;
 				margin: auto 0 auto 50px;
 				color: rgb(255, 255, 255);
 				font-weight: bold;
@@ -271,16 +271,6 @@
 								image = document.createElement("div");
 								image.innerHTML = y;
 								article.appendChild(image);
-								var left = document.createElement("a");
-								left.setAttribute("class", "left");
-								left.setAttribute("onclick", "slide(-1)");
-								left.innerHTML = "&#10094;";
-								article.appendChild(left);
-								var right = document.createElement("a");
-								right.setAttribute("class", "right");
-								right.setAttribute("onclick", "slide(1)");
-								right.innerHTML = "&#10095;";
-								article.appendChild(right);
 							}
 						}
 						function getNodeValue(obj, tag) {
