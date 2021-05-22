@@ -36,6 +36,7 @@
 			}
 			#left {
 				cursor: pointer;
+				position: absolute;
 				top: 50%;
 				width: auto;
 				padding: 16px;
@@ -272,7 +273,7 @@
 								test.setAttribute("id", "left");
 								test.setAttribute("onclick", "plusSlides(-1)");
 								test.innerHTML = "&#10094;";
-								article.appendChild(test);
+								image.appendChild(test);
 								button = document.createElement("button");
 								button.setAttribute("onclick", "slide(1)");
 								button.setAttribute("class", "button");
