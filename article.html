@@ -61,12 +61,8 @@
 				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 			}
-			aside ul {
-				list-style: none;
-				padding-left: 0;
-			}
-			aside ul li {
-				display: inline;
+			aside a:first-child:after { 
+				content: "&nbsp;&#8212;&nbsp;";
 			}
 			/* stylisation de l'article */
 			article {
@@ -332,7 +328,7 @@
 		</script>
 	</head>
 	<body onload="page()">
-		<aside><ul><li><a id="en">en</a></li><li>&nbsp;&#8212;&nbsp;</li><li><a id="fr">fr</a></li></aside>
+		<aside><a id="en">en</a><a id="fr">fr</a></aside>
 		<article id="article"><!-- Document Object Model Contents --></article>
 		<nav><button onClick="location.href='https://ofstoriesandtrees.github.io/index/main.html'">home</button></nav>	
 	</body>
