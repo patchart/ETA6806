@@ -34,10 +34,10 @@
 			.button:focus {
 				outline-color: none;
 			}
-			#left {
+			.left {
 				cursor: pointer;
 				position: absolute;
-				top: 70%;
+				top: 60%;
 				left: 25%;
 				width: auto;
 				padding: 32px 16px;
@@ -48,7 +48,7 @@
 				border-radius: 0 3px 3px 0;
 				user-select: none;				
 			}
-			#left:hover {
+			.left:hover {
 				background-color: rgba(0, 0, 0, 0.8);
 				border: 0;
 			}
@@ -264,8 +264,8 @@
 								image.innerHTML = y;
 								article.appendChild(image);
 								var test = document.createElement("a");
-								test.setAttribute("id", "left");
-								test.setAttribute("onclick", "plusSlides(-1)");
+								test.setAttribute("class", "left");
+								test.setAttribute("onclick", "slide(-1)");
 								test.innerHTML = "&#10094;";
 								image.appendChild(test);
 								button = document.createElement("button");
