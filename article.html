@@ -18,46 +18,6 @@
 				cursor: pointer;
 				border-bottom: 1px solid;
 			}
-			/* stylisation du DOM */
-			.images:not(:first-child) {
-				display: none;
-			}
-			.button {
-				border: none;
-				background-color: inherit;
-				font: 100 75px "Helvetica Neue", Helvetica,Arial, sans-serif;
-				color: rgb(255, 255, 255);
-			}
-			.button:hover {
-				cursor: pointer;
-			}
-			.button:focus {
-				outline-color: none;
-			}
-			.left {
-				left: 25%;
-				width: auto;
-				padding: 16px;
-				color: rgb(255, 255, 255);
-				font-weight: bold;
-				font-size: 22px;				
-			}
-			.right {
-				right: 25%;
-				width: auto;
-				padding: 16px;
-				color: rgb(255, 255, 255);
-				font-weight: bold;
-				font-size: 22px;				
-			}
-			.left:hover, .right:hover {
-				cursor: pointer;
-				border: 0;
-				background-color: rgba(250, 250, 250, 0.1);
-				transition: 0.6s ease;
-				border-radius: 0 3px 3px 0;
-				user-select: none;
-			}
 			/* stylisation de l'alternative */
 			aside {
 				width: 50%;
@@ -165,7 +125,7 @@
 							// on fait une condition pour identifier les données
 							if (word == data[i].getAttribute("no")+"_fr") {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, media, graph, metadata, length, elevation, climax, viewpoint, duration, translate, image, button;
+								var title, date, media, graph, metadata, length, elevation, climax, viewpoint, duration, translate, image;
 								var digit = word.slice(0, -3);
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(metatitle[0].getAttribute("rend")));
@@ -215,11 +175,6 @@
 								image = document.createElement("div");
 								image.innerHTML = y;
 								article.appendChild(image);
-								button = document.createElement("button");
-								button.setAttribute("onclick", "slide(1)");
-								button.setAttribute("class", "button");
-								button.innerHTML = "&#10227;";
-								article.appendChild(button);
 							} else if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image;
@@ -301,24 +256,6 @@
 					fr.setAttribute("href", "https://ofstoriesandtrees.github.io/index/article.html?no="+code+"_fr");
 					fr.setAttribute("onclick", ".");
 				}
-			}
-		</script>
-		<script type="text/javascript">
-			// on programme le montage multimédia
-			var index = 1;
-			show(index);
-			function slide(n) {
-				show(index += n);
-			}
-			function show(n) {
-				var i;
-				var x = document.getElementsByClassName("images");
-				if (n > x.length) {index = 1}
-				if (n < 1) {index = x.length}
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";
-				}
-				x[index-1].style.display = "block";
 			}
 		</script>
 	</head>
