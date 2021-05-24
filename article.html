@@ -106,9 +106,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var traduction = xmlDoc.getElementsByTagName("translate");
 						var text = xmlDoc.getElementsByTagName("paragraph");
-						var multimedia = xmlDoc.getElementsByTagName("image");
 						var article = document.getElementById("article");
 						article.innerHTML = "";
 						// on calcul le nombre de données
@@ -152,19 +150,19 @@
 								duration.innerHTML = "Durée : ";
 								duration.appendChild(document.createTextNode(data[i].children[2].children[4].getAttribute("rend")));
 								metadata.appendChild(duration);
-								translate = document.createElement("div");
-								var w = data[i].children[4].children;
-								var x = "", j;
-								for (j = 0; j < w.length; j++) {
-  									translate.innerHTML += "<p>"+w[j].textContent+"</p>";
+								translate = document.createElement("p");
+								var x = data[i].lastElementChild.children;
+								var j;
+								for (j = 0; j < x.length; j++) {
+  									translate.innerHTML += x[j].textContent;
 								}
 								article.appendChild(translate);
-								var y = "", k;
-								for (k = 0; k < multimedia.length; k++) {
-  									y += "<img class='images' src='multimedia/"+digit+"/image-"+multimedia[k].getAttribute("status")+".jpg'/>";
-								}
 								image = document.createElement("div");
-								image.innerHTML = y;
+								var y = data[i].children[4].children;
+								var k;
+								for (k = 0; k < y.length; k++) {
+  									image.innerHTML += "<img class='images' src='multimedia/"+digit+"/image-"+y[k].getAttribute("status")+".jpg'/>";
+								}
 								article.appendChild(image);
 							} else if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
