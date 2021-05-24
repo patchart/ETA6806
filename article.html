@@ -152,12 +152,12 @@
 								duration.innerHTML = "Durée : ";
 								duration.appendChild(document.createTextNode(data[i].children[2].children[4].getAttribute("rend")));
 								metadata.appendChild(duration);
-								var x = "", j;
-								for (var j = 0; j < traduction.length; j++) {
-  									x += "<p>"+traduction[j].textContent+"</p>";
-								}
 								translate = document.createElement("div");
-								translate.innerHTML = x;
+								var x = data[i].children[3].children;
+								var j;
+								for (j = 0; j < x.length; j++) {
+  									translate += "<p>"+x[j].textContent+"</p>";
+								}
 								article.appendChild(translate);
 								var y = "", k;
 								for (k = 0; k < multimedia.length; k++) {
