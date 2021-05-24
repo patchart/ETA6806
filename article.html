@@ -202,6 +202,7 @@
 								metadata.appendChild(duration);
 								paragraph = document.createElement("div");
 								var x = data[i].children[3].children;
+								x.removeChild(x.lastElementChild);
 								var j;
 								for (j = 0; j < x.length; j++) {
   									paragraph.innerHTML += "<p>"+x[j].textContent+"</p>";
@@ -211,7 +212,7 @@
 								var y = data[i].children[4].children;
 								var k;
 								for (k = 0; k < y.length; k++) {
-  									image.innerHTML += "<img src='multimedia/"+digit+"/image-"+y[k].getAttribute("status")+".jpg'/>";
+  									image.innerHTML += "<img src='multimedia/"+code+"/image-"+y[k].getAttribute("status")+".jpg'/>";
 								}
 								article.appendChild(image);
 							}
