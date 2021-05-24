@@ -121,9 +121,9 @@
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, media, graph, metadata, length, elevation, climax, viewpoint, duration, translate, image;
 								var digit = word.slice(0, -3);
-								var zzz = data[i];
+								var zzz = data[i].firstElementChild;
 								title = document.createElement("h1");
-								title.appendChild(document.createTextNode(zzz[0].getAttributeNode("test")));
+								title.appendChild(document.createTextNode(zzz.getAttribute("test")));
 								article.appendChild(title);
 								date = document.createElement("h2");
 								date.appendChild(document.createTextNode(metadate[0].getAttribute("rend")));
