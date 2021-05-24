@@ -152,7 +152,9 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var meta = xmlDoc.getElementsByTagName("traduction");
+						var metatitle = xmlDoc.getElementsByTagName("title");
+						var metadate = xmlDoc.getElementsByTagName("date");
+						var metatime = xmlDoc.getElementsByTagName("duration");
 						var traduction = xmlDoc.getElementsByTagName("translate");
 						var text = xmlDoc.getElementsByTagName("paragraph");
 						var multimedia = xmlDoc.getElementsByTagName("image");
@@ -166,10 +168,10 @@
 								var title, date, media, graph, metadata, length, elevation, climax, viewpoint, duration, translate, image, button;
 								var digit = word.slice(0, -3);
 								title = document.createElement("h1");
-								title.appendChild(document.createTextNode(meta[0].getAttribute("title")));
+								title.appendChild(document.createTextNode(metatitle[0].getAttribute("rend")));
 								article.appendChild(title);
 								date = document.createElement("h2");
-								date.appendChild(document.createTextNode(meta[0].getAttribute("date")));
+								date.appendChild(document.createTextNode(metadate[0].getAttribute("rend")));
 								article.appendChild(date);
 								media = document.createElement("img");
 								media.setAttribute("src", "multimedia/"+digit+"/media.jpg");
@@ -197,7 +199,7 @@
 								metadata.appendChild(viewpoint);
 								duration = document.createElement("li");
 								duration.innerHTML = "Durée : ";
-								duration.appendChild(document.createTextNode(meta[0].getAttribute("time")));
+								duration.appendChild(document.createTextNode(metatime[0].getAttribute("rend")));
 								metadata.appendChild(duration);
 								var x = "", j;
 								for (var j = 0; j < traduction.length; j++) {
