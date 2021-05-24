@@ -169,6 +169,8 @@
 								image = document.createElement("div");
 								image.innerHTML = y;
 								article.appendChild(image);
+								var z = document.getElementsByTagName("nav a");
+								z.innerHTML = "accueil";
 							} else if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image;
