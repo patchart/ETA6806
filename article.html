@@ -106,6 +106,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
+						var metatitle = xmlDoc.getElementsByTagName("title");
 						var metadate = xmlDoc.getElementsByTagName("date");
 						var metatime = xmlDoc.getElementsByTagName("duration");
 						var traduction = xmlDoc.getElementsByTagName("translate");
@@ -120,9 +121,8 @@
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, media, graph, metadata, length, elevation, climax, viewpoint, duration, translate, image;
 								var digit = word.slice(0, -3);
-								var metatitle = xmlDoc.getElementsByTagName("title");
 								title = document.createElement("h1");
-								title.appendChild(document.createTextNode(metatitle.getAttribute("test")));
+								title.appendChild(document.createTextNode(getAttribute(data[i], "test")));
 								article.appendChild(title);
 								date = document.createElement("h2");
 								date.appendChild(document.createTextNode(metadate[0].getAttribute("rend")));
