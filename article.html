@@ -203,9 +203,8 @@
 								paragraph = document.createElement("div");
 								var x = data[i].children[3].children;
 								var j;
-								for (j = 0; j < x.length; j++) {
+								for (j = 0; j < x.length-1; j++) {
   									paragraph.innerHTML += "<p>"+x[j].textContent+"</p>";
-									x.removeChild(x.lastElementChild);
 								}
 								article.appendChild(paragraph);
 								image = document.createElement("div");
