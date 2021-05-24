@@ -106,7 +106,6 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var text = xmlDoc.getElementsByTagName("paragraph");
 						var article = document.getElementById("article");
 						article.innerHTML = "";
 						// on calcul le nombre de données
@@ -201,19 +200,19 @@
 								duration.innerHTML = "Duration: ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
-								var x = "", j;
-								for (var j = 0; j < text.length; j++) {
-  									x += "<p>"+text[j].textContent+"</p>";
+								paragraph = document.createElement("p");
+								var x = data[i].children[3].children;
+								var j;
+								for (j = 0; j < x.length; j++) {
+  									paragraph.innerHTML += x[j].textContent;
 								}
-								paragraph = document.createElement("div");
-								paragraph.innerHTML = x;
 								article.appendChild(paragraph);
-								var y = "", k;
-								for (k = 0; k < multimedia.length; k++) {
-  									y += "<img class='images' src='multimedia/"+code+"/image-"+multimedia[k].getAttribute("status")+".jpg'/>";
-								}
 								image = document.createElement("div");
-								image.innerHTML = y;
+								var y = data[i].children[4].children;
+								var k;
+								for (k = 0; k < y.length; k++) {
+  									image.innerHTML += "<img class='images' src='multimedia/"+digit+"/image-"+y[k].getAttribute("status")+".jpg'/>";
+								}
 								article.appendChild(image);
 							}
 						}
