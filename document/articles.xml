@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <articles>
+        <article no="02052021">
+        <title rend="Mont Foster">Mount Foster</title>
+        <date rend="2 mai 2021">2th May 2021</date>
+        <metadata>
+            <length>13,96 km</length>
+            <elevation>544 m</elevation>
+            <climax>710 m</climax>
+            <viewpoint>360&#176;</viewpoint>
+            <duration rend="4h30">4.30</duration>
+        </metadata>
+        <text></text>
+        <multimedia>
+            <image status="1"/>
+            <image status="2"/>
+            <image status="3"/>
+            <image status="4"/>
+            <image status="5"/>
+            <image status="6"/>
+            <image status="7"/>
+            <image status="8"/>
+            <image status="9"/>
+            <image status="10"/>
+            <image status="11"/>
+        </multimedia>
+    </article>
     <article no="08052021">
         <title rend="Les monts Stoke">Stoke Mountains</title>
         <date rend="8 mai 2021">8th May 2021</date>
