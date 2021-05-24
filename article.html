@@ -150,7 +150,7 @@
 								duration.appendChild(document.createTextNode(data[i].children[2].children[4].getAttribute("rend")));
 								metadata.appendChild(duration);
 								translate = document.createElement("div");
-								var x = data[i].lastElementChild.children;
+								var x = data[i].children[3].lastElementChild.children;
 								var j;
 								for (j = 0; j < x.length; j++) {
   									translate.innerHTML += "<p>"+x[j].textContent+"</p>";
@@ -202,10 +202,10 @@
 								metadata.appendChild(duration);
 								paragraph = document.createElement("div");
 								var x = data[i].children[3].children;
-								x.removeChild(x.lastElementChild);
 								var j;
 								for (j = 0; j < x.length; j++) {
   									paragraph.innerHTML += "<p>"+x[j].textContent+"</p>";
+									x.removeChild(x.lastElementChild);
 								}
 								article.appendChild(paragraph);
 								image = document.createElement("div");
