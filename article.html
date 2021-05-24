@@ -122,7 +122,7 @@
 								var digit = word.slice(0, -3);
 								var metatitle = xmlDoc.getElementsByTagName("title");
 								title = document.createElement("h1");
-								title.appendChild(document.createTextNode(metatitle[0].getAttribute("test")));
+								title.appendChild(document.createTextNode(metatitle.getAttribute("test")));
 								article.appendChild(title);
 								date = document.createElement("h2");
 								date.appendChild(document.createTextNode(metadate[0].getAttribute("rend")));
