@@ -149,18 +149,18 @@
 								duration.innerHTML = "Durée : ";
 								duration.appendChild(document.createTextNode(data[i].children[2].children[4].getAttribute("rend")));
 								metadata.appendChild(duration);
-								translate = document.createElement("p");
+								translate = document.createElement("div");
 								var x = data[i].lastElementChild.children;
 								var j;
 								for (j = 0; j < x.length; j++) {
-  									translate.innerHTML += x[j].textContent;
+  									translate.innerHTML += "<p>"+x[j].textContent+"</p>";
 								}
 								article.appendChild(translate);
 								image = document.createElement("div");
 								var y = data[i].children[4].children;
 								var k;
 								for (k = 0; k < y.length; k++) {
-  									image.innerHTML += "<img class='images' src='multimedia/"+digit+"/image-"+y[k].getAttribute("status")+".jpg'/>";
+  									image.innerHTML += "<img src='multimedia/"+digit+"/image-"+y[k].getAttribute("status")+".jpg'/>";
 								}
 								article.appendChild(image);
 							} else if (code == data[i].getAttribute("no")) {
@@ -200,18 +200,18 @@
 								duration.innerHTML = "Duration: ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
-								paragraph = document.createElement("p");
+								paragraph = document.createElement("div");
 								var x = data[i].children[3].children;
 								var j;
 								for (j = 0; j < x.length; j++) {
-  									paragraph.innerHTML += x[j].textContent;
+  									paragraph.innerHTML += "<p>"+x[j].textContent+"</p>";
 								}
 								article.appendChild(paragraph);
 								image = document.createElement("div");
 								var y = data[i].children[4].children;
 								var k;
 								for (k = 0; k < y.length; k++) {
-  									image.innerHTML += "<img class='images' src='multimedia/"+digit+"/image-"+y[k].getAttribute("status")+".jpg'/>";
+  									image.innerHTML += "<img src='multimedia/"+digit+"/image-"+y[k].getAttribute("status")+".jpg'/>";
 								}
 								article.appendChild(image);
 							}
