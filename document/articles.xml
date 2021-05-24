@@ -102,7 +102,11 @@
             <viewpoint>360&#176;</viewpoint>
             <duration rend="4h30">4.30</duration>
         </metadata>
-        <text></text>
+        <text>
+            <paragraph>
+                test<intro/>
+            </paragraph>
+        </text>
         <multimedia>
             <image status="1"/>
             <image status="2"/>
@@ -160,7 +164,11 @@
             <viewpoint>360&#176;</viewpoint>
             <duration rend="6h30">6.30</duration>
         </metadata>
-        <text></text>
+        <text>
+            <paragraph>
+                test<intro/>
+            </paragraph>
+        </text>
         <multimedia>
             <image status="1"/>
             <image status="2"/>
