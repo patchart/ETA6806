@@ -169,8 +169,6 @@
 								image = document.createElement("div");
 								image.innerHTML = y;
 								article.appendChild(image);
-								var z = document.getElementsByClassName(".index");
-								z.innerHTML = "accueil";
 							} else if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image;
@@ -258,6 +256,6 @@
 	<body onload="page()">
 		<aside><a id="en">en</a>&nbsp;&mdash;&nbsp;<a id="fr">fr</a></aside>
 		<article id="article"><!-- Document Object Model Contents --></article>
-		<nav><a href="https://ofstoriesandtrees.github.io/index/main.html" class="index">home</a></nav>	
+		<nav><a href="https://ofstoriesandtrees.github.io/index/main.html">index</a></nav>	
 	</body>
 </html>
