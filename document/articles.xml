@@ -43,7 +43,8 @@
                 <translate>
                     Parfois la piste m'amène à traverser des sous-bois tapissés de mousses et de lichens, comme un 
                     paysage boréal. Ces passages sous le couvert de la végétation sont tels que des tunnels de forêt. 
-                    À mi-chemin dans les montagnes, une rivière en cascade permet de se rafraichir et de se réhydrater.                  Une véritable oasis sur un sentier au relief assez accidenté...
+                    À mi-chemin dans les montagnes, une rivière en cascade permet de se rafraichir et de se réhydrater. 
+                    Une véritable oasis sur un sentier au relief assez accidenté...
                 </translate>
                 <translate>
                     Les sommets ne sont pas à la hauteur de l'effort investi dans les ascensions, car il y a peu ou pas 
@@ -76,8 +77,13 @@
         </metadata>
         <text>
             <paragraph>
-                Via the Oaken Trail<intro/>
+                Via the Oaken Trail<intro/>.
             </paragraph>
+            <traduction>
+                <translate>
+                    Via le sentiers des chênes.
+                </translate>
+            </traduction>
         </text>
         <multimedia>
             <image status="1"/>
@@ -102,8 +108,13 @@
         </metadata>
         <text>
             <paragraph>
-                test<intro/>
+                &nbsp;<intro/>
             </paragraph>
+            <traduction>
+                <translate>
+                    &nbsp;
+                </translate>
+            </traduction>
         </text>
         <multimedia>
             <image status="1"/>
@@ -130,8 +141,13 @@
         </metadata>
         <text>
             <paragraph>
-                Via the North Staircase Trail<intro/>
+                Via the North Staircase Trail<intro/>.
             </paragraph>
+            <traduction>
+                <translate>
+                    Via l'Escalier du Nord.
+                </translate>
+            </traduction>
         </text>
         <multimedia>
             <image status="1"/>
@@ -162,8 +178,13 @@
         </metadata>
         <text>
             <paragraph>
-                test<intro/>
+                &nbsp;<intro/>
             </paragraph>
+            <traduction>
+                <translate>
+                    &nbsp;
+                </translate>
+            </traduction>
         </text>
         <multimedia>
             <image status="1"/>
