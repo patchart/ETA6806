@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <articles>
+    <article no="22052021">
+        <title rend="Les sentiers frontaliers">Border Trails</title>
+        <date rend="22 mai 2021">22th May 2021</date>
+        <metadata>
+            <length>23,44 km</length>
+            <elevation>695 m</elevation>
+            <climax>875 m</climax>
+            <viewpoint>0&#176;</viewpoint>
+            <duration rend="7h00">7.00</duration>
+        </metadata>
+        <text>
+            <paragraph>
+                Via le Maine<intro/>.
+            </paragraph>
+            <traduction>
+                <translate>
+                    Via Maine.
+                </translate>
+            </traduction>
+        </text>
+        <multimedia>
+            <image status="1"/>
+            <image status="2"/>
+            <image status="3"/>
+            <image status="4"/>
+            <image status="5"/>
+            <image status="6"/>
+            <image status="7"/>
+        </multimedia>
+    </article>
     <article no="08052021">
         <title rend="Les monts Stoke">Stoke Mountains</title>
         <date rend="8 mai 2021">8th May 2021</date>
