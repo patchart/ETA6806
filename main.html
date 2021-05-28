@@ -144,6 +144,36 @@
 					margin: 0;
 				}
 			}
+			/* --- */
+			.test {
+			  position: relative;
+			  margin: auto;
+			}
+			.prev, .next {
+			  cursor: pointer;
+			  position: absolute;
+			  top: 50%;
+			  width: auto;
+			  padding: 16px;
+			  margin-top: -22px;
+			  color: white;
+			  font-weight: bold;
+			  font-size: 18px;
+			  transition: 0.6s ease;
+			  border-radius: 0 3px 3px 0;
+			  user-select: none;
+			}
+
+			/* Position the "next button" to the right */
+			.next {
+			  right: 0;
+			  border-radius: 3px 0 0 3px;
+			}
+
+			/* On hover, add a black background color with a little bit see-through */
+			.prev:hover, .next:hover {
+			  background-color: rgba(0,0,0,0.8);
+			}
 		</style>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 		<script type="text/javascript">
@@ -159,11 +189,29 @@
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
 							var section, media, x, y, title, z, date, intro;
+							////--->
+							var a, b, c;
+							////---<
 							section = document.createElement("section");
 							main.appendChild(section);
+							////--->
+							a = document.createElement("div");
+							a.setAttribute("class", "test");
+							section.appendChild(a);
+							////---<
 							media = document.createElement("img");
 							media.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/media.jpg");
-							section.appendChild(media);
+							/*section*/a.appendChild(media);
+							////--->
+							b = document.createElement("a");
+							b.setAttribute("class", "prev");
+							b.innerHTML = "&#10094;";
+							a.appendChild(b);
+							c = document.createElement("a");
+							c.setAttribute("class", "next");
+							c.innerHTML = "&#10095;";
+							a.appendChild(c);
+							////---<
 							x = document.createElement("form");
 							x.setAttribute("action", "article.html");
 							section.appendChild(x);
