@@ -165,15 +165,13 @@
 			}
 
 			/* Position the "next button" to the right */
-			.prev {
+			.next {
 			right: 0;
 			}
-			.next {
+			.prev {
 			  right: 359px;
 			  border-radius: 3px 0 0 3px;
 			}
-
-			/* On hover, add a black background color with a little bit see-through */
 			.prev:hover, .next:hover {
 			  background-color: rgba(0,0,0,0.8);
 			}
@@ -207,11 +205,11 @@
 							/*section*/a.appendChild(media);
 							////--->
 							b = document.createElement("a");
-							b.setAttribute("class", "prev");
+							b.setAttribute("class", "next");
 							b.innerHTML = "&#10094;";
 							a.appendChild(b);
 							c = document.createElement("a");
-							c.setAttribute("class", "next");
+							c.setAttribute("class", "prev");
 							c.innerHTML = "&#10095;";
 							a.appendChild(c);
 							////---<
