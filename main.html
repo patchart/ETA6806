@@ -203,15 +203,18 @@
 							section.appendChild(a);
 							////---<
 							media = document.createElement("img");
-							media.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/media.jpg");
+							media.setAttribute("class", "slides");
+							media.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/image-"+i+".jpg");
 							/*section*/a.appendChild(media);
 							////--->
 							b = document.createElement("a");
 							b.setAttribute("class", "prev");
+							b.setAttribute("onclick", "prev()");
 							b.innerHTML = "&#10094;";
 							a.appendChild(b);
 							c = document.createElement("a");
 							c.setAttribute("class", "next");
+							c.setAttribute("onclick", "next()");
 							c.innerHTML = "&#10095;";
 							a.appendChild(c);
 							////---<
@@ -243,6 +246,25 @@
 				// on charge le contenu du document
 				xhr.open("GET", "document/articles.xml", true);
 				xhr.send(null);
+			}
+		</script>
+		<script>
+			var slideIndex = 1;
+			showDivs(slideIndex);
+
+			function next(n) {
+				showDivs(slideIndex += n);
+			}
+
+			function prev(n) {
+				var i;
+				var x = document.getElementsByClassName("slides");
+				if (n > x.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = x.length}
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+				}
+				x[slideIndex-1].style.display = "block";
 			}
 		</script>
 	</head>
