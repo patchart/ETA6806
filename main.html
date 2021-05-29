@@ -247,6 +247,25 @@
 							intro = document.createElement("p");
 							intro.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
 							section.appendChild(intro);
+							
+					var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function slide(n) {
+			  showSlides(slideIndex += n);
+			}
+
+			function showSlides(n) {
+			  var h;
+			  var slides = document.getElementsByClassName("slides");
+			  if (n > slides.length) {slideIndex = 1}    
+			  if (n < 1) {slideIndex = slides.length}
+			  for (h = 0; h < slides.length; h++) {
+			      slides[h].style.display = "none";  
+			  }
+
+			  slides[slideIndex-1].style.display = "block";  
+			}
 						}
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
@@ -263,25 +282,5 @@
 		<header><div><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
 		<main id="main"><!-- Document Object Model Contents & Sections --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
-		<script>
-			var slideIndex = 1;
-			showSlides(slideIndex);
-
-			function slide(n) {
-			  showSlides(slideIndex += n);
-			}
-
-			function showSlides(n) {
-			  var i;
-			  var slides = document.getElementsByClassName("slides");
-			  if (n > slides.length) {slideIndex = 1}    
-			  if (n < 1) {slideIndex = slides.length}
-			  for (i = 0; i < slides.length; i++) {
-			      slides[i].style.display = "none";  
-			  }
-
-			  slides[slideIndex-1].style.display = "block";  
-			}
-		</script>
 	</body>
 </html>
