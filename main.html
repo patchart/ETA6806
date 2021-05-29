@@ -4,7 +4,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link rel="icon" href="multimedia/icon.jpg"/>
 		<style>
-			.slides {display: none}
 			/* stylisation d'ensemble */
 			body, html {
 				height: 100%;
@@ -217,12 +216,12 @@
 							////--->
 							b = document.createElement("a");
 							b.setAttribute("class", "prev");
-							b.setAttribute("onclick", "prev(-1)");
+							b.setAttribute("onclick", "slide(-1)");
 							b.innerHTML = "&#10094;";
 							a.appendChild(b);
 							c = document.createElement("a");
 							c.setAttribute("class", "next");
-							c.setAttribute("onclick", "next(1)");
+							c.setAttribute("onclick", "slide(1)");
 							c.innerHTML = "&#10095;";
 							a.appendChild(c);
 							////---<
@@ -265,7 +264,7 @@
 			var slideIndex = 1;
 			showSlides(slideIndex);
 
-			function slides(n) {
+			function slide(n) {
 			  showSlides(slideIndex += n);
 			}
 
