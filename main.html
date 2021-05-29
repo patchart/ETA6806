@@ -4,6 +4,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link rel="icon" href="multimedia/icon.jpg"/>
 		<style>
+			.slides {display: none}
 			/* stylisation d'ensemble */
 			body, html {
 				height: 100%;
@@ -216,12 +217,12 @@
 							////--->
 							b = document.createElement("a");
 							b.setAttribute("class", "prev");
-							b.setAttribute("onclick", "prev()");
+							b.setAttribute("onclick", "prev(-1)");
 							b.innerHTML = "&#10094;";
 							a.appendChild(b);
 							c = document.createElement("a");
 							c.setAttribute("class", "next");
-							c.setAttribute("onclick", "next()");
+							c.setAttribute("onclick", "next(1)");
 							c.innerHTML = "&#10095;";
 							a.appendChild(c);
 							////---<
@@ -262,21 +263,22 @@
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script>
 			var slideIndex = 1;
-			showDivs(slideIndex);
+			showSlides(slideIndex);
 
-			function next(n) {
-				showDivs(slideIndex += n);
+			function slides(n) {
+			  showSlides(slideIndex += n);
 			}
 
-			function prev(n) {
-				var i;
-				var x = document.getElementsByClassName("slides");
-				if (n > x.length) {slideIndex = 1}
-				if (n < 1) {slideIndex = x.length}
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";
-				}
-				x[slideIndex-1].style.display = "block";
+			function showSlides(n) {
+			  var i;
+			  var slides = document.getElementsByClassName("slides");
+			  if (n > slides.length) {slideIndex = 1}    
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+			      slides[i].style.display = "none";  
+			  }
+
+			  slides[slideIndex-1].style.display = "block";  
 			}
 		</script>
 	</body>
