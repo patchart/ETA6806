@@ -202,10 +202,17 @@
 							a.setAttribute("class", "test");
 							section.appendChild(a);
 							////---<
-							media = document.createElement("img");
-							media.setAttribute("class", "slides");
-							media.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/image-"+i+".jpg");
-							/*section*/a.appendChild(media);
+							//media = document.createElement("img");
+							//media.setAttribute("class", "slides");
+							//media.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/media.jpg");
+							/*section*///a.appendChild(media);
+							var image = document.createElement("div");
+							var yy = data[i].children[4].children;
+							var k;
+							for (k = 0; k < yy.length; k++) {
+  								image.innerHTML += "<img class='slides' src='multimedia/"+code+"/image-"+yy[k].getAttribute("status")+".jpg'/>";
+							}
+							a.appendChild(image);
 							////--->
 							b = document.createElement("a");
 							b.setAttribute("class", "prev");
