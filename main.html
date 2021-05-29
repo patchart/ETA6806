@@ -206,11 +206,12 @@
 							//media.setAttribute("class", "slides");
 							//media.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/media.jpg");
 							/*section*///a.appendChild(media);
-							var image = document.createElement("div");
+							var image = document.createElement("img");
 							var yy = data[i].children[4].children;
 							var k;
 							for (k = 0; k < yy.length; k++) {
-  								image.innerHTML += "<img class='slides' src='multimedia/"+code+"/image-"+yy[k].getAttribute("status")+".jpg'/>";
+  								image.setAttribute("src", "src='multimedia/22052021/image-"+yy[k].getAttribute("status")+".jpg'");
+								image.setAttribute("class", "slides");
 							}
 							a.appendChild(image);
 							////--->
