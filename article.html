@@ -214,11 +214,11 @@
 								alpha.setAttribute("class", "slideshow-container");
 								article.appendChild(alpha);
 								
-								image = document.createElement("img");
+								image = document.createElement("div");
 								var y = data[i].children[4].children;
 								var k;
 								for (k = 0; k < y.length; k++) {
-  									image.setAttribute("src", "multimedia/"+code+"/image-"+y[k].getAttribute("status")+".jpg");
+  									image.innerHTML += "<img src='multimedia/"+code+"/image-"+y[k].getAttribute("status")+".jpg'/>";
 								}
 								alpha.appendChild(image);
 							}
