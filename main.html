@@ -299,9 +299,11 @@
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
 							var section, media, x, y, title, z, date, intro;
-							
+							var x = "slides-";
+							var y = data[i].getAttribute("no");
+							var z = "slides-"+y;
 							 var i;
-							 var slides = document.getElementsByClassName("slides-"+data[i].getAttribute("no"));
+							 var slides = document.getElementsByClassName(z);
 							 if (n > slides.length) {slideIndex = 1}    
 							 if (n < 1) {slideIndex = slides.length}
 							 for (i = 0; i < slides.length; i++) {
