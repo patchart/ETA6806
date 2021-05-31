@@ -213,7 +213,7 @@
 								var yy = data[i].children[4].children;
 								var k;
 								for (k = 0; k < yy.length; k++) {
-  									image.innerHTML += "<img class='slides' src='multimedia/"+data[i].getAttribute("no")+"/image-"+yy[k].getAttribute("status")+".jpg'/>";
+  									image.innerHTML += "<img class='slides"+data[i].getAttribute("no")+"' src='multimedia/"+data[i].getAttribute("no")+"/image-"+yy[k].getAttribute("status")+".jpg'/>";
 								}
 								a.appendChild(image);
 							////--->
@@ -271,14 +271,31 @@
 			  showSlides(slideIndex += n);
 			}
 			function showSlides(n) {
+				var xhr = new XMLHttpRequest();
+				xhr.onload = function() {
+					if (xhr.status === 200) {
+						var xmlDoc = xhr.responseXML;
+						var data = xmlDoc.getElementsByTagName("article");
+						for (var i = 0; i < data.length; i++) {
+
 			  var i;
-			  var slides = document.getElementsByClassName("slides");
+			  var x = data[i].getAttribute("no");
+			  var slides = document.getElementsByClassName("slides"+x);
 			  if (n > slides.length) {slideIndex = 1}    
 			  if (n < 1) {slideIndex = slides.length}
 			  for (i = 0; i < slides.length; i++) {
 			      slides[i].style.display = "none";  
 			  }
 			  slides[slideIndex-1].style.display = "block";  
+						
+						function getNodeValue(obj, tag) {
+							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
+						}
+					}
+				};
+				// on charge le contenu du document
+				xhr.open("GET", "document/articles.xml", true);
+				xhr.send(null);
 			}
 		</script>
 	</body>
