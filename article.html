@@ -207,13 +207,20 @@
   									paragraph.innerHTML += "<p>"+x[j].textContent+"</p>";
 								}
 								article.appendChild(paragraph);
-								image = document.createElement("div");
+								
+								
+								var alpha, beta, teta;
+								alpha = document.createElement("div");
+								alpha.setAttribute("class", "slideshow-container");
+								article.appendChild(alpha);
+								
+								image = document.createElement("img");
 								var y = data[i].children[4].children;
 								var k;
 								for (k = 0; k < y.length; k++) {
-  									image.innerHTML += "<img src='multimedia/"+code+"/image-"+y[k].getAttribute("status")+".jpg'/>";
+  									image.setAttribut("src", "multimedia/"+code+"/image-"+y[k].getAttribute("status")+".jpg";
 								}
-								article.appendChild(image);
+								alpha.appendChild(image);
 							}
 						}
 						function getNodeValue(obj, tag) {
@@ -250,6 +257,33 @@
 	<body onload="page()">
 		<aside><a id="en">en</a>&nbsp;&mdash;&nbsp;<a id="fr">fr</a></aside>
 		<article id="article"><!-- Document Object Model Contents --></article>
-		<nav><a href="https://ofstoriesandtrees.github.io/index/main.html">index</a></nav>	
+		<nav><a href="https://ofstoriesandtrees.github.io/index/main.html">index</a></nav>
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) {
+		  		showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) {
+		  		showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				var i;
+		  		var slides = document.getElementsByClassName("mySlides");
+		 		if (n > slides.length) {
+					slideIndex = 1;
+				}    
+		  		if (n < 1) {
+					slideIndex = slides.length
+				}
+		  		for (i = 0; i < slides.length; i++) {
+		      			slides[i].style.display = "none";  
+		  		}
+		  		slides[slideIndex-1].style.display = "block";  
+			}		
+		</script>
 	</body>
 </html>
