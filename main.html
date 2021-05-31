@@ -213,7 +213,7 @@
 								var yy = data[i].children[4].children;
 								var k;
 								for (k = 0; k < yy.length; k++) {
-  									image.innerHTML += "<img class='slides' src='multimedia/"+data[i].getAttribute("no")+"/image-"+yy[k].getAttribute("status")+".jpg'/>";
+  									image.innerHTML += "<img class='slides-"+data[i].getAttribute("no")+"' src='multimedia/"+data[i].getAttribute("no")+"/image-"+yy[k].getAttribute("status")+".jpg'/>";
 								}
 								a.appendChild(image);
 							////--->
@@ -261,10 +261,10 @@
 	</head>
 	<body onload="page()">
 		<header><div><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
-		<main id="main"><!-- Document Object Model Contents & Sections --></main>
+		<main id="main" onload="media()"><!-- Document Object Model Contents & Sections --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script>
-			var slideIndex = 1;
+			/*var slideIndex = 1;
 			showSlides(slideIndex);
 
 			function slide(n) {
@@ -279,6 +279,47 @@
 			      slides[i].style.display = "none";  
 			  }
 			  slides[slideIndex-1].style.display = "block";  
+			}*/
+			
+			function media() {
+				// on envoie la requête XML
+				var xhr = new XMLHttpRequest();
+				xhr.onload = function() {
+					if (xhr.status === 200) {
+						var xmlDoc = xhr.responseXML;
+						var data = xmlDoc.getElementsByTagName("article");
+						var main = document.getElementById("main");
+						main.innerHTML = "";
+						// on calcul le nombre de données
+						for (var i = 0; i < data.length; i++) {
+							var section, media, x, y, title, z, date, intro;
+							
+							var slideIndex = 1;
+							showSlides(slideIndex);
+
+							function slide(n) {
+							  showSlides(slideIndex += n);
+							}
+							
+							function showSlides(n) {
+							  var i;
+							  var slides = document.getElementsByClassName("slides-"+data[i].getAttribute("no"));
+							  if (n > slides.length) {slideIndex = 1}    
+							  if (n < 1) {slideIndex = slides.length}
+							  for (i = 0; i < slides.length; i++) {
+							      slides[i].style.display = "none";  
+							  }
+							  slides[slideIndex-1].style.display = "block";  
+							}
+						}
+						function getNodeValue(obj, tag) {
+							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
+						}
+					}
+				};
+				// on charge le contenu du document
+				xhr.open("GET", "document/articles.xml", true);
+				xhr.send(null);
 			}
 		</script>
 	</body>
