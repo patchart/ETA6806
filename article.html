@@ -10,14 +10,6 @@
 				margin: 0;
 				background-color: rgb(0, 0, 0);
 			}
-			a {
-				color: rgb(255, 255, 255);
-				text-decoration: none;
-			}
-			a:hover {
-				cursor: pointer;
-				border-bottom: 1px solid;
-			}
 			/* stylisation de l'alternative */
 			aside {
 				width: 50%;
@@ -26,6 +18,14 @@
 				text-align: center;
 				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
+			}
+			aside a {
+				color: rgb(255, 255, 255);
+				text-decoration: none;
+			}
+			aside a:hover {
+				cursor: pointer;
+				border-bottom: 1px solid;
 			}
 			/* stylisation de l'article */
 			article {
@@ -76,6 +76,35 @@
 				padding-left: 0;
 				text-align: left;
 			}
+			article #gallery {
+			  max-width: 1000px;
+			  position: relative;
+			  margin: auto;
+			}
+			article .photos:not(:first-child) {
+				display: none;
+			}
+			article #back, article #front {
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				padding: 16px;
+			 	margin-top: -22px;
+				color: rgb(255, 255, 255);
+			 	font-weight: bold;
+			 	font-size: 18px;
+			 	transition: 0.6s ease;
+			 	border-radius: 0 3px 3px 0;
+			 	user-select: none;
+			}
+			article #back {
+				left: 0;
+			}
+			article #front {
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
 			/* stylisation de la navigation */
 			nav {
 				width: 50%;
@@ -90,41 +119,6 @@
 			nav a:hover {
 				cursor: pointer;
 				border-bottom: 1px solid;
-			}
-			
-			
-			.mySlides:not(:first-child) {
-				display: none;
-			}
-			.slideshow-container {
-			  max-width: 1000px;
-			  position: relative;
-			  margin: auto;
-			}
-
-			/* Next & previous buttons */
-			.prev, .next {
-			  cursor: pointer;
-			  position: absolute;
-			  top: 50%;
-			  width: auto;
-			  padding: 16px;
-			  margin-top: -22px;
-			  color: white;
-			  font-weight: bold;
-			  font-size: 18px;
-			  transition: 0.6s ease;
-			  border-radius: 0 3px 3px 0;
-			  user-select: none;
-			}
-
-			/* Position the "next button" to the right */
-			.prev {
-				left: 0;
-			}
-			.next {
-			  right: 0;
-			  border-radius: 3px 0 0 3px;
 			}
 		</style>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
@@ -200,7 +194,7 @@
 								article.appendChild(image);
 							} else if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, image;
+								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, gallery, image;
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								article.appendChild(title);
@@ -242,31 +236,27 @@
   									paragraph.innerHTML += "<p>"+x[j].textContent+"</p>";
 								}
 								article.appendChild(paragraph);
-								
-								
-								var alpha, beta, teta;
-								alpha = document.createElement("div");
-								alpha.setAttribute("class", "slideshow-container");
-								article.appendChild(alpha);
-								
+								var back, front;
+								gallery = document.createElement("div");
+								gallery.setAttribute("id", "gallery");
+								article.appendChild(gallery);
 								image = document.createElement("div");
 								var y = data[i].children[4].children;
 								var k;
 								for (k = 0; k < y.length; k++) {
-  									image.innerHTML += "<img class='mySlides' src='multimedia/"+code+"/image-"+y[k].getAttribute("status")+".jpg'/>";
+  									image.innerHTML += "<img class='photos' src='multimedia/"+code+"/image-"+y[k].getAttribute("status")+".jpg'/>";
 								}
-								alpha.appendChild(image);
-								
-								beta = document.createElement("a");
-								beta.setAttribute("class", "prev");
-								beta.setAttribute("onclick", "plusSlides(-1)");
-								beta.innerHTML = "&#10094;";
-								alpha.appendChild(beta);
-								teta = document.createElement("a");
-								teta.setAttribute("class", "next");
-								teta.setAttribute("onclick", "plusSlides(1)");
-								teta.innerHTML = "&#10095;";
-								alpha.appendChild(teta);
+								gallery.appendChild(image);
+								back = document.createElement("a");
+								back.setAttribute("id", "back");
+								back.setAttribute("onclick", "show(-1)");
+								back.innerHTML = "&#10094;";
+								gallery.appendChild(back);
+								front = document.createElement("a");
+								front.setAttribute("id", "front");
+								front.setAttribute("onclick", "show(1)");
+								front.innerHTML = "&#10095;";
+								gallery.appendChild(front);
 							}
 						}
 						function getNodeValue(obj, tag) {
@@ -305,30 +295,24 @@
 		<article id="article"><!-- Document Object Model Contents --></article>
 		<nav><a href="https://ofstoriesandtrees.github.io/index/main.html">index</a></nav>
 		<script>
-			var slideIndex = 1;
-			showSlides(slideIndex);
-
-			function plusSlides(n) {
-		  		showSlides(slideIndex += n);
+			var index = 1;
+			slide(index);
+			function show(n) {
+		  		slide(index += n);
 			}
-
-			function currentSlide(n) {
-		  		showSlides(slideIndex = n);
-			}
-
-			function showSlides(n) {
+			function slide(n) {
 				var i;
-		  		var slides = document.getElementsByClassName("mySlides");
-		 		if (n > slides.length) {
-					slideIndex = 1;
+		  		var photo = document.getElementsByClassName("photos");
+		 		if (n > photo.length) {
+					index = 1;
 				}    
 		  		if (n < 1) {
-					slideIndex = slides.length
+					index = photo.length
 				}
-		  		for (i = 0; i < slides.length; i++) {
-		      			slides[i].style.display = "none";  
+		  		for (i = 0; i < photo.length; i++) {
+		      			photo[i].style.display = "none";  
 		  		}
-		  		slides[slideIndex-1].style.display = "block";  
+		  		photo[index-1].style.display = "block";  
 			}		
 		</script>
 	</body>
