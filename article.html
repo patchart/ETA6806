@@ -18,8 +18,8 @@
 				cursor: pointer;
 				border-bottom: 1px solid;
 			}
-			/* stylisation de l'alternative */
-			aside {
+			/* stylisation de l'entête */
+			header {
 				width: 50%;
 				padding: 15px;
 				margin: auto;
@@ -108,18 +108,18 @@
 			article #back:hover, article #front:hover {
   				background-color: rgba(0, 0, 0, 0.8);
 			}
-			/* stylisation de la navigation */
-			nav {
+			/* stylisation du pied de page */
+			footer {
 				width: 50%;
 				margin: auto;
 				padding: 15px;
 				text-align: center;
 			}
-			nav a {
+			footer a {
 				font: 200 22px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 			}
-			nav a:hover {
+			footer a:hover {
 				cursor: pointer;
 				border-bottom: 1px solid;
 			}
@@ -145,7 +145,7 @@
 							// on fait une condition pour identifier les données
 							if (word == data[i].getAttribute("no")+"_fr") {
 								// on récupère les données dans les attributs et les éléments XML
-								var title, date, media, graph, metadata, length, elevation, climax, viewpoint, duration, translate, image;
+								var title, date, media, graph, metadata, length, elevation, climax, viewpoint, duration, translate, gallery, image;
 								var digit = word.slice(0, -3);
 								title = document.createElement("h1");
 								title.appendChild(document.createTextNode(data[i].children[0].getAttribute("rend")));
@@ -188,13 +188,29 @@
   									translate.innerHTML += "<p>"+x[j].textContent+"</p>";
 								}
 								article.appendChild(translate);
+								var back, front;
+								gallery = document.createElement("div");
+								gallery.setAttribute("id", "gallery");
+								article.appendChild(gallery);
 								image = document.createElement("div");
 								var y = data[i].children[4].children;
 								var k;
 								for (k = 0; k < y.length; k++) {
-  									image.innerHTML += "<img src='multimedia/"+digit+"/image-"+y[k].getAttribute("status")+".jpg'/>";
+  									image.innerHTML += "<img class='photos' src='multimedia/"+digit+"/image-"+y[k].getAttribute("status")+".jpg'/>";
 								}
-								article.appendChild(image);
+								gallery.appendChild(image);
+								back = document.createElement("a");
+								back.setAttribute("id", "back");
+								back.setAttribute("class", "switch");
+								back.setAttribute("onclick", "show(-1)");
+								back.innerHTML = "&#10094;";
+								gallery.appendChild(back);
+								front = document.createElement("a");
+								front.setAttribute("id", "front");
+								front.setAttribute("class", "switch");
+								front.setAttribute("onclick", "show(1)");
+								front.innerHTML = "&#10095;";
+								gallery.appendChild(front);
 							} else if (code == data[i].getAttribute("no")) {
 								// on récupère les données dans les attributs et les éléments XML
 								var title, date, media, graph, metadata, length, climax, viewpoint, duration, paragraph, gallery, image;
@@ -296,9 +312,9 @@
 		</script>
 	</head>
 	<body onload="page()">
-		<aside><a id="en">en</a>&nbsp;&mdash;&nbsp;<a id="fr">fr</a></aside>
+		<header><a id="en">en</a>&nbsp;&mdash;&nbsp;<a id="fr">fr</a></header>
 		<article id="article"><!-- Document Object Model Contents --></article>
-		<nav><a href="https://ofstoriesandtrees.github.io/index/main.html">index</a></nav>
+		<footer><a href="https://ofstoriesandtrees.github.io/index/main.html">index</a></footer>
 		<script>
 			var index = 1;
 			slide(index);
