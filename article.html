@@ -10,6 +10,14 @@
 				margin: 0;
 				background-color: rgb(0, 0, 0);
 			}
+			a:not(.switch) {
+				color: rgb(255, 255, 255);
+				text-decoration: none;
+			}
+			a:hover:not(.switch) {
+				cursor: pointer;
+				border-bottom: 1px solid;
+			}
 			/* stylisation de l'alternative */
 			aside {
 				width: 50%;
@@ -18,14 +26,6 @@
 				text-align: center;
 				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
-			}
-			aside a {
-				color: rgb(255, 255, 255);
-				text-decoration: none;
-			}
-			aside a:hover {
-				cursor: pointer;
-				border-bottom: 1px solid;
 			}
 			/* stylisation de l'article */
 			article {
@@ -249,11 +249,13 @@
 								gallery.appendChild(image);
 								back = document.createElement("a");
 								back.setAttribute("id", "back");
+								back.setAttribute("class", "switch");
 								back.setAttribute("onclick", "show(-1)");
 								back.innerHTML = "&#10094;";
 								gallery.appendChild(back);
 								front = document.createElement("a");
 								front.setAttribute("id", "front");
+								front.setAttribute("class", "switch");
 								front.setAttribute("onclick", "show(1)");
 								front.innerHTML = "&#10095;";
 								gallery.appendChild(front);
