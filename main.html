@@ -179,7 +179,7 @@
 							//title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 								var str = data[i].children[0].nodeValue;
 								var a = str.charAt(0);
-								title.innerHTML = "<span>"+str+"</span>";
+								title.innerHTML = "<span>"+str.textContent+"</span>";
 							section.appendChild(title);
 							y.appendChild(title);
 							date = document.createElement("h3");
