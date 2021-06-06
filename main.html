@@ -176,7 +176,10 @@
 							y.setAttribute("value", data[i].getAttribute("no"));
 							x.appendChild(y);
 							title = document.createElement("h2");
-							title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
+							//title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
+								var str = document.createTextNode(getNodeValue(data[i], "title")));
+								var a = str.charAt(0);
+								title.innerHTML = a+"<span style='color:red;'>"+str+"</span>";
 							section.appendChild(title);
 							y.appendChild(title);
 							date = document.createElement("h3");
