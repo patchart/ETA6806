@@ -180,7 +180,8 @@
 							var test = data[i].children[0];
 							var alpha = test.textContent;
 							var beta = alpha.charAt(0);
-								title.innerHTML = beta+"<span>"+test.textContent+"</span>";
+							var teta = alpha.substr(1);
+								title.innerHTML = beta+"<span>"+teta+"</span>";
 							section.appendChild(title);
 							y.appendChild(title);
 							date = document.createElement("h3");
