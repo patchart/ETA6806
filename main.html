@@ -113,6 +113,38 @@
 			section p:after {
 				content: "...";
 			}
+			section #gallery {
+			  max-width: 1000px;
+			  position: relative;
+			  margin: auto;
+			}
+			section .photos:not(:first-child) {
+				display: none;
+			}
+			section #back, article #front {
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				padding: 16px;
+			 	margin-top: -22px;
+				color: rgb(255, 255, 255);
+			 	font-weight: bold;
+			 	font-size: 18px;
+			 	transition: 0.6s ease;
+			 	border-radius: 0 3px 3px 0;
+			 	user-select: none;
+			}
+			section #back {
+				left: 0;
+			}
+			section #front {
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
+			section #back:hover, article #front:hover {
+  				background-color: rgba(0, 0, 0, 0.8);
+			}
 			/* stylisation du pied de page */
 			footer {
 				padding: 15px 35px;
@@ -166,12 +198,32 @@
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
-							var section, media, form, button, title, date, intro;
+							var section, gallery, image, form, button, title, date, intro;
 							section = document.createElement("section");
 							main.appendChild(section);
-							media = document.createElement("img");
-							media.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/media.jpg");
-							section.appendChild(media);
+								var back, front;
+								gallery = document.createElement("div");
+								gallery.setAttribute("id", "gallery");
+								article.appendChild(gallery);
+								image = document.createElement("div");
+								var y = data[i].children[4].children;
+								var k;
+								for (k = 0; k < y.length; k++) {
+  									image.innerHTML += "<img class='photos' src='multimedia/"+data[i].getAttribute("no")+"/image-"+y[k].getAttribute("status")+".jpg'/>";
+								}
+								gallery.appendChild(image);
+								back = document.createElement("a");
+								back.setAttribute("id", "back");
+								back.setAttribute("class", "switch");
+								back.setAttribute("onclick", "show(-1)");
+								back.innerHTML = "&#10094;";
+								gallery.appendChild(back);
+								front = document.createElement("a");
+								front.setAttribute("id", "front");
+								front.setAttribute("class", "switch");
+								front.setAttribute("onclick", "show(1)");
+								front.innerHTML = "&#10095;";
+								gallery.appendChild(front);
 							form = document.createElement("form");
 							form.setAttribute("action", "article.html");
 							section.appendChild(form);
@@ -180,7 +232,6 @@
 							button.setAttribute("value", data[i].getAttribute("no"));
 							form.appendChild(button);
 							title = document.createElement("h2");
-							//title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
 							var string = data[i].children[0];
 							var x = string.textContent;
 							var y = x.charAt(0);
