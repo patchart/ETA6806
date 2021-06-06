@@ -177,9 +177,8 @@
 							x.appendChild(y);
 							title = document.createElement("h2");
 							//title.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
-							var test = document.createTextNode(getNodeValue(data[i], "title")));
-								var a = test.charAt(0);
-								title.innerHTML = "<span>"+test+"</span>";
+							var test = data[i].children[0];
+								title.innerHTML = "<span>"+test.textContent+"</span>";
 							section.appendChild(title);
 							y.appendChild(title);
 							date = document.createElement("h3");
