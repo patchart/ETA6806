@@ -90,16 +90,14 @@
 				margin: 0;
 				font: 200 25px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
-			}
-			section h2 span {
 				box-shadow: 0 -10px #205064 inset;
 			}
-			section h2 span:after {
+			section h2:after {
 				content: "\00a0\00a0";
 			}
-			section h2 span:hover {
+			section h2:hover {
 				cursor: pointer;
-				border-left-width: 50px;
+				border-bottom-width: 50px;
  				float:left;
  				transition:1s ease-out;
 			}
@@ -178,11 +176,9 @@
 							y.setAttribute("value", data[i].getAttribute("no"));
 							x.appendChild(y);
 							title = document.createElement("h2");
+							title.appendChild(document.createTexteNode(getNodeValue(data[i], "title")));
 							section.appendChild(title);
 							y.appendChild(title);
-							z = document.createElement("span");
-							z.appendChild(document.createTextNode(getNodeValue(data[i], "title")));
-							title.appendChild(z);
 							date = document.createElement("h3");
 							date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 							section.appendChild(date);
