@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <articles>
+    <article no="05062021">
+        <title rend="Mont Hereford">Mount Hereford</title>
+        <date rend="5 juin 2021">5th June 2021</date>
+        <metadata>
+            <length>12 km</length>
+            <elevation>450 m</elevation>
+            <climax>875 m</climax>
+            <viewpoint>360&#176;</viewpoint>
+            <duration rend="4h30">4.30</duration>
+        </metadata>
+        <text>
+            <paragraph>
+                Via le sentier Neil-Tillotson<intro/>.
+            </paragraph>
+            <traduction>
+                <translate>
+                    Via the Neil-Tillotson trail.
+                </translate>
+            </traduction>
+        </text>
+        <multimedia>
+            <image status="1"/>
+            <image status="2"/>
+            <image status="3"/>
+            <image status="4"/>
+            <image status="5"/>
+            <image status="6"/>
+            <image status="7"/>
+            <image status="8"/>
+            <image status="9"/>
+            <image status="10"/>
+            <image status="11"/>
+            <image status="12"/>
+            <image status="13"/>
+            <image status="14"/>
+            <image status="15"/>
+            <image status="16"/>
+            <image status="17"/>
+            <image status="18"/>
+            <image status="19"/>
+            <image status="20"/>            
+            <image status="21"/>
+        </multimedia>
+    </article>
     <article no="29052021">
         <title rend="Les monts Écho et Singer">Echo &#38; Singer mountains</title>
         <date rend="29 mai 2021">29th May 2021</date>
@@ -150,11 +194,11 @@
         </metadata>
         <text>
             <paragraph>
-                Via the Oaken Trail<intro/>.
+                Via the Oaken trail<intro/>.
             </paragraph>
             <traduction>
                 <translate>
-                    Via le sentiers des chênes.
+                    Via le sentier des chênes.
                 </translate>
             </traduction>
         </text>
@@ -251,7 +295,7 @@
         </metadata>
         <text>
             <paragraph>
-                Via the North Staircase Trail<intro/>.
+                Via the North Staircase trail<intro/>.
             </paragraph>
             <traduction>
                 <translate>
