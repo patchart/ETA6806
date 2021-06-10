@@ -279,46 +279,21 @@
 		  		slide(index += n);
 			}
 			function slide(n) {
-				// on envoie la requête XML
-				var xhr = new XMLHttpRequest();
-				xhr.onload = function() {
-					if (xhr.status === 200) {
-						var xmlDoc = xhr.responseXML;
-						var data = xmlDoc.getElementsByTagName("article");
-						var main = document.getElementById("main");
-						main.innerHTML = "";
-						// on calcul le nombre de données
-						for (var i = 0; i < data.length; i++) {	
-				
-			
+				for (var i=0; i<20; i++) {
 				var j;
-					var value = "photos-"+i;
-					var photo = document.getElementsByClassName(value);
-					if (n > photo.length) {
-						index = 1;
-					}    
-					if (n < 1) {
-						index = photo.length
-					}
-					for (j = 0; j < photo.length; j++) {
-						photo[j].style.display = "none";  
-					}
-					photo[index-1].style.display = "block";  
-				
-							
-					//		
-							
-							
-						}
-						function getNodeValue(obj, tag) {
-							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
-						}
-					}
-				};
-				// on charge le contenu du document
-				xhr.open("GET", "document/articles.xml", true);
-				xhr.send(null);
-			}
+				var value = "photos-"+i;
+				var photo = document.getElementsByClassName(value);
+				if (n > photo.length) {
+					index = 1;
+				}    
+				if (n < 1) {
+					index = photo.length
+				}
+				for (j = 0; j < photo.length; j++) {
+					photo[j].style.display = "none";  
+				}
+				photo[index-1].style.display = "block";  
+			}}
 		</script>
 	</body>
 </html>
