@@ -218,7 +218,7 @@
 								var y = data[i].children[2].getAttribute("status");
 								var k;
 								for (k = 1; k < y; k++) {
-  									image.innerHTML += "<img class='photos' src='multimedia/"+data[i].getAttribute("no")+"/image-"+k+".jpg'/>";
+  									image.innerHTML += "<img class='"+data[i].getAttribute("no")+"' src='multimedia/"+data[i].getAttribute("no")+"/image-"+k+".jpg'/>";
 								}
 								//
 								gallery.appendChild(image);
