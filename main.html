@@ -79,7 +79,7 @@
 			section .photos:not(:first-child) {
 				display: none;
 			}
-			section #back, article #front {
+			section #back, section #front {
 				cursor: pointer;
 				position: absolute;
 				top: 50%;
@@ -100,7 +100,7 @@
 				right: 0;
 				border-radius: 3px 0 0 3px;
 			}
-			section #back:hover, article #front:hover {
+			section #back:hover, section #front:hover {
   				background-color: rgba(0, 0, 0, 0.8);
 			}
 			section img {
@@ -219,7 +219,7 @@
 							var w = data[i].children[4].children;
 							var k;
 							for (k = 0; k < w.length; k++) {
-  								image.innerHTML += "<img class='photos' src='multimedia/"+i+"/image-"+w[k].getAttribute("status")+".jpg'/>";
+  								image.innerHTML += "<img class='photos-"+i+"' src='multimedia/"+i+"/image-"+w[k].getAttribute("status")+".jpg'/>";
 							}
 							gallery.appendChild(image);
 							back = document.createElement("a");
@@ -280,17 +280,20 @@
 			}
 			function slide(n) {
 				var i;
-		  		var photo = document.getElementsByClassName("photos");
-		 		if (n > photo.length) {
-					index = 1;
-				}    
-		  		if (n < 1) {
-					index = photo.length
+				for (var j = 0; j < 10; j++) {
+					var value = "photos-"+j;
+					var photo = document.getElementsByClassName(value);
+					if (n > photo.length) {
+						index = 1;
+					}    
+					if (n < 1) {
+						index = photo.length
+					}
+					for (i = 0; i < photo.length; i++) {
+						photo[i].style.display = "none";  
+					}
+					photo[index-1].style.display = "block";  
 				}
-		  		for (i = 0; i < photo.length; i++) {
-		      			photo[i].style.display = "none";  
-		  		}
-		  		photo[index-1].style.display = "block";  
 			}		
 		</script>
 	</body>
