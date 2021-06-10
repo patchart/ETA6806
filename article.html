@@ -225,11 +225,13 @@
 								gallery.setAttribute("id", "gallery");
 								article.appendChild(gallery);
 								image = document.createElement("div");
-								var y = data[i].children[4].children;
+								//
+								var y = data[i].children[2].getAttribute("rend");
 								var k;
-								for (k = 0; k < y.length; k++) {
-  									image.innerHTML += "<img class='photos' src='multimedia/"+code+"/image-"+y[k].getAttribute("status")+".jpg'/>";
+								for (k = 0; k < y; k++) {
+  									image.innerHTML += "<img class='photos' src='multimedia/"+code+"/image-"+k+".jpg'/>";
 								}
+								//
 								gallery.appendChild(image);
 								back = document.createElement("a");
 								back.setAttribute("id", "back");
