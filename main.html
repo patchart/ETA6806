@@ -71,6 +71,38 @@
 					max-width: 275px;
 				}
 			}
+			section #gallery {
+			  max-width: 1000px;
+			  position: relative;
+			  margin: auto;
+			}
+			section .photos:not(:first-child) {
+				display: none;
+			}
+			section #back, article #front {
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				padding: 16px;
+			 	margin-top: -22px;
+				color: rgb(255, 255, 255);
+			 	font-weight: bold;
+			 	font-size: 18px;
+			 	transition: 0.6s ease;
+			 	border-radius: 0 3px 3px 0;
+			 	user-select: none;
+			}
+			section #back {
+				left: 0;
+			}
+			section #front {
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
+			section #back:hover, article #front:hover {
+  				background-color: rgba(0, 0, 0, 0.8);
+			}
 			section img {
 				width: 400px;
 			}
@@ -172,12 +204,37 @@
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
-							var section, media, form, button, title, date, intro;
+							var section, media, gallery, image, form, button, title, date, intro;
 							section = document.createElement("section");
 							main.appendChild(section);
-							media = document.createElement("img");
-							media.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/media.jpg");
-							section.appendChild(media);
+							//***
+							//media = document.createElement("img");
+							//media.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/media.jpg");
+							//section.appendChild(media);
+							var back, front;
+							gallery = document.createElement("div");
+							gallery.setAttribute("id", "gallery");
+							section.appendChild(gallery);
+							image = document.createElement("div");
+							var w = data[i].children[4].children;
+							var k;
+							for (k = 0; k < w.length; k++) {
+  								image.innerHTML += "<img class='photos' src='multimedia/"+i+"/image-"+w[k].getAttribute("status")+".jpg'/>";
+							}
+							gallery.appendChild(image);
+							back = document.createElement("a");
+							back.setAttribute("id", "back");
+							back.setAttribute("class", "switch");
+							back.setAttribute("onclick", "show(-1)");
+							back.innerHTML = "&#10094;";
+							gallery.appendChild(back);
+							front = document.createElement("a");
+							front.setAttribute("id", "front");
+							front.setAttribute("class", "switch");
+							front.setAttribute("onclick", "show(1)");
+							front.innerHTML = "&#10095;";
+							gallery.appendChild(front);
+							//***
 							form = document.createElement("form");
 							form.setAttribute("action", "article.html");
 							section.appendChild(form);
@@ -215,5 +272,26 @@
 		<header><div><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
 		<main id="main"><!-- Document Object Model Contents --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
+		<script>
+			var index = 1;
+			slide(index);
+			function show(n) {
+		  		slide(index += n);
+			}
+			function slide(n) {
+				var i;
+		  		var photo = document.getElementsByClassName("photos");
+		 		if (n > photo.length) {
+					index = 1;
+				}    
+		  		if (n < 1) {
+					index = photo.length
+				}
+		  		for (i = 0; i < photo.length; i++) {
+		      			photo[i].style.display = "none";  
+		  		}
+		  		photo[index-1].style.display = "block";  
+			}		
+		</script>
 	</body>
 </html>
