@@ -220,9 +220,32 @@
 								date = document.createElement("h2");
 								date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
 								article.appendChild(date);
-								media = document.createElement("img");
-								media.setAttribute("src", "multimedia/"+code+"/media.jpg");
-								article.appendChild(media);
+								var back, front;
+								gallery = document.createElement("div");
+								gallery.setAttribute("id", "gallery");
+								article.appendChild(gallery);
+								image = document.createElement("div");
+								var y = data[i].children[4].children;
+								var k;
+								for (k = 0; k < y.length; k++) {
+  									image.innerHTML += "<img class='photos' src='multimedia/"+code+"/image-"+y[k].getAttribute("status")+".jpg'/>";
+								}
+								gallery.appendChild(image);
+								back = document.createElement("a");
+								back.setAttribute("id", "back");
+								back.setAttribute("class", "switch");
+								back.setAttribute("onclick", "show(-1)");
+								back.innerHTML = "&#10094;";
+								gallery.appendChild(back);
+								front = document.createElement("a");
+								front.setAttribute("id", "front");
+								front.setAttribute("class", "switch");
+								front.setAttribute("onclick", "show(1)");
+								front.innerHTML = "&#10095;";
+								gallery.appendChild(front);
+								//media = document.createElement("img");
+								//media.setAttribute("src", "multimedia/"+code+"/media.jpg");
+								//article.appendChild(media);
 								graph = document.createElement("img");
 								graph.setAttribute("src", "multimedia/"+code+"/graph.jpg");
 								article.appendChild(graph);
@@ -255,29 +278,6 @@
   									paragraph.innerHTML += "<p>"+x[j].textContent+"</p>";
 								}
 								article.appendChild(paragraph);
-								var back, front;
-								gallery = document.createElement("div");
-								gallery.setAttribute("id", "gallery");
-								article.appendChild(gallery);
-								image = document.createElement("div");
-								var y = data[i].children[4].children;
-								var k;
-								for (k = 0; k < y.length; k++) {
-  									image.innerHTML += "<img class='photos' src='multimedia/"+code+"/image-"+y[k].getAttribute("status")+".jpg'/>";
-								}
-								gallery.appendChild(image);
-								back = document.createElement("a");
-								back.setAttribute("id", "back");
-								back.setAttribute("class", "switch");
-								back.setAttribute("onclick", "show(-1)");
-								back.innerHTML = "&#10094;";
-								gallery.appendChild(back);
-								front = document.createElement("a");
-								front.setAttribute("id", "front");
-								front.setAttribute("class", "switch");
-								front.setAttribute("onclick", "show(1)");
-								front.innerHTML = "&#10095;";
-								gallery.appendChild(front);
 							}
 						}
 						function getNodeValue(obj, tag) {
