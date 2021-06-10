@@ -228,7 +228,7 @@
 								//
 								var y = data[i].children[2].getAttribute("status");
 								var k;
-								for (k = 0; k < y; k++) {
+								for (k = 1; k < y; k++) {
   									image.innerHTML += "<img class='photos' src='multimedia/"+code+"/image-"+k+".jpg'/>";
 								}
 								//
@@ -274,7 +274,7 @@
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
 								paragraph = document.createElement("div");
-								var x = data[i].children[3].children;
+								var x = data[i].children[4].children;
 								var j;
 								for (j = 0; j < x.length-1; j++) {
   									paragraph.innerHTML += "<p>"+x[j].textContent+"</p>";
