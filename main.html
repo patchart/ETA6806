@@ -279,9 +279,20 @@
 		  		slide(index += n);
 			}
 			function slide(n) {
-				var i;
-				for (var j = 0; j < 10; j++) {
-					var value = "photos-"+j;
+				// on envoie la requête XML
+				var xhr = new XMLHttpRequest();
+				xhr.onload = function() {
+					if (xhr.status === 200) {
+						var xmlDoc = xhr.responseXML;
+						var data = xmlDoc.getElementsByTagName("article");
+						var main = document.getElementById("main");
+						main.innerHTML = "";
+						// on calcul le nombre de données
+						for (var i = 0; i < data.length; i++) {	
+				
+			
+				var j;
+					var value = "photos-"+i;
 					var photo = document.getElementsByClassName(value);
 					if (n > photo.length) {
 						index = 1;
@@ -289,12 +300,28 @@
 					if (n < 1) {
 						index = photo.length
 					}
-					for (i = 0; i < photo.length; i++) {
-						photo[i].style.display = "none";  
+					for (j = 0; j < photo.length; j++) {
+						photo[j].style.display = "none";  
 					}
 					photo[index-1].style.display = "block";  
-				}
-			}		
+				
+							
+					//		
+							
+							
+						}
+						function getNodeValue(obj, tag) {
+							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
+						}
+					}
+				};
+				// on charge le contenu du document
+				xhr.open("GET", "document/articles.xml", true);
+				xhr.send(null);
+			}
+							
+			//				
+			}
 		</script>
 	</body>
 </html>
