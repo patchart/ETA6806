@@ -277,48 +277,23 @@
 		<script>
 			var index = 1;
 			slide(index);
+			// on réceptionne les valeurs
 			function show(n, m) {
 		  		slide(index += n, m);
-				var aside;
-				var main = document.getElementById("main");
-				aside = document.createElement("p");
-				aside.appendChild(document.createTextNode(m));
-				main.appendChild(aside);
 			}
+			// on applique les valeurs
 			function slide(n, m) {
-				//***
-				var xhr = new XMLHttpRequest();
-				xhr.onload = function() {
-					if (xhr.status === 200) {
-						var xmlDoc = xhr.responseXML;
-						var data = xmlDoc.getElementsByTagName("article");
-						// on calcul le nombre de données
-						for (var j = 0; j < data.length; j++) {
-				//***
-				var i;
-		  		var photo = document.getElementsByClassName(m);
-		 		if (n > photo.length) {
+		  		var media = document.getElementsByClassName(m);	
+				if (n > media.length) {
 					index = 1;
 				}    
 		  		if (n < 1) {
-					index = photo.length
+					index = media.length
 				}
-		  		for (i = 0; i < photo.length; i++) {
-		      			photo[i].style.display = "none";  
+		  		for (var i = 0; i < media.length; i++) {
+		      			media[i].style.display = "none";  
 		  		}
-		  		photo[index-1].style.display = "block";  
-				//***
-
-					}
-						function getNodeValue(obj, tag) {
-							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
-						}
-					}
-				};
-				// on charge le contenu du document
-				xhr.open("GET", "edition/articles.xml", true);
-				xhr.send(null);
-				//***
+		  		media[index-1].style.display = "block";  
 			}		
 		</script>
 	</body>
