@@ -288,9 +288,9 @@
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
 						// on calcul le nombre de données
-						for (var i = 0; i < data.length; i++) {
+						for (var j = 0; j < data.length; j++) {
 				//***
-				document.getElementById("main").innerHTML += "<p>"+data[i].getAttribute("no")+"</p>";
+				document.getElementById("main").innerHTML = "<p>"+data[j].getAttribute("no")+"</p>";
 				var i;
 		  		var photo = document.getElementsByClassName(data[i].getAttribute("no"));
 		 		if (n > photo.length) {
