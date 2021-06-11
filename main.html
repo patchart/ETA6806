@@ -272,7 +272,7 @@
 	</head>
 	<body onload="page()">
 		<header><div><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
-		<main id="main"><!-- Document Object Model Contents --></main>
+		<main id="main" onload="test()"><!-- Document Object Model Contents --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script>
 			var index = 1;
@@ -280,7 +280,7 @@
 			function show(n) {
 		  		slide(index += n);
 			}
-			function slide(n) {
+			function test() {
 				//***
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function() {
@@ -291,6 +291,7 @@
 						for (var j = 0; j < data.length; j++) {
 				//***
 				document.getElementById("main").innerHTML = "<p>"+data[j].getAttribute("no")+"</p>";
+			function slide(n) {
 				var i;
 		  		var photo = document.getElementsByClassName(data[j].getAttribute("no"));
 		 		if (n > photo.length) {
@@ -304,7 +305,8 @@
 		  		}
 		  		photo[index-1].style.display = "block";  
 				//***
-						}
+			}
+					}
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
 						}
