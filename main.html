@@ -231,7 +231,7 @@
 								front = document.createElement("a");
 								front.setAttribute("id", "front");
 								front.setAttribute("class", "switch");
-								front.setAttribute("onclick", "show(1)");
+								front.setAttribute("onclick", "show(1); test("+data[i].getAttribute("no")+")");
 								front.innerHTML = data[i].getAttribute("no");//"&#10095;"
 								gallery.appendChild(front);
 							//media = document.createElement("img");
@@ -277,10 +277,10 @@
 		<script>
 			var index = 1;
 			slide(index);
-			function show(n) {
+			function show(n,test) {
 		  		slide(index += n);
 			}
-			function slide(n) {
+			function slide(n,test) {
 				//***
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function() {
@@ -293,10 +293,10 @@
 				var aside;
 				var main = document.getElementById("main");
 				aside = document.createElement("p");
-				aside.appendChild(document.createTextNode(data[j].getAttribute("no")));
+				aside.appendChild(document.createTextNode(test));
 				main.appendChild(aside);
 				var i;
-		  		var photo = document.getElementsByClassName(data[j].getAttribute("no"));
+		  		var photo = document.getElementsByClassName(test);
 		 		if (n > photo.length) {
 					index = 1;
 				}    
