@@ -231,7 +231,7 @@
 								front = document.createElement("a");
 								front.setAttribute("id", "front");
 								front.setAttribute("class", "switch");
-								front.setAttribute("onclick", "show(1,"+data[i].getAttribute("no")+")");
+								front.setAttribute("onclick", "show(1, "+data[i].getAttribute("no")+")");
 								front.innerHTML = data[i].getAttribute("no");//"&#10095;"
 								gallery.appendChild(front);
 							//media = document.createElement("img");
@@ -277,10 +277,11 @@
 		<script>
 			var index = 1;
 			slide(index);
-			function show(n,m) {
+			function show(n, m) {
 		  		slide(index += n);
+				slide(m);
 			}
-			function slide(n,m) {
+			function slide(n, m) {
 				//***
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function() {
