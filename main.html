@@ -284,7 +284,8 @@
 			}
 			// on applique les valeurs
 			function slide(n, m) {
-		  		var media = document.getElementsByClassName("0"+m);	
+		  		var media = document.getElementsByClassName(m);	
+				document.getElementById("main").innerHTML = "<p>"+m+"</p>";
 				if (n > media.length) {
 					index = 1;
 				}    
