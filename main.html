@@ -275,6 +275,7 @@
 		<main id="main"><!-- Document Object Model Contents --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script>
+			// on paramètre les fonctions
 			var index = 1;
 			slide(index);
 			// on réceptionne les valeurs
@@ -283,7 +284,7 @@
 			}
 			// on applique les valeurs
 			function slide(n, m) {
-		  		var media = document.getElementsByClassName(m);	
+		  		var media = document.getElementsByClassName("0"+m);	
 				if (n > media.length) {
 					index = 1;
 				}    
