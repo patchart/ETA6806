@@ -279,9 +279,13 @@
 			slide(index);
 			function show(n, m) {
 		  		slide(index += n);
-				slide(m);
+				var aside;
+				var main = document.getElementById("main");
+				aside = document.createElement("p");
+				aside.appendChild(document.createTextNode(m));
+				main.appendChild(aside);
 			}
-			function slide(n, m) {
+			function slide(n) {
 				//***
 				var xhr = new XMLHttpRequest();
 				xhr.onload = function() {
@@ -291,11 +295,6 @@
 						// on calcul le nombre de données
 						for (var j = 0; j < data.length; j++) {
 				//***
-				var aside;
-				var main = document.getElementById("main");
-				aside = document.createElement("p");
-				aside.appendChild(document.createTextNode(m));
-				main.appendChild(aside);
 				var i;
 		  		var photo = document.getElementsByClassName(m);
 		 		if (n > photo.length) {
