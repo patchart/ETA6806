@@ -290,6 +290,7 @@
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
 				//***
+				document.getElementById("main").innerHTML = "<p>"+data[i].getAttribute("no")+"</p>";
 				var i;
 		  		var photo = document.getElementsByClassName(data[i].getAttribute("no"));
 		 		if (n > photo.length) {
