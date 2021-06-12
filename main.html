@@ -71,13 +71,18 @@
 					max-width: 275px;
 				}
 			}
-			article img {
-				width: 400px;
-			}
 			article #figure {
 			  max-width: 1000px;
 			  position: relative;
 			  margin: auto;
+			}
+			article img {
+				width: 400px;
+			}
+			@media screen and (max-width: 450px) {
+				article img {
+					width: 275px;
+				}
 			}
 			article img:not(:first-child) {
 				display: none;
@@ -106,17 +111,12 @@
 			article #back:hover, article #front:hover {
   				background-color: rgba(0, 0, 0, 0.8);
 			}
-			@media screen and (max-width: 450px) {
-				article img {
-					width: 275px;
-				}
-			}
 			article button {
 				border: none;
 				padding: 0;
 				font: 200 25px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
-				background-color: inherit;
+				background-color: none;
 			}
 			article h2 {
 				margin: 0;
