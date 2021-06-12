@@ -304,6 +304,15 @@
 		<main id="main"><!-- Document Object Model : articles, sections & figures --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Custom maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script type="text/javascript">
+			// on ajoute une fonction d'affichage
+			function show() {
+  				var x = document.getElementById("section");
+  				if (x.style.display === "none") {
+    				x.style.display = "block";
+  				} else {
+    					x.style.display = "none";
+ 				}
+			}
 			// on paramètre les fonctions médiatiques
 			var code = 1;
 			slide(code);
@@ -324,17 +333,6 @@
 		      			media[i].style.display = "none";  
 		  		}
 		  		media[code-1].style.display = "block";  
-			}
-		</script>
-		<script type="text/javascript">
-			// on ajoute une fonction d'affichage
-			function show() {
-  				var x = document.getElementById("section");
-  				if (x.style.display === "none") {
-    				x.style.display = "block";
-  				} else {
-    					x.style.display = "none";
- 				}
 			}
 		</script>
 	</body>
