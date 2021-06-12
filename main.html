@@ -314,25 +314,25 @@
  				}
 			}
 			// on prépare les fonctions médiatiques
-			var digit = 1;
-			slide(digit);
+			var code = 1;
+			slide(code);
 			// on analyse les valeurs
 			function value(n, m) {
-		  		slide(digit += n, m);
+		  		slide(code += n, m);
 			}
 			// on applique les valeurs
 			function slide(n, m) {
 		  		var media = document.getElementsByClassName(m);	
 				if (n > media.length) {
-					digit = 1;
+					code = 1;
 				}    
 		  		if (n < 1) {
-					digit = media.length
+					code = media.length
 				}
 		  		for (var i = 0; i < media.length; i++) {
 		      			media[i].style.display = "none";  
 		  		}
-		  		media[digit-1].style.display = "block";  
+		  		media[code-1].style.display = "block";  
 			}
 		</script>
 	</body>
