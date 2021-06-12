@@ -271,7 +271,7 @@
 							*/
 							var section;
 							section = document.createElement("section");
-							section.setAttribute("class", ""+data[i].getAttribute("no")+"");
+							section.setAttribute("class", "test");
 							section.setAttribute("style", "display:none;");
 							/*
 							*/
@@ -306,7 +306,7 @@
 		<script type="text/javascript">
 			// on fait une fonction d'affichage
 			function show(a) {
-  				var x = document.getElementsByClassName(a);
+  				var x = document.getElementsByClassName("test");
   				if (x.style.display === "none") {
     				x.style.display = "block";
   				} else {
