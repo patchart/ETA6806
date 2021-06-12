@@ -270,7 +270,6 @@
 							var section;
 							section = document.createElement.("section");
 							section.setAttribute("id", "section");
-							article.appendChild(section);
 							/*
 							*/
 							var text;
@@ -280,6 +279,7 @@
   								text.innerHTML += "<p>"+line[k].textContent+"</p>";
 							}
 							section.appendChild(text);
+							article.appendChild(section);
 							//var intro;
 							//intro = document.createElement("p");
 							//intro.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
