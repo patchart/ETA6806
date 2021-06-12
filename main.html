@@ -245,7 +245,7 @@
 							//article.appendChild(form);
 							var button;
 							button = document.createElement("button");
-							button.setAttribute("onclick", "show("+data[i].getAttribute("no")+")");
+							button.setAttribute("onclick", "show(_"+data[i].getAttribute("no")+"_)");
 							article.appendChild(button);
 							//button.setAttribute("name", "no");
 							//button.setAttribute("value", data[i].getAttribute("no"));
@@ -271,7 +271,7 @@
 							*/
 							var section;
 							section = document.createElement("section");
-							section.setAttribute("class", "s"+data[i].getAttribute("no"));
+							section.setAttribute("class", "_"+data[i].getAttribute("no")+"_");
 							section.setAttribute("style", "display:none;");
 							/*
 							*/
@@ -306,7 +306,7 @@
 		<script type="text/javascript">
 			// on fait une fonction d'affichage
 			function show(a) {
-  				var x = document.getElementsByClassName("s"+a);
+  				var x = document.getElementsByClassName(a);
   				if (x.style.display === "none") {
     				x.style.display = "block";
   				} else {
