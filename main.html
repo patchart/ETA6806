@@ -205,6 +205,7 @@
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
 							var string, word, line, j, k, x, y, z;
+							var code = "_"+data[i].getAttribute("no")+"_";
 							/*
 							*/
 							var article;
@@ -245,7 +246,7 @@
 							//article.appendChild(form);
 							var button;
 							button = document.createElement("button");
-							button.setAttribute("onclick", "show("+data[i].getAttribute("no")+")");
+							button.setAttribute("onclick", "show("+code+")");
 							article.appendChild(button);
 							//button.setAttribute("name", "no");
 							//button.setAttribute("value", data[i].getAttribute("no"));
@@ -271,7 +272,7 @@
 							*/
 							var section;
 							section = document.createElement("section");
-							section.setAttribute("id", data[i].getAttribute("no"));
+							section.setAttribute("id", code);
 							section.setAttribute("style", "display:none;");
 							/*
 							*/
