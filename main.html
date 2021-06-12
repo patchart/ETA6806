@@ -268,7 +268,7 @@
 							/*
 							*/
 							var section;
-							section = document.createElement.("section");
+							section = document.createElement("section");
 							section.setAttribute("id", "section");
 							/*
 							*/
@@ -321,6 +321,17 @@
 		      			media[i].style.display = "none";  
 		  		}
 		  		media[code-1].style.display = "block";  
+			}
+		</script>
+		<script type="text/javascript">
+			// on ajoute une fonction d'affichage
+			function show() {
+  				var x = document.getElementById("section");
+  				if (x.style.display === "none") {
+    				x.style.display = "block";
+  				} else {
+    					x.style.display = "none";
+ 				}
 			}
 		</script>
 	</body>
