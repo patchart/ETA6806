@@ -56,7 +56,7 @@
 				text-align: center;
 				background-color: rgb(0, 0, 0);
 			}
-			section {
+			article {
 				display: inline-block;
 				max-width: 400px;
 				margin: 50px 20px;
@@ -66,23 +66,23 @@
 				background-color: rgba(255, 255, 255, 0.05);
 			}
 			@media screen and (max-width: 450px) {
-				section {
+				article {
 					margin: 50px 0;
 					max-width: 275px;
 				}
 			}
-			section img {
+			article img {
 				width: 400px;
 			}
-			section #gallery {
+			article #figure {
 			  max-width: 1000px;
 			  position: relative;
 			  margin: auto;
 			}
-			section img:not(:first-child) {
+			article img:not(:first-child) {
 				display: none;
 			}
-			section #back, section #front {
+			article #back, article #front {
 				cursor: pointer;
 				position: absolute;
 				top: 50%;
@@ -96,59 +96,59 @@
 			 	border-radius: 0 3px 3px 0;
 			 	user-select: none;
 			}
-			section #back {
+			article #back {
 				left: 0;
 			}
-			section #front {
+			article #front {
 				right: 0;
 				border-radius: 3px 0 0 3px;
 			}
-			section #back:hover, section #front:hover {
+			article #back:hover, article #front:hover {
   				background-color: rgba(0, 0, 0, 0.8);
 			}
 			@media screen and (max-width: 450px) {
-				section img {
+				article img {
 					width: 275px;
 				}
 			}
-			section button {
+			article button {
 				border: none;
 				padding: 0;
 				font: 200 25px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 				background-color: inherit;
 			}
-			section h2 {
+			article h2 {
 				margin: 0;
 				font: 200 25px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);
 			}
 			@media screen and (max-width: 450px) {
-				section h2 {
+				article h2 {
 					margin-left: 0;
 					font-size: 22px;
 				}
 			}
-			section h2 span {
+			article h2 span {
 				background-image: linear-gradient(120deg, rgb(32, 80, 100) 0%, rgb(32, 80, 100) 100%);
   				background-repeat: no-repeat;
   				background-size: 92% 0.3em;
 				background-position: 0 88%;
   				transition: background-size 0.25s ease-in;
 			}
-			section h2 span:after {
+			article h2 span:after {
 				content: "\00a0\00a0\00a0\00a0";
 			}
-			section h2 span:hover {
+			article h2 span:hover {
 				cursor: pointer;
 				background-size: 100% 0.3em;
 			}
-			section h3, section p {
+			article h3, article p {
 				margin-bottom: 0;
 				font: 200 18px "Helvetica Neue", Helvetica,Arial, sans-serif;
 				color: rgb(255, 255, 255);	
 			}
-			section p:after {
+			article p:after {
 				content: "...";
 			}
 			/* stylisation du pied de page */
@@ -204,60 +204,72 @@
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
-							var section, media, form, button, title, date, intro;
-							section = document.createElement("section");
-							main.appendChild(section);
-							
-								var gallery, image;
-								var back, front;
-								gallery = document.createElement("div");
-								gallery.setAttribute("id", "gallery");
-								section.appendChild(gallery);
-								image = document.createElement("div");
-								//
-								var y = data[i].children[2].getAttribute("status");
-								var k;
-								for (k = 1; k < y; k++) {
-  									image.innerHTML += "<img class='"+data[i].getAttribute("no")+"' src='multimedia/"+data[i].getAttribute("no")+"/image-"+k+".jpg'/>";
-								}
-								//
-								gallery.appendChild(image);
-								back = document.createElement("a");
-								back.setAttribute("id", "back");
-								back.setAttribute("class", "switch");
-								back.setAttribute("onclick", "show(-1)");
-								back.innerHTML = data[i].getAttribute("no");//&#10094;
-								gallery.appendChild(back);
-								front = document.createElement("a");
-								front.setAttribute("id", "front");
-								front.setAttribute("class", "switch");
-								front.setAttribute("onclick", "show(1, "+data[i].getAttribute("no")+")");
-								front.innerHTML = data[i].getAttribute("no");//"&#10095;"
-								gallery.appendChild(front);
-							//media = document.createElement("img");
-							//media.setAttribute("src", "multimedia/"+data[i].getAttribute("no")+"/image-1.jpg");
-							//section.appendChild(media);
+							var string, word, j, x, y, z;
+							/*
+							*/
+							var article;
+							article = document.createElement("article");
+							main.appendChild(article);
+							/*
+							*/
+							var figure, image;
+							figure = document.createElement("div");
+							figure.setAttribute("id", "figure");
+							article.appendChild(figure);
+							image = document.createElement("div");
+							j = data[i].children[2].getAttribute("status");
+							for (z = 1; z < j; z++) {
+  								image.innerHTML += "<img class='"+data[i].getAttribute("no")+"' src='multimedia/"+data[i].getAttribute("no")+"/image-"+z+".jpg'/>";
+							}
+							figure.appendChild(image);
+							/*
+							*/							
+							var back, front;
+							back = document.createElement("a");
+							back.setAttribute("id", "back");
+							back.setAttribute("class", "switch");
+							back.setAttribute("onclick", "nav(-1)");
+							back.innerHTML = "&#10094;";
+							figure.appendChild(back);
+							front = document.createElement("a");
+							front.setAttribute("id", "front");
+							front.setAttribute("class", "switch");
+							front.setAttribute("onclick", "nav(1, "+data[i].getAttribute("no")+")");
+							front.innerHTML = "&#10095;";
+							figure.appendChild(front);
+							/*
+							*/
+							var form, button;
 							form = document.createElement("form");
 							form.setAttribute("action", "article.html");
-							section.appendChild(form);
+							article.appendChild(form);
 							button = document.createElement("button");
 							button.setAttribute("name", "no");
 							button.setAttribute("value", data[i].getAttribute("no"));
 							form.appendChild(button);
+							/*
+							*/
+							var title;
 							title = document.createElement("h2");
-							var string = data[i].children[0];
-							var x = string.textContent;
-							var y = x.charAt(0);
-							var z = x.substr(1);
-							title.innerHTML = y+"<span>"+z+"</span>";
-							section.appendChild(title);
+							string = data[i].children[0];
+							word = string.textContent;
+							x = word.charAt(0);
+							y = word.substr(1);
+							title.innerHTML = x+"<span>"+y+"</span>";
+							article.appendChild(title);
 							button.appendChild(title);
+							/*
+							*/
+							var date;
 							date = document.createElement("h3");
 							date.appendChild(document.createTextNode(getNodeValue(data[i], "date")));
-							section.appendChild(date);
+							article.appendChild(date);
+							/*
+							*/
+							var intro;
 							intro = document.createElement("p");
 							intro.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
-							section.appendChild(intro);
+							article.appendChild(intro);
 						}
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
@@ -272,29 +284,29 @@
 	</head>
 	<body onload="page()">
 		<header><div><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
-		<main id="main"><!-- Document Object Model Contents --></main>
+		<main id="main"><!-- Document Object Model : articles, sections & figures --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script>
 			// on paramètre les fonctions
-			var index = 1;
-			slide(index);
-			// on réceptionne les valeurs
-			function show(n, m) {
-		  		slide(index += n, m);
+			var code = 1;
+			slide(code);
+			// on analyse les valeurs
+			function nav(n, m) {
+		  		slide(code += n, m);
 			}
 			// on applique les valeurs
 			function slide(n, m) {
 		  		var media = document.getElementsByClassName(m);	
 				if (n > media.length) {
-					index = 1;
+					code = 1;
 				}    
 		  		if (n < 1) {
-					index = media.length
+					code = media.length
 				}
 		  		for (var i = 0; i < media.length; i++) {
 		      			media[i].style.display = "none";  
 		  		}
-		  		media[index-1].style.display = "block";  
+		  		media[code-1].style.display = "block";  
 			}		
 		</script>
 	</body>
