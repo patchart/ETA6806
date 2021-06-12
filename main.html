@@ -228,13 +228,13 @@
 							back = document.createElement("a");
 							back.setAttribute("id", "back");
 							back.setAttribute("class", "switch");
-							back.setAttribute("onclick", "nav(-1)");
+							back.setAttribute("onclick", "value(-1, "+data[i].getAttribute("no")+")");
 							back.innerHTML = "&#10094;";
 							figure.appendChild(back);
 							front = document.createElement("a");
 							front.setAttribute("id", "front");
 							front.setAttribute("class", "switch");
-							front.setAttribute("onclick", "nav(1, "+data[i].getAttribute("no")+")");
+							front.setAttribute("onclick", "value(1, "+data[i].getAttribute("no")+")");
 							front.innerHTML = "&#10095;";
 							figure.appendChild(front);
 							/*
@@ -291,7 +291,7 @@
 			var code = 1;
 			slide(code);
 			// on analyse les valeurs
-			function nav(n, m) {
+			function value(n, m) {
 		  		slide(code += n, m);
 			}
 			// on applique les valeurs
