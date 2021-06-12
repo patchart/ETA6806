@@ -239,14 +239,14 @@
 							figure.appendChild(front);
 							/*
 							*/
-							var form, button;
-							form = document.createElement("form");
-							form.setAttribute("action", "article.html");
-							article.appendChild(form);
-							button = document.createElement("button");
-							button.setAttribute("name", "no");
-							button.setAttribute("value", data[i].getAttribute("no"));
-							form.appendChild(button);
+							//var form, button;
+							//form = document.createElement("form");
+							//form.setAttribute("action", "article.html");
+							//article.appendChild(form);
+							//button = document.createElement("button");
+							//button.setAttribute("name", "no");
+							//button.setAttribute("value", data[i].getAttribute("no"));
+							//form.appendChild(button);
 							/*
 							*/
 							var title;
@@ -258,7 +258,7 @@
 							y = word.substr(1);
 							title.innerHTML = x+"<span>"+y+"</span>";
 							article.appendChild(title);
-							button.appendChild(title);
+							//button.appendChild(title);
 							/*
 							*/
 							var date;
@@ -301,7 +301,7 @@
 		<main id="main"><!-- Document Object Model : articles, sections & figures --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script type="text/javascript">
-			// on paramètre les fonctions
+			// on paramètre les fonctions médiatiques
 			var code = 1;
 			slide(code);
 			// on analyse les valeurs
