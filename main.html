@@ -243,7 +243,10 @@
 							//form = document.createElement("form");
 							//form.setAttribute("action", "article.html");
 							//article.appendChild(form);
-							//button = document.createElement("button");
+							var button;
+							button = document.createElement("button");
+							button.setAttribute("onclick", "show()");
+							article.appendChild(button);
 							//button.setAttribute("name", "no");
 							//button.setAttribute("value", data[i].getAttribute("no"));
 							//form.appendChild(button);
@@ -251,13 +254,12 @@
 							*/
 							var title;
 							title = document.createElement("h2");
-							title.setAttribute("onclick", "show()");
 							string = data[i].children[0];
 							word = string.textContent;
 							x = word.charAt(0);
 							y = word.substr(1);
 							title.innerHTML = x+"<span>"+y+"</span>";
-							article.appendChild(title);
+							button.appendChild(title);
 							//button.appendChild(title);
 							/*
 							*/
