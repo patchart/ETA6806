@@ -255,13 +255,6 @@
 							article.appendChild(date);
 							/*
 							*/
-							var text;
-							text = document.createElement("div");
-							line = data[i].children[4].children;
-							for (k = 0; k < line.length-1; k++) {
-  								text.innerHTML += "<p>"+line[k].textContent+"</p>";
-							}
-							article.appendChild(text);
 								var metadata, length, elevation, climax, viewpoint, duration;
 								metadata = document.createElement("ul");
 								article.appendChild(metadata);
@@ -285,6 +278,13 @@
 								duration.innerHTML = "Duration: ";
 								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
 								metadata.appendChild(duration);
+							var text;
+							text = document.createElement("div");
+							line = data[i].children[4].children;
+							for (k = 0; k < line.length-1; k++) {
+  								text.innerHTML += "<p>"+line[k].textContent+"</p>";
+							}
+							article.appendChild(text);
 						}
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
