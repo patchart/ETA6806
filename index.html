@@ -94,7 +94,7 @@
 							var text;
 							text = document.createElement("div");
 							line = data[i].children[4].children;
-							for (k = 0; k < line.length-1; k++) {
+							for (k = 0; k < line.length; k++) {
   								text.innerHTML += "<p>"+line[k].textContent+"</p>";
 							}
 							article.appendChild(text);
