@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 		<link rel="icon" href="multimedia/style/icon.jpg"/>
 		<style>
 			/* stylisation d'ensemble */
@@ -20,6 +21,34 @@
 			}
 			button, a {
 				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			}
+			.material-icons {
+  				font-family: "Material Icons";
+  				font-weight: normal;
+  				font-style: normal;
+  				font-size: 18px;
+  				display: inline-block;
+  				line-height: 1;
+  				text-transform: none;
+  				letter-spacing: normal;
+  				word-wrap: normal;
+  				white-space: nowrap;
+  				direction: ltr;
+				-webkit-font-smoothing: antialiased;
+  				-moz-osx-font-smoothing: grayscale;
+  				text-rendering: optimizeLegibility;
+  				font-feature-settings: 'liga';
+			}
+			@font-face {
+  				font-family: "Material Icons";
+  				font-style: normal;
+ 				font-weight: 400;
+  				src: url(https://example.com/MaterialIcons-Regular.eot);
+  					src: local('Material Icons'),
+    					local('MaterialIcons-Regular'),
+    					url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    					url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    					url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 			}
 			/* stylisation de l'entête */
 			header {
@@ -267,7 +296,7 @@
 								elevation.appendChild(document.createTextNode(getNodeValue(data[i], "elevation")));
 								metadata.appendChild(elevation);
 								climax = document.createElement("li");
-								climax.innerHTML = "<img src='multimedia/style/mountain.svg' style='color:white;'/> Climax: ";
+								climax.innerHTML = "<span class='material-icons'>landscape</span> Climax: ";
 								climax.appendChild(document.createTextNode(getNodeValue(data[i], "climax")));
 								metadata.appendChild(climax);
 								viewpoint = document.createElement("li");
