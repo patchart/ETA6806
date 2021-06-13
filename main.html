@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link rel="stylesheet" href="multimedia/0/styles.css">
+		<link rel="stylesheet" href="multimedia/style/design.css">
 		<link rel="icon" href="multimedia/style/icon.jpg"/>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 		<script type="text/javascript">
@@ -13,8 +13,8 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var main = document.getElementById("main");
-						main.innerHTML = "";
+						var publish = document.getElementById("publish");
+						publish.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
 							var string, word, line, j, k, x, y, z;
@@ -22,7 +22,7 @@
 							*/
 							var article;
 							article = document.createElement("article");
-							main.appendChild(article);
+							publish.appendChild(article);
 							/*
 							*/
 							var figure, image;
@@ -114,7 +114,7 @@
 	</head>
 	<body onload="page()">
 		<header><div><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
-		<main id="main"><!-- Document Object Model : article, section & figure --></main>
+		<main id="publish"><!-- Document Object Model --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Custom maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script type="text/javascript">
 			// on prépare les fonctions médiatiques
