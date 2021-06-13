@@ -11,8 +11,8 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var publish = document.getElementById("publish");
-						publish.innerHTML = "";
+						var main = document.getElementById("publish");
+						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
 							var string, word, line, j, k, x, y, z;
@@ -20,7 +20,7 @@
 							*/
 							var article;
 							article = document.createElement("article");
-							publish.appendChild(article);
+							main.appendChild(article);
 							/*
 							*/
 							var figure, image;
@@ -105,7 +105,7 @@
 					}
 				};
 				// on charge le contenu du document
-				xhr.open("GET", "edition/articles.xml", true);
+				xhr.open("GET", "editing.xml", true);
 				xhr.send(null);
 			}
 		</script>
