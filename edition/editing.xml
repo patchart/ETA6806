@@ -3,7 +3,7 @@
     <article no="8">
         <title>Mount Hereford</title>
         <date>5th June 2021</date>
-        <multimedia load="22"/>
+        <media load="22"/>
         <metadata>
             <length>12 km</length>
             <elevation>450 m</elevation>
@@ -20,7 +20,7 @@
     <article no="7">
         <title>Echo &#38; Singer mountains</title>
         <date>29th May 2021</date>
-        <multimedia load="21"/>
+        <media load="21"/>
         <metadata>
             <length>20,13 km</length>
             <elevation>1 074 m</elevation>
@@ -30,14 +30,14 @@
         </metadata>
         <text>
             <paragraph>
-                Via the Sentiers de l'Estrie<intro/>.
+                Via the Sentiers de l'Estrie.
             </paragraph>
         </text>
     </article>
     <article no="6">
         <title>Border Trails</title>
         <date>22th May 2021</date>
-        <multimedia load="8"/>
+        <media load="8"/>
         <metadata>
             <length>23,44 km</length>
             <elevation>695 m</elevation>
@@ -47,14 +47,14 @@
         </metadata>
         <text>
             <paragraph>
-                Via le Maine<intro/>.
+                Via le Maine.
             </paragraph>
         </text>
     </article>
     <article no="5">
         <title>Stoke Mountains</title>
         <date>8th May 2021</date>
-        <multimedia load="9"/>
+        <media load="9"/>
         <metadata>
             <length>18,97 km</length>
             <elevation>890 m</elevation>
@@ -64,7 +64,7 @@
         </metadata>
         <text>
             <paragraph>
-                I wanted this <i>day hike</i> to complete crossing the Stoke Mountains, 
+                I wanted this day hike to complete crossing the Stoke Mountains, 
                 and the weekend of May 8 was fine for me; the thaw period ends earlier than elsewhere 
                 in this region. In fact, the Stoke Mountains form a mountain range that stands out 
                 from the great Eastern Townships trail. The geographical location means that the place 
@@ -88,7 +88,7 @@
     <article no="4">
         <title>Mount Orford</title>
         <date>2th May 2021</date>
-        <multimedia load="9"/>
+        <media load="9"/>
         <metadata>
             <length>10,12 km</length>
             <elevation>668 m</elevation>
@@ -98,14 +98,14 @@
         </metadata>
         <text>
             <paragraph>
-                Via the Oaken trail<intro/>.
+                Via the Oaken trail.
             </paragraph>
         </text>
     </article>
     <article no="3">
         <title>Mount Foster</title>
         <date>24th April 2021</date>
-        <multimedia load="11"/>
+        <media load="11"/>
         <metadata>
             <length>13,96 km</length>
             <elevation>544 m</elevation>
@@ -115,14 +115,14 @@
         </metadata>
         <text>
             <paragraph>
-                Via the trails of Missisquoi North<intro/>.
+                Via the trails of Missisquoi North.
             </paragraph>
         </text>
     </article>
     <article no="2">
         <title>Mount Orford</title>
         <date>17th April 2021</date>
-        <multimedia load="15"/>
+        <media load="15"/>
         <metadata>
             <length>9,64 km</length>
             <elevation>640 m</elevation>
@@ -132,14 +132,14 @@
         </metadata>
         <text>
             <paragraph>
-                Via the North Staircase Trail<intro/>.
+                Via the North Staircase Trail.
             </paragraph>
         </text>
     </article>
     <article no="1">
         <title>Mount Glen</title>
         <date>10th April 2021</date>
-        <multimedia load="21"/>
+        <media load="21"/>
         <metadata>
             <length>16,88 km</length>
             <elevation>672 m</elevation>
@@ -149,7 +149,7 @@
         </metadata>
         <text>
             <paragraph>
-                Via the North Staircase trail<intro/>.
+                Via the North Staircase trail.
             </paragraph>
         </text>
     </article>
