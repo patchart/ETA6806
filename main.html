@@ -111,13 +111,13 @@
 			article #back:hover, article #front:hover {
   				background-color: rgba(0, 0, 0, 0.8);
 			}
-			article button {
+			/*article button {
 				border: none;
 				padding: 0;
 				font: 200 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
 				color: rgb(255, 255, 255);
 				background-color: rgba(13, 13, 13, 255);
-			}
+			}*/
 			article h2 {
 				margin: 0;
 				font: 200 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -239,17 +239,9 @@
 							figure.appendChild(front);
 							/*
 							*/
-							//var form, button;
-							//form = document.createElement("form");
-							//form.setAttribute("action", "article.html");
-							//article.appendChild(form);
-							var button;
-							button = document.createElement("button");
-							button.setAttribute("onclick", "show("+data[i].getAttribute("no")+")");
-							article.appendChild(button);
-							//button.setAttribute("name", "no");
-							//button.setAttribute("value", data[i].getAttribute("no"));
-							//form.appendChild(button);
+							//var button;
+							//button = document.createElement("button");
+							//article.appendChild(button);
 							/*
 							*/
 							var title;
@@ -259,8 +251,7 @@
 							x = word.charAt(0);
 							y = word.substr(1);
 							title.innerHTML = x+"<span>"+y+"</span>";
-							button.appendChild(title);
-							//button.appendChild(title);
+							article.appendChild(title);
 							/*
 							*/
 							var date;
@@ -269,24 +260,13 @@
 							article.appendChild(date);
 							/*
 							*/
-							var section;
-							section = document.createElement("section");
-							section.setAttribute("id", data[i].getAttribute("no"));
-							section.setAttribute("style", "display:none;");
-							/*
-							*/
 							var text;
 							text = document.createElement("div");
 							line = data[i].children[4].children;
 							for (k = 0; k < line.length-1; k++) {
   								text.innerHTML += "<p>"+line[k].textContent+"</p>";
 							}
-							section.appendChild(text);
-							article.appendChild(section);
-							//var intro;
-							//intro = document.createElement("p");
-							//intro.appendChild(document.createTextNode(getNodeValue(data[i], "paragraph")));
-							//article.appendChild(intro);
+							article.appendChild(text);
 						}
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
@@ -304,15 +284,6 @@
 		<main id="main"><!-- Document Object Model : article, section & figure --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Custom maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script type="text/javascript">
-			// on fait une fonction d'affichage
-			function show(a) {
-  				var x = document.getElementById(a);
-  				if (x.style.display === "none") {
-    				x.style.display = "block";
-  				} else {
-    					x.style.display = "none";
- 				}
-			}
 			// on prépare les fonctions médiatiques
 			var code = 1;
 			slide(code);
