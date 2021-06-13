@@ -103,7 +103,7 @@ article #front {
 	border-radius: 3px 0 0 3px;
 }
 article #back:hover, article #front:hover {
-		background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.8);
 }
 article h2 {
 	margin: 0;
@@ -118,10 +118,10 @@ article h2 {
 }
 article h2 span {
 	background-image: linear-gradient(120deg, rgb(64, 64, 64) 0%, rgb(64, 64, 64) 100%);
-		background-repeat: no-repeat;
-		background-size: 92% 0.3em;
+	background-repeat: no-repeat;
+	background-size: 92% 0.3em;
 	background-position: 0 88%;
-		transition: background-size 0.25s ease-in;
+	transition: background-size 0.25s ease-in;
 }
 article h2 span:after {
 	content: "\00a0\00a0\00a0\00a0";
