@@ -284,29 +284,31 @@
 							article.appendChild(date);
 							/*
 							*/
-								var metadata, length, elevation, climax, viewpoint, duration;
-								metadata = document.createElement("ul");
-								article.appendChild(metadata);
-								length = document.createElement("li");
-								length.innerHTML = "Length: ";
-								length.appendChild(document.createTextNode(getNodeValue(data[i], "length")));
-								metadata.appendChild(length);
-								elevation = document.createElement("li");
-								elevation.innerHTML = "Elevation gain: ";
-								elevation.appendChild(document.createTextNode(getNodeValue(data[i], "elevation")));
-								metadata.appendChild(elevation);
-								climax = document.createElement("li");
-								climax.innerHTML = "<span class='material-icons'>landscape</span> Climax: ";
-								climax.appendChild(document.createTextNode(getNodeValue(data[i], "climax")));
-								metadata.appendChild(climax);
-								viewpoint = document.createElement("li");
-								viewpoint.innerHTML = "Viewpoint: ";
-								viewpoint.appendChild(document.createTextNode(getNodeValue(data[i], "viewpoint")));
-								metadata.appendChild(viewpoint);
-								duration = document.createElement("li");
-								duration.innerHTML = "Duration: ";
-								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
-								metadata.appendChild(duration);
+							var metadata, length, elevation, climax, viewpoint, duration;
+							metadata = document.createElement("ul");
+							article.appendChild(metadata);
+							length = document.createElement("li");
+							length.innerHTML = "<span class='material-icons'>map</span> Length: ";
+							length.appendChild(document.createTextNode(getNodeValue(data[i], "length")));
+							metadata.appendChild(length);
+							elevation = document.createElement("li");
+							elevation.innerHTML = "<span class='material-icons'>moving</span> Elevation gain: ";
+							elevation.appendChild(document.createTextNode(getNodeValue(data[i], "elevation")));
+							metadata.appendChild(elevation);
+							climax = document.createElement("li");
+							climax.innerHTML = "<span class='material-icons'>map</span> Climax: ";
+							climax.appendChild(document.createTextNode(getNodeValue(data[i], "climax")));
+							metadata.appendChild(climax);
+							viewpoint = document.createElement("li");
+							viewpoint.innerHTML = "<span class='material-icons'>landscape</span> Viewpoint: ";
+							viewpoint.appendChild(document.createTextNode(getNodeValue(data[i], "viewpoint")));
+							metadata.appendChild(viewpoint);
+							duration = document.createElement("li");
+							duration.innerHTML = "<span class='material-icons'>timer</span> Duration: ";
+							duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
+							metadata.appendChild(duration);
+							/*
+							*/
 							var text;
 							text = document.createElement("div");
 							line = data[i].children[4].children;
