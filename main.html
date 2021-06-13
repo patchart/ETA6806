@@ -111,13 +111,6 @@
 			article #back:hover, article #front:hover {
   				background-color: rgba(0, 0, 0, 0.8);
 			}
-			/*article button {
-				border: none;
-				padding: 0;
-				font: 200 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
-				color: rgb(255, 255, 255);
-				background-color: rgba(13, 13, 13, 255);
-			}*/
 			article h2 {
 				margin: 0;
 				font: 200 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -239,11 +232,6 @@
 							figure.appendChild(front);
 							/*
 							*/
-							//var button;
-							//button = document.createElement("button");
-							//article.appendChild(button);
-							/*
-							*/
 							var title;
 							title = document.createElement("h2");
 							string = data[i].children[0];
@@ -267,6 +255,29 @@
   								text.innerHTML += "<p>"+line[k].textContent+"</p>";
 							}
 							article.appendChild(text);
+								var metadata, length, elevation, climax, viewpoint, duration;
+								metadata = document.createElement("ul");
+								article.appendChild(metadata);
+								length = document.createElement("li");
+								length.innerHTML = "Length: ";
+								length.appendChild(document.createTextNode(getNodeValue(data[i], "length")));
+								metadata.appendChild(length);
+								elevation = document.createElement("li");
+								elevation.innerHTML = "Elevation gain: ";
+								elevation.appendChild(document.createTextNode(getNodeValue(data[i], "elevation")));
+								metadata.appendChild(elevation);
+								climax = document.createElement("li");
+								climax.innerHTML = "Climax: ";
+								climax.appendChild(document.createTextNode(getNodeValue(data[i], "climax")));
+								metadata.appendChild(climax);
+								viewpoint = document.createElement("li");
+								viewpoint.innerHTML = "Viewpoint: ";
+								viewpoint.appendChild(document.createTextNode(getNodeValue(data[i], "viewpoint")));
+								metadata.appendChild(viewpoint);
+								duration = document.createElement("li");
+								duration.innerHTML = "Duration: ";
+								duration.appendChild(document.createTextNode(getNodeValue(data[i], "duration")));
+								metadata.appendChild(duration);
 						}
 						function getNodeValue(obj, tag) {
 							return obj.getElementsByTagName(tag)[0].firstChild.nodeValue;
