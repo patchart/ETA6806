@@ -66,9 +66,9 @@ article {
 	}
 }
 article #figure {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
 }
 article img {
 	width: 400px;
@@ -133,9 +133,6 @@ article h3, article p {
 	margin-bottom: 0;
 	font: 200 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: rgb(255, 255, 255);	
-}
-article p:after {
-	content: "...";
 }
 article ul {
 	list-style: none;
