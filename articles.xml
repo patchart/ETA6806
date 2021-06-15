@@ -3,7 +3,7 @@
     <article no="8">
         <title>Mount Hereford</title>
         <date>5th June 2021</date>
-        <media load="22"/>
+        <media file="22"/>
         <metadata>
             <length>12 km</length>
             <elevation>450 m</elevation>
@@ -20,7 +20,7 @@
     <article no="7">
         <title>Echo &#38; Singer mountains</title>
         <date>29th May 2021</date>
-        <media load="21"/>
+        <media file="21"/>
         <metadata>
             <length>20,13 km</length>
             <elevation>1 074 m</elevation>
@@ -37,7 +37,7 @@
     <article no="6">
         <title>Border Trails</title>
         <date>22th May 2021</date>
-        <media load="8"/>
+        <media file="8"/>
         <metadata>
             <length>23,44 km</length>
             <elevation>695 m</elevation>
@@ -54,7 +54,7 @@
     <article no="5">
         <title>Stoke Mountains</title>
         <date>8th May 2021</date>
-        <media load="9"/>
+        <media file="9"/>
         <metadata>
             <length>18,97 km</length>
             <elevation>890 m</elevation>
@@ -88,7 +88,7 @@
     <article no="4">
         <title>Mount Orford</title>
         <date>2th May 2021</date>
-        <media load="9"/>
+        <media file="9"/>
         <metadata>
             <length>10,12 km</length>
             <elevation>668 m</elevation>
@@ -105,7 +105,7 @@
     <article no="3">
         <title>Mount Foster</title>
         <date>24th April 2021</date>
-        <media load="11"/>
+        <media file="11"/>
         <metadata>
             <length>13,96 km</length>
             <elevation>544 m</elevation>
@@ -122,7 +122,7 @@
     <article no="2">
         <title>Mount Orford</title>
         <date>17th April 2021</date>
-        <media load="15"/>
+        <media file="15"/>
         <metadata>
             <length>9,64 km</length>
             <elevation>640 m</elevation>
@@ -139,7 +139,7 @@
     <article no="1">
         <title>Mount Glen</title>
         <date>10th April 2021</date>
-        <media load="21"/>
+        <media file="21"/>
         <metadata>
             <length>16,88 km</length>
             <elevation>672 m</elevation>
