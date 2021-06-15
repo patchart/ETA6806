@@ -4,6 +4,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 		<script type="text/javascript">
+			function intro () {
+				document.getElementById("init").style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+				document.getElementById("init").style.overflow = "scroll";
+			}
 			function page() {
 				// on envoie la requête XML
 				var xhr = new XMLHttpRequest();
@@ -11,7 +15,7 @@
 					if (xhr.status === 200) {
 						var xmlDoc = xhr.responseXML;
 						var data = xmlDoc.getElementsByTagName("article");
-						var main = document.getElementById("publish");
+						var main = document.getElementById("info");
 						main.innerHTML = "";
 						// on calcul le nombre de données
 						for (var i = 0; i < data.length; i++) {
@@ -108,12 +112,16 @@
 				xhr.open("GET", "articles.xml", true);
 				xhr.send(null);
 			}
+			function start() {
+				setTimeOut(intro, 8000);
+				page();
+			}
 		</script>
 		<link rel="stylesheet" href="multimedia/design/style.css"/>
 	</head>
 	<body onload="page()">
-		<header style="background-image:url('multimedia/design/theme.jpg');"><div><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
-		<main id="publish"><!-- Document Object Model --></main>
+		<header style="background-image:url('multimedia/design/theme.jpg');"><div id="init"><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
+		<main id="info"><!-- Document Object Model --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Custom maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script type="text/javascript">
 			// on prépare les valeurs
