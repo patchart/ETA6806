@@ -4,6 +4,9 @@ body, html {
 	margin: 0;
 	background-color: rgb(0, 0, 0);
 }
+body {
+	overflow: hidden;
+}
 a {
 	color: rgb(255, 255, 255);
 	text-decoration: none;
@@ -22,7 +25,6 @@ header {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	overflow: hidden;
 }
 header div {
 	height: 100%;
