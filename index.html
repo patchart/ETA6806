@@ -6,8 +6,8 @@
 		<script type="text/javascript">
 			function intro () {
 				document.getElementById("init").style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-				document.getElementById("title").style.zIndex= "auto";
-				document.getElementById("animation").style.display= "none";
+				document.getElementById("load").style.display= "none";
+				document.getElementById("info").style.zIndex= "auto";
 				document.getElementById("body").style.overflow = "scroll";
 			}
 			function page() {
@@ -34,7 +34,7 @@
 							figure.setAttribute("id", "figure");
 							article.appendChild(figure);
 							image = document.createElement("div");
-							j = data[i].children[2].getAttribute("files");
+							j = data[i].children[2].getAttribute("file");
 							for (z = 1; z < j; z++) {
   								image.innerHTML += "<img class='"+data[i].getAttribute("no")+"' src='multimedia/"+data[i].getAttribute("no")+"/image-"+z+".jpg'/>";
 							}
@@ -121,11 +121,11 @@
 		</script>
 		<link rel="stylesheet" href="multimedia/design/style.css"/>
 		<style type="text/css">
-			@keyframes dynamics {
+			@keyframes dynamic {
 				0% { transform: translate(-50%,-50%) rotate(0deg); }
 				100% { transform: translate(-50%,-50%) rotate(360deg); }
 			}
-			.dynamics div {
+			.dynamic div {
 				position: absolute;
 				width: 120px;
 			 	height: 120px;
@@ -133,12 +133,12 @@
 				border-top-color: transparent;
 				border-radius: 50%;
 			}
-			.dynamics div {
-				animation: dynamics 1s linear infinite;
+			.dynamic div {
+				animation: dynamic 1s linear infinite;
 				top: 100px;
 				left: 100px
 			}
-			.animation {
+			.load {
 				position: absolute;
 				left: 40%;
 				bottom: 50%;
@@ -148,7 +148,7 @@
 				overflow: hidden;
 				background: none;
 			}
-			.dynamics {
+			.dynamic {
 				width: 50%;
 				height: 50%;
 				position: relative;
@@ -156,12 +156,12 @@
 				backface-visibility: hidden;
 			 	transform-origin: 0 0;
 			}
-			.dynamics div { box-sizing: content-box; }
+			.dynamic div { box-sizing: content-box; }
 		</style>
 	</head>
 	<body id="body" onload="start()">
-		<header style="background-image:url('multimedia/design/theme.jpg');"><div id="init"><h1 id="title"><span>Of Stories<br/>and Trees</span></h1>
-			<div id="animation" class="animation"><div class="dynamics">
+		<header style="background-image:url('multimedia/design/theme.jpg');"><div id="init"><h1 id="info"><span>Of Stories<br/>and Trees</span></h1>
+			<div id="load" class="load"><div class="dynamic">
 				<div></div>
 				</div></div>
 			</div>
