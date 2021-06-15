@@ -6,6 +6,7 @@
 		<script type="text/javascript">
 			function intro () {
 				document.getElementById("init").style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+				document.getElementById("info").style.display = "none";
 				document.getElementById("body").style.overflow = "scroll";
 			}
 			function page() {
@@ -118,9 +119,49 @@
 			}
 		</script>
 		<link rel="stylesheet" href="multimedia/design/style.css"/>
+		<style type="text/css">
+			@keyframes ldio-7n0cf9u6nf2 {
+				0% { transform: translate(-50%,-50%) rotate(0deg); }
+				100% { transform: translate(-50%,-50%) rotate(360deg); }
+			}
+			.ldio-7n0cf9u6nf2 div {
+				position: absolute;
+				width: 120px;
+			 	height: 120px;
+				border: 20px solid #000000;
+				border-top-color: transparent;
+				border-radius: 50%;
+			}
+			.ldio-7n0cf9u6nf2 div {
+				animation: ldio-7n0cf9u6nf2 1s linear infinite;
+				top: 100px;
+				left: 100px
+			}
+			.loadingio-spinner-rolling-q6zcq4hs7ul {
+				width: 200px;
+				height: 200px;
+				display: inline-block;
+				overflow: hidden;
+				background: none;
+			}
+			.ldio-7n0cf9u6nf2 {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				transform: translateZ(0) scale(1);
+				backface-visibility: hidden;
+			 	transform-origin: 0 0; /* see note above */
+			}
+			.ldio-7n0cf9u6nf2 div { box-sizing: content-box; }
+		</style>
 	</head>
 	<body id="body" onload="start()">
-		<header style="background-image:url('multimedia/design/theme.jpg');"><div id="init"><h1><span>Of Stories<br/>and Trees</span></h1></div></header>
+		<header style="background-image:url('multimedia/design/theme.jpg');"><div id="init"><h1><span>Of Stories<br/>and Trees</span></h1>
+			<div id="info" class="loadingio-spinner-rolling-q6zcq4hs7ul"><div class="ldio-7n0cf9u6nf2">
+				<div></div>
+				</div></div>
+			</div>
+		</header>
 		<main id="main"><!-- Document Object Model --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Custom maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script type="text/javascript">
