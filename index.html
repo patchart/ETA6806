@@ -4,12 +4,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 		<script type="text/javascript">
-			function intro () {
-				document.getElementById("init").style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-				document.getElementById("load").style.display= "none";
-				document.getElementById("info").style.zIndex= "auto";
-				document.getElementById("body").style.overflow = "scroll";
-			}
 			function page() {
 				// on envoie la requête XML
 				var xhr = new XMLHttpRequest();
@@ -114,9 +108,15 @@
 				xhr.open("GET", "articles.xml", true);
 				xhr.send(null);
 			}
+			function intro () {
+				document.getElementById("init").style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+				document.getElementById("load").style.display= "none";
+				document.getElementById("info").style.zIndex= "auto";
+				document.getElementById("body").style.overflow = "scroll";
+			}
 			function start() {
-				setTimeout(intro, 8000);
 				page();
+				setTimeout(intro, 8000);
 			}
 		</script>
 		<link rel="stylesheet" href="multimedia/design/style.css"/>
