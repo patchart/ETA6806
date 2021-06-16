@@ -28,7 +28,7 @@
 							figure.setAttribute("id", "figure");
 							article.appendChild(figure);
 							image = document.createElement("div");
-							j = data[i].children[2].getAttribute("file");
+							j = data[i].children[2].getAttribute("files");
 							for (z = 1; z < j; z++) {
   								image.innerHTML += "<img class='"+data[i].getAttribute("no")+"' src='medias/"+data[i].getAttribute("no")+"/image-"+z+".jpg'/>";
 							}
