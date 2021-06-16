@@ -109,17 +109,17 @@
 				xhr.send(null);
 			}
 			function format() {
-				var graphic, dynamic, b;
+				var static, graphic, b;
 				var header = document.getElementById("header");
+				static.createElement("div");
+				static.setAttribute("id", "graphic");
+				static.setAttribute("class", "graphic");
+				header.appendChild(static);
 				graphic.createElement("div");
-				graphic.setAttribute("id", "graphic");
-				graphic.setAttribute("class", "graphic");
-				header.appendChild(graphic);
-				dynamic.createElement("div");
-				dynamic.setAttribute("class", "dynamic");
-				graphic.appendChild(dynamic);
+				graphic.setAttribute("class", "dynamic");
+				static.appendChild(graphic);
 				b.createElement("div");
-				dynamic.appendChild(b);
+				graphic.appendChild(b);
 			}
 			function render() {
 				document.getElementById("init").style.backgroundColor = "rgba(0, 0, 0, 0.8)";
