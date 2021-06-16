@@ -30,7 +30,7 @@
 							image = document.createElement("div");
 							j = data[i].children[2].getAttribute("file");
 							for (z = 1; z < j; z++) {
-  								image.innerHTML += "<img class='"+data[i].getAttribute("no")+"' src='multimedia/"+data[i].getAttribute("no")+"/image-"+z+".jpg'/>";
+  								image.innerHTML += "<img class='"+data[i].getAttribute("no")+"' src='medias/"+data[i].getAttribute("no")+"/image-"+z+".jpg'/>";
 							}
 							figure.appendChild(image);
 							/*
@@ -108,72 +108,33 @@
 				xhr.open("GET", "articles.xml", true);
 				xhr.send(null);
 			}
-			function intro () {
+			function rendering () {
 				document.getElementById("init").style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-				document.getElementById("load").style.display= "none";
-				document.getElementById("info").style.zIndex= "auto";
+				document.getElementById("load").style.display = "none";
+				document.getElementById("intro").style.zIndex = "auto";
 				document.getElementById("body").style.overflow = "scroll";
+				var x, y, z;
+				var header = document.getElementById("header");
+				x.createElement("div");
+				x.setAttribute("id", "load");
+				x.setAttribute("class", "load");
+				header.appendChild(x);
+				y.createElement("div");
+				y.setAttribute("class", "info");
+				x.appendChild(y);
+				z.createElement("div");
+				y.appendChild(z);
 			}
 			function start() {
 				page();
-				setTimeout(intro, 8000);
+				setTimeout(rendering, 8000);
 			}
 		</script>
-		<link rel="stylesheet" href="multimedia/design/style.css"/>
-		<style type="text/css">
-			@keyframes dynamic {
-				0% { transform: translate(-50%,-50%) rotate(0deg); }
-				100% { transform: translate(-50%,-50%) rotate(360deg); }
-			}
-			.dynamic div {
-				position: absolute;
-				width: 120px;
-			 	height: 120px;
-				border: 20px solid rgba(64, 64, 64, 0.5);
-				border-top-color: transparent;
-				border-radius: 50%;
-			}
-			.dynamic div {
-				animation: dynamic 1s linear infinite;
-				top: 100px;
-				left: 100px
-			}
-			.load {
-				position: absolute;
-				margin: 0;
-				left: 43%;
-				bottom: 50%;
-				width: 80%;
-				height: 200px;
-				display: inline-block;
-				overflow: hidden;
-				background: none;
-			}
-			@media screen and (max-width: 450px) {
-				.load {
-					left: 20%;
-					bottom: 33%;
-					width: 60%;
-				}
-			}
-			.dynamic {
-				width: 20%;
-				height: 20%;
-				position: relative;
-				transform: translateZ(0) scale(1);
-				backface-visibility: hidden;
-			 	transform-origin: 0 0;
-			}
-			.dynamic div { box-sizing: content-box; }
-		</style>
+		<link rel="stylesheet" href="style/design.css"/>
+		<link rel="stylesheet" href="style/animation.css"/>
 	</head>
 	<body id="body" onload="start()">
-		<header style="background-image:url('multimedia/design/theme.jpg');"><div id="init"><h1 id="info"><span>Of Stories<br/>and Trees</span></h1>
-			<div id="load" class="load"><div class="dynamic">
-				<div></div>
-				</div></div>
-			</div>
-		</header>
+		<header id="header" style="background-image:url('style/theme.jpg');"><div id="init"><h1 id="intro"><span>Of Stories<br/>and Trees</span></h1></header>
 		<main id="main"><!-- Document Object Model --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Custom maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
 		<script type="text/javascript">
