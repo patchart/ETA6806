@@ -1,8 +1,8 @@
-@keyframes info {
+@keyframes graphic {
 	0% { transform: translate(-50%,-50%) rotate(0deg); }
 	100% { transform: translate(-50%,-50%) rotate(360deg); }
 }
-.info div {
+.graphic div {
 	position: absolute;
 	width: 120px;
  	height: 120px;
@@ -10,12 +10,12 @@
 	border-top-color: transparent;
 	border-radius: 50%;
 }
-.info div {
-	animation: info 1s linear infinite;
+.graphic div {
+	animation: graphic 1s linear infinite;
 	top: 100px;
 	left: 100px
 }
-.load {
+.static {
 	position: absolute;
 	margin: 0;
 	left: 43%;
@@ -27,13 +27,13 @@
 	background: none;
 }
 @media screen and (max-width: 450px) {
-	.load {
+	.static {
 		left: 20%;
 		bottom: 33%;
 		width: 60%;
 	}
 }
-.info {
+.graphic {
 	width: 20%;
 	height: 20%;
 	position: relative;
@@ -41,6 +41,6 @@
 	backface-visibility: hidden;
  	transform-origin: 0 0;
 }
-.info div { 
+.graphic div { 
 	box-sizing: content-box; 
 }
