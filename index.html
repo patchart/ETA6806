@@ -108,32 +108,35 @@
 				xhr.open("GET", "articles.xml", true);
 				xhr.send(null);
 			}
+			function format() {
+				var load, info, b;
+				var header = document.getElementById("header");
+				load.createElement("div");
+				load.setAttribute("id", "load");
+				load.setAttribute("class", "load");
+				header.appendChild(load);
+				info.createElement("div");
+				info.setAttribute("class", "info");
+				load.appendChild(info);
+				b.createElement("div");
+				info.appendChild(b);
+			}
 			function render () {
 				document.getElementById("init").style.backgroundColor = "rgba(0, 0, 0, 0.8)";
 				document.getElementById("load").style.display = "none";
 				document.getElementById("intro").style.zIndex = "auto";
 				document.getElementById("body").style.overflow = "scroll";
-				var x, y, z;
-				var header = document.getElementById("header");
-				x.createElement("div");
-				x.setAttribute("id", "load");
-				x.setAttribute("class", "load");
-				header.appendChild(x);
-				y.createElement("div");
-				y.setAttribute("class", "info");
-				x.appendChild(y);
-				z.createElement("div");
-				y.appendChild(z);
 			}
-			function start() {
+			function read() {
 				page();
+				format();
 				setTimeout(render, 16000);
 			}
 		</script>
 		<link rel="stylesheet" href="style/design.css"/>
 		<link rel="stylesheet" href="style/animation.css"/>
 	</head>
-	<body id="body" onload="start()">
+	<body id="body" onload="read()">
 		<header id="header" style="background-image:url('style/theme.jpg');"><div id="init"><h1 id="intro"><span>Of Stories<br/>and Trees</span></h1></header>
 		<main id="main"><!-- Document Object Model --></main>
 		<footer><ul><li><a href="https://www.alltrails.com/members/patrick-chartrand-4/maps" target="_blank">Custom maps</a></li><li><a href="mailto:patrick.chartrand@umontreal.ca">Contact</a></li></ul><h4>Patrick Chartrand &copy; 2021</h4></footer>
