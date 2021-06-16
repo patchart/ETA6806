@@ -108,7 +108,11 @@
 				xhr.open("GET", "articles.xml", true);
 				xhr.send(null);
 			}
-			function format() {
+			function render() {
+				document.getElementById("init").style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+				document.getElementById("intro").style.zIndex = "auto";
+				document.getElementById("static").style.display = "none";
+				document.getElementById("body").style.overflow = "scroll";
 				var static, graphic, b;
 				var header = document.getElementById("header");
 				static.createElement("div");
@@ -121,15 +125,8 @@
 				b.createElement("div");
 				graphic.appendChild(b);
 			}
-			function render() {
-				document.getElementById("init").style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-				document.getElementById("intro").style.zIndex = "auto";
-				document.getElementById("static").style.display = "none";
-				document.getElementById("body").style.overflow = "scroll";
-			}
 			function read() {
 				page();
-				format();
 				setTimeout(render, 16000);
 			}
 		</script>
